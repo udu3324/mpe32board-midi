@@ -1,0 +1,48 @@
+mpe32board-midi research
+
+
+features - 
+
+midi out to pc
+audio out to pc (onboard synth/dsp)
+gpio exposed
+easy tinkering with
+
+(optional) microsd slot
+
+electronics - 
+
+-- main board
+
+stm32h743 (good processing power)
+^ good option, better than the 750 which has little flash
+
+supports a 16x2 lcd display (headers for it)
+
+https://www.youtube.com/watch?v=h28D4AaPSjg
+64mb ram (SDRAM) (look at 3.15 on datasheet)
+has to run 100mhz, can be underclocked, 90-tfbga footprint
+also i hope i can trace this well
+
+a bunch of TCA9548A i2c muxes
+!!!!!!!! check if memory could take up too much io for the muxes i need
+^ im pretty sure im fine as the muxes can hardware set their addresses
+
+https://electronics.stackexchange.com/questions/595103/stdc14-connector-pinout-for-st-link-v3-for-swd-debugging
+stlink for easy debugging and flashing (under jtag/swd)
+either use 10pin or 20pin
+still requires external power (from usb c)
+
+-- hall effect sensor board
+
+tmag5273
+^ capacitor for it
+
+https://www.thevfdcollective.com/blog/stm32-and-sk6812-rgbw-led
+(optional) neopixel? (supply with 3v3 and 3v3 logic)
+
+connector out > 3v3, gnd, tmag out, neopixel in, neopixel out (5)
+OR
+connector out > 3v3, gnd, tmag out
+connector L > neopixel in
+connector R > neopixel out (chain-like connection)
