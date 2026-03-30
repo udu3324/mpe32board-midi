@@ -15,6 +15,34 @@ electronics -
 -- main board
 
 stm32h743 (good processing power)
+
+i need a mcu that is:
+- in stock
+- supports sdram
+- has good flash space
+
+stm32h743ag
+stm32h743ai
+stm32h743ig
+
+stm32h743xg
+stm32h743xi
+
+stm32h753ii
+
+
+
+
+
+
+stm32h753ai (4 in stock) (lfbga169)
+stm32h743ii (2k in stock) (lqfp176)
+stm32h753xi (187 in stock) (tfbga240+25)
+
+going with stm32h743ii
+
+
+
 ^ good option, better than the 750 which has little flash
 
 supports a 16x2 lcd display (headers for it)
