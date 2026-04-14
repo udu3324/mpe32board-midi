@@ -1,7 +1,7 @@
 mpe32board-midi research
 
 
-features - 
+# features
 
 midi out to pc
 audio out to pc (onboard synth/dsp)
@@ -10,9 +10,9 @@ easy tinkering with
 
 (optional) microsd slot
 
-electronics - 
+# electronics
 
--- main board
+## main board
 
 stm32h743 (good processing power)
 
@@ -47,6 +47,7 @@ going with stm32h743ii
 
 supports a 16x2 lcd display (headers for it)
 
+https://community.st.com/t5/stm32-mcus/how-to-set-up-the-fmc-peripheral-to-interface-with-the-sdram/ta-p/49457
 https://www.youtube.com/watch?v=h28D4AaPSjg
 64mb ram (SDRAM) (look at 3.15 on datasheet)
 has to run 100mhz, can be underclocked, 90-tfbga footprint
@@ -61,7 +62,7 @@ stlink for easy debugging and flashing (under jtag/swd)
 either use 10pin or 20pin
 still requires external power (from usb c)
 
--- hall effect sensor board
+## hall effect sensor board
 
 tmag5273
 ^ capacitor for it
