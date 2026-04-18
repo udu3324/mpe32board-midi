@@ -1,6 +1,7 @@
 mpe32board-midi research
 
 
+
 # features
 
 midi out to pc
@@ -17,9 +18,10 @@ easy tinkering with
 stm32h743 (good processing power)
 
 i need a mcu that is:
-- in stock
-- supports sdram
-- has good flash space
+
+* in stock
+* supports sdram
+* has good flash space
 
 stm32h743ag
 stm32h743ai
@@ -29,6 +31,7 @@ stm32h743xg
 stm32h743xi
 
 stm32h753ii
+
 
 
 
@@ -47,20 +50,34 @@ going with stm32h743ii
 
 supports a 16x2 lcd display (headers for it)
 
+
+
 https://community.st.com/t5/stm32-mcus/how-to-set-up-the-fmc-peripheral-to-interface-with-the-sdram/ta-p/49457
 https://www.youtube.com/watch?v=h28D4AaPSjg
 64mb ram (SDRAM) (look at 3.15 on datasheet)
 has to run 100mhz, can be underclocked, 90-tfbga footprint
 also i hope i can trace this well
 
+
+
 a bunch of TCA9548A i2c muxes
 !!!!!!!! check if memory could take up too much io for the muxes i need
 ^ im pretty sure im fine as the muxes can hardware set their addresses
+
+
 
 https://electronics.stackexchange.com/questions/595103/stdc14-connector-pinout-for-st-link-v3-for-swd-debugging
 stlink for easy debugging and flashing (under jtag/swd)
 either use 10pin or 20pin
 still requires external power (from usb c)
+
+
+
+https://www.phippselectronics.com/interface-an-sd-card-through-sdio-on-the-stm32-blackpill-part-1/
+
+microsd support
+
+
 
 ## hall effect sensor board
 
@@ -75,3 +92,4 @@ OR
 connector out > 3v3, gnd, tmag out
 connector L > neopixel in
 connector R > neopixel out (chain-like connection)
+

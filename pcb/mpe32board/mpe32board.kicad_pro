@@ -621,6 +621,18 @@
     [
       "47cc9e28-bc0a-48c2-8b50-ab5238ab7463",
       "Sensor Connectors"
+    ],
+    [
+      "61580c48-69b8-477c-a7ec-2670dc79cb6a",
+      "MicroSD Card"
+    ],
+    [
+      "117e1584-29cf-485e-a9aa-2eeb8261960f",
+      "16x2-4 LCD Display"
+    ],
+    [
+      "9a9bbe28-fd3c-4e18-9aae-0f4323bbcc15",
+      "Audio Codec"
     ]
   ],
   "text_variables": {}
