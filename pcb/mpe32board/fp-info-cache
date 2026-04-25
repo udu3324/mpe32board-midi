@@ -1,4 +1,4 @@
-26410847938444955
+26425055059846319
 1_udu_lib
 HM-NFC-Class6-Antenna
 <h1> Class 6 Antenna - 50 pF #01 </h1>{return}<h3>{return}Size: 	24 x 18 mm{return}<br>{return}Width: 	0.25 mm{return}<br>{return}Gap: 	0.1 mm{return}<br>{return}Turns: 	7{return}</h3>
@@ -6,6 +6,34 @@ HM-NFC-Class6-Antenna
 0
 3
 2
+1_udu_lib
+PWP0016J_L
+
+DRV8874PWPR 
+0
+32
+32
+1_udu_lib
+PWP0016J_M
+
+DRV8874PWPR 
+0
+32
+32
+1_udu_lib
+PWP0016J_N
+
+DRV8874PWPR 
+0
+32
+32
+1_udu_lib
+PWP0016J_NV
+
+DRV8874PWPR 
+0
+17
+17
 1_udu_lib
 SW_Cherry_MX_1.00u_PCB_3dmodel
 Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf
@@ -34,6 +62,27 @@ Untitled_1
 0
 0
 0
+1_udu_lib
+VQFN24_RGE_CORNERPADS_TEX
+
+XTAC5212IRGER 
+0
+29
+29
+1_udu_lib
+VQFN24_RGE_CORNERPADS_TEX-L
+
+XTAC5212IRGER 
+0
+29
+29
+1_udu_lib
+VQFN24_RGE_CORNERPADS_TEX-M
+
+XTAC5212IRGER 
+0
+29
+29
 1_udu_lib
 XIAO-RP2040-DIP
 
@@ -17009,6 +17058,13 @@ conn jae fpc board to board
 0
 74
 71
+Connector_JST
+FIXEDJST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical
+JST SH series connector, BM04B-SRSS-TB (http://www.jst-mfg.com/product/pdf/eng/eSH.pdf), generated with kicad-footprint-generator
+connector JST SH vertical
+0
+6
+5
 Connector_JST
 JST_ACH_BM01B-ACHSS-A-GAN-ETF_1x01-1MP_P1.20mm_Vertical
 JST ACH series connector, BM01B-ACHSS-A-GAN-ETF (http://www.jst-mfg.com/product/pdf/eng/eACH.pdf), generated with kicad-footprint-generator

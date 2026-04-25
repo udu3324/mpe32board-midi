@@ -633,6 +633,10 @@
     [
       "9a9bbe28-fd3c-4e18-9aae-0f4323bbcc15",
       "Audio Codec"
+    ],
+    [
+      "96daed9c-596f-4728-8b5d-8474114f199f",
+      "Control Debug Keys and Internal Neopixels"
     ]
   ],
   "text_variables": {}
