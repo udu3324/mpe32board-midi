@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20250114)
+	(version 20260306)
 	(generator "eeschema")
-	(generator_version "9.0")
+	(generator_version "10.0")
 	(uuid "9ef34d7d-e26a-4410-b51f-e052c18c0412")
 	(paper "A4")
 	(lib_symbols
@@ -16,8 +16,12 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "R"
 				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.016 1.016)
@@ -26,6 +30,8 @@
 			)
 			(property "Value" "R_Small"
 				(at 1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -34,47 +40,57 @@
 			)
 			(property "Footprint" ""
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
-			(property "Datasheet" "~"
+			(property "Datasheet" ""
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Description" "Resistor, small symbol"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "ki_keywords" "R resistor"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "ki_fp_filters" "R_*"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(symbol "R_Small_0_1"
@@ -94,7 +110,7 @@
 				(pin passive line
 					(at 0 2.54 270)
 					(length 0.762)
-					(name "~"
+					(name ""
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -112,7 +128,7 @@
 				(pin passive line
 					(at 0 -2.54 90)
 					(length 0.762)
-					(name "~"
+					(name ""
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -130,15 +146,19 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "LED:WS2812B"
+		(symbol "LED:SK6812MINI-E"
 			(pin_names
 				(offset 0.254)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "D"
 				(at 5.08 5.715 0)
+				(show_name no)
+				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -146,8 +166,10 @@
 					(justify right bottom)
 				)
 			)
-			(property "Value" "WS2812B"
+			(property "Value" "SK6812MINI-E"
 				(at 1.27 -5.715 0)
+				(show_name no)
+				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -155,54 +177,64 @@
 					(justify left top)
 				)
 			)
-			(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
+			(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount"
 				(at 1.27 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify left top)
-					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf"
 				(at 2.54 -9.525 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify left top)
-					(hide yes)
 				)
 			)
 			(property "Description" "RGB LED with integrated controller"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "ki_keywords" "RGB LED NeoPixel addressable"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*"
+			(property "ki_fp_filters" "LED?SK6812MINI?E?3.2x2.8mm?P1.5mm*"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
-			(symbol "WS2812B_0_0"
+			(symbol "SK6812MINI-E_0_0"
 				(text "RGB"
 					(at 2.286 -4.191 0)
 					(effects
@@ -212,7 +244,7 @@
 					)
 				)
 			)
-			(symbol "WS2812B_0_1"
+			(symbol "SK6812MINI-E_0_1"
 				(polyline
 					(pts
 						(xy 1.27 -2.54) (xy 1.778 -2.54)
@@ -309,29 +341,11 @@
 					)
 				)
 			)
-			(symbol "WS2812B_1_1"
-				(pin input line
-					(at -7.62 0 0)
-					(length 2.54)
-					(name "DIN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
+			(symbol "SK6812MINI-E_1_1"
 				(pin power_in line
-					(at 0 7.62 270)
+					(at 0 -7.62 90)
 					(length 2.54)
-					(name "VDD"
+					(name "VSS"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -346,10 +360,28 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at 0 -7.62 90)
+				(pin input line
+					(at -7.62 0 0)
 					(length 2.54)
-					(name "VSS"
+					(name "DIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 7.62 270)
+					(length 2.54)
+					(name "VDD"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -374,7 +406,7 @@
 							)
 						)
 					)
-					(number "2"
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -396,8 +428,12 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "SW"
 				(at 1.27 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -407,6 +443,8 @@
 			)
 			(property "Value" "SW_Push"
 				(at 0 -1.524 0)
+				(show_name no)
+				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -415,38 +453,46 @@
 			)
 			(property "Footprint" ""
 				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
-			(property "Datasheet" "~"
+			(property "Datasheet" ""
 				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Description" "Push button switch, generic, two pins"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "ki_keywords" "switch normally-open pushbutton push-button"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(symbol "SW_Push_0_1"
@@ -536,7 +582,7 @@
 			(embedded_fonts no)
 		)
 		(symbol "power:+3V3"
-			(power)
+			(power global)
 			(pin_numbers
 				(hide yes)
 			)
@@ -547,17 +593,23 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "#PWR"
 				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Value" "+3V3"
 				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -566,38 +618,46 @@
 			)
 			(property "Footprint" ""
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Datasheet" ""
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Description" "Power symbol creates a global label with name \"+3V3\""
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "ki_keywords" "global power"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(symbol "+3V3_0_1"
@@ -642,7 +702,7 @@
 				(pin power_in line
 					(at 0 0 90)
 					(length 0)
-					(name "~"
+					(name ""
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -661,7 +721,7 @@
 			(embedded_fonts no)
 		)
 		(symbol "power:GND"
-			(power)
+			(power global)
 			(pin_numbers
 				(hide yes)
 			)
@@ -672,17 +732,23 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "#PWR"
 				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Value" "GND"
 				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -691,38 +757,46 @@
 			)
 			(property "Footprint" ""
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Datasheet" ""
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "ki_keywords" "global power"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(symbol "GND_0_1"
@@ -743,7 +817,7 @@
 				(pin power_in line
 					(at 0 0 270)
 					(length 0)
-					(name "~"
+					(name ""
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -773,22 +847,16 @@
 		(uuid "8c2a87b0-a010-4483-bbb3-f57c7afca8ba")
 	)
 	(junction
-		(at 125.73 137.16)
+		(at 107.95 121.92)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "064bef82-6b9b-4fd9-a94f-b86bedab63e3")
+		(uuid "122546b6-1624-4cfb-ae1a-239ca326dfd2")
 	)
 	(junction
-		(at 161.29 137.16)
+		(at 143.51 137.16)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "163b0252-2472-4863-9b04-b9cd4b3fe431")
-	)
-	(junction
-		(at 107.95 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1af3be8e-f7a2-48a0-aa8a-a646a66f409f")
+		(uuid "24960ed7-d0c3-4416-a35b-02f359213b65")
 	)
 	(junction
 		(at 151.13 66.04)
@@ -797,34 +865,10 @@
 		(uuid "253c101d-b515-4ad3-bbdf-c863a11a9e67")
 	)
 	(junction
-		(at 125.73 121.92)
+		(at 72.39 121.92)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "2bcee041-8b13-47c9-8fb6-09eb17b322e7")
-	)
-	(junction
-		(at 143.51 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4b16df5e-083f-4051-94a6-e77c4f8286bb")
-	)
-	(junction
-		(at 90.17 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4c4322c3-2185-495b-ba9a-2dbd9609c021")
-	)
-	(junction
-		(at 90.17 121.92)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5d5b5c19-215f-4a20-b78a-4bf3e8d905d0")
-	)
-	(junction
-		(at 72.39 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "68fac2bb-a8a7-4f87-8dc7-b0a1038e468e")
+		(uuid "4b2db59f-0a10-4994-847f-2a1d34a6af28")
 	)
 	(junction
 		(at 113.03 66.04)
@@ -833,10 +877,10 @@
 		(uuid "810b36f3-d36c-43d1-be3f-f48829836db1")
 	)
 	(junction
-		(at 161.29 121.92)
+		(at 107.95 137.16)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9679bf40-3d33-4ae3-92b9-6393aec16ac1")
+		(uuid "87e61b0d-42f1-4907-959b-a44463008063")
 	)
 	(junction
 		(at 72.39 66.04)
@@ -851,48 +895,44 @@
 		(uuid "a6961ef5-1559-4547-9ddd-626cd3799452")
 	)
 	(junction
-		(at 179.07 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c480c0af-328a-4a1e-8b20-4342f865b013")
-	)
-	(junction
-		(at 179.07 121.92)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "dec591e4-39b7-4e2e-ba18-4ff83a21fd9a")
-	)
-	(junction
 		(at 143.51 121.92)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e092c925-3762-4e18-9b62-b8ab0c382c86")
+		(uuid "a7e4c8da-8781-4541-82eb-bc54195f3d8d")
 	)
 	(junction
-		(at 107.95 121.92)
+		(at 125.73 137.16)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "f95c0012-7ae2-4bc5-b9bb-e8c5fde6a5ab")
+		(uuid "ae5d8817-ecf2-4476-adb8-3729e663bff8")
 	)
 	(junction
-		(at 72.39 121.92)
+		(at 90.17 121.92)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ff66624f-e21c-430f-a747-d7d362f2b913")
+		(uuid "c9862cfa-d5fe-488a-943a-5743d470a056")
+	)
+	(junction
+		(at 125.73 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ca706d8d-0fa8-473d-a141-e1cea530a664")
+	)
+	(junction
+		(at 90.17 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d8cb5bcb-d1dd-40d6-be4c-6fb6574d2390")
+	)
+	(junction
+		(at 72.39 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ff9cd3cf-b549-4713-b2bb-751e6f02d190")
 	)
 	(no_connect
-		(at 204.47 129.54)
-		(uuid "ff6e2d4c-1d47-4552-b15a-cd6bfb3fd821")
-	)
-	(wire
-		(pts
-			(xy 186.69 129.54) (xy 189.23 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "06469d7e-3c99-43f5-88d3-ea3986bbe57b")
+		(at 168.91 129.54)
+		(uuid "ca768c6f-d693-4f91-a88a-0d24f556eb42")
 	)
 	(wire
 		(pts
@@ -916,26 +956,6 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 121.92) (xy 161.29 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "11fda6d4-d016-4a22-989c-3e169ac3fa5b")
-	)
-	(wire
-		(pts
-			(xy 125.73 137.16) (xy 143.51 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "142275c8-579d-41a1-b5c9-838561d7fa24")
-	)
-	(wire
-		(pts
 			(xy 113.03 73.66) (xy 113.03 66.04)
 		)
 		(stroke
@@ -956,16 +976,6 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 121.92) (xy 125.73 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2044d1d2-63bf-4fe1-874f-da75a0a9b94d")
-	)
-	(wire
-		(pts
 			(xy 151.13 66.04) (xy 152.4 66.04)
 		)
 		(stroke
@@ -983,16 +993,6 @@
 			(type default)
 		)
 		(uuid "2ea3389f-273b-4fd8-8e93-cafa5a66c1de")
-	)
-	(wire
-		(pts
-			(xy 125.73 121.92) (xy 143.51 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3099c98a-9736-4f27-858a-b354736e6d6d")
 	)
 	(wire
 		(pts
@@ -1086,6 +1086,36 @@
 	)
 	(wire
 		(pts
+			(xy 107.95 137.16) (xy 125.73 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c8fd559-1f57-466b-8f32-4f5346336522")
+	)
+	(wire
+		(pts
+			(xy 90.17 121.92) (xy 107.95 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50ea7775-097f-4197-9305-e30614809203")
+	)
+	(wire
+		(pts
+			(xy 90.17 137.16) (xy 107.95 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52da09b8-2670-4a65-880c-ca8945f57697")
+	)
+	(wire
+		(pts
 			(xy 205.74 74.93) (xy 205.74 73.66)
 		)
 		(stroke
@@ -1116,16 +1146,6 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 137.16) (xy 125.73 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "60f23f03-0b06-4d93-be69-296acf02207f")
-	)
-	(wire
-		(pts
 			(xy 72.39 137.16) (xy 90.17 137.16)
 		)
 		(stroke
@@ -1136,16 +1156,6 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 129.54) (xy 171.45 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "899bdd91-bbcc-4c66-b08b-560753d53328")
-	)
-	(wire
-		(pts
 			(xy 189.23 66.04) (xy 191.77 66.04)
 		)
 		(stroke
@@ -1153,6 +1163,16 @@
 			(type default)
 		)
 		(uuid "8f0aceb6-a13e-4978-81fc-dc25f163954a")
+	)
+	(wire
+		(pts
+			(xy 125.73 137.16) (xy 143.51 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "919134c5-d375-4b83-b151-41bd3e0822ef")
 	)
 	(wire
 		(pts
@@ -1196,16 +1216,6 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 137.16) (xy 161.29 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a307ceaa-fb63-43fe-a876-8816326996b5")
-	)
-	(wire
-		(pts
 			(xy 191.77 66.04) (xy 193.04 66.04)
 		)
 		(stroke
@@ -1216,6 +1226,16 @@
 	)
 	(wire
 		(pts
+			(xy 143.51 121.92) (xy 161.29 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab2d9e34-502c-4b5a-866d-0a818082dd1b")
+	)
+	(wire
+		(pts
 			(xy 113.03 66.04) (xy 114.3 66.04)
 		)
 		(stroke
@@ -1223,16 +1243,6 @@
 			(type default)
 		)
 		(uuid "ad727abe-53f8-44b7-8eac-c383acd9f6f7")
-	)
-	(wire
-		(pts
-			(xy 161.29 121.92) (xy 179.07 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b1aff93a-0d25-4a35-afe9-0f3caeaf9553")
 	)
 	(wire
 		(pts
@@ -1266,26 +1276,6 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 121.92) (xy 196.85 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c45c04c7-874d-47ba-bd93-352615e4328d")
-	)
-	(wire
-		(pts
-			(xy 179.07 137.16) (xy 196.85 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c779dc31-0a74-4c24-9dc2-2c45ea5f3ee4")
-	)
-	(wire
-		(pts
 			(xy 72.39 66.04) (xy 73.66 66.04)
 		)
 		(stroke
@@ -1293,6 +1283,16 @@
 			(type default)
 		)
 		(uuid "c97812f4-abda-49e4-93e1-07ae5365fa17")
+	)
+	(wire
+		(pts
+			(xy 107.95 121.92) (xy 125.73 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d46cd857-154e-4468-969f-6c3e7993f1ac")
 	)
 	(wire
 		(pts
@@ -1336,6 +1336,16 @@
 	)
 	(wire
 		(pts
+			(xy 143.51 137.16) (xy 161.29 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1ef4e9d-345a-4a62-9242-fd2edcb9d962")
+	)
+	(wire
+		(pts
 			(xy 72.39 121.92) (xy 90.17 121.92)
 		)
 		(stroke
@@ -1376,16 +1386,6 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 137.16) (xy 107.95 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f5507597-46fc-46e0-b557-57c83e3d13d6")
-	)
-	(wire
-		(pts
 			(xy 83.82 66.04) (xy 86.36 66.04)
 		)
 		(stroke
@@ -1406,16 +1406,6 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 121.92) (xy 107.95 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f98e2eae-6a26-4953-8a2d-57fe27ad63e6")
-	)
-	(wire
-		(pts
 			(xy 127 73.66) (xy 121.92 73.66)
 		)
 		(stroke
@@ -1426,13 +1416,13 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 137.16) (xy 179.07 137.16)
+			(xy 125.73 121.92) (xy 143.51 121.92)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fdaaef20-57fc-4020-8861-70dae743d970")
+		(uuid "fe523f0c-b6d8-4c8b-a03f-b6cd09210562")
 	)
 	(global_label "BTN4_INTERNAL"
 		(shape input)
@@ -1447,12 +1437,14 @@
 		(uuid "1adda442-5af8-493a-94fb-036a7ad70529")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 171.7305 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
 			)
 		)
 	)
@@ -1469,12 +1461,14 @@
 		(uuid "426159c9-2e36-411a-9fca-5e5f28b02a7a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 42.9767 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
 			)
 		)
 	)
@@ -1491,12 +1485,14 @@
 		(uuid "43445568-daf4-4848-99e5-bf9920fbd886")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 92.9905 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
 			)
 		)
 	)
@@ -1513,12 +1509,14 @@
 		(uuid "861462e2-d016-45c1-8c0d-bbdced3214bb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 52.3505 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
 			)
 		)
 	)
@@ -1535,87 +1533,14 @@
 		(uuid "e6c59565-60b3-421d-907d-e9cba27c6c86")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 131.0905 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B")
-		(at 143.51 129.54 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "22ae56f5-f6b8-4535-a293-d5d0b98fd4f1")
-		(property "Reference" "D5"
-			(at 149.098 117.856 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "WS2812B"
-			(at 149.098 120.396 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
-			(at 144.78 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 146.05 139.065 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "RGB LED with integrated controller"
-			(at 143.51 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e5b8fda0-8215-4847-9d1d-aa042343fd9c")
-		)
-		(pin "3"
-			(uuid "7199bf11-4916-4f68-a118-10fb7fb65a69")
-		)
-		(pin "4"
-			(uuid "04e5ca62-cf12-45d3-a467-523c29a89621")
-		)
-		(pin "2"
-			(uuid "c5fa3a62-edb1-4027-acc7-fd7c00899507")
-		)
-		(instances
-			(project "mpe32board"
-				(path "/90f9def3-561d-490b-a661-0a19546ece9e/96daed9c-596f-4728-8b5d-8474114f199f"
-					(reference "D5")
-					(unit 1)
-				)
 			)
 		)
 	)
@@ -1623,23 +1548,29 @@
 		(lib_id "power:GND")
 		(at 165.1 74.93 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2ce8f680-7cf0-4b7b-9b17-513046bf18ec")
 		(property "Reference" "#PWR0167"
 			(at 165.1 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "GND"
 			(at 165.1 80.01 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1648,29 +1579,35 @@
 		)
 		(property "Footprint" ""
 			(at 165.1 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 165.1 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 165.1 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -1689,22 +1626,28 @@
 		(lib_id "power:+3V3")
 		(at 165.1 64.77 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(uuid "3391bf14-c679-4c9e-9489-8f47e2466af2")
 		(property "Reference" "#PWR0166"
 			(at 165.1 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "+3V3"
 			(at 164.846 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1713,29 +1656,35 @@
 		)
 		(property "Footprint" ""
 			(at 165.1 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 165.1 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
 			(at 165.1 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -1754,14 +1703,18 @@
 		(lib_id "Device:R_Small")
 		(at 78.74 73.66 90)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "33e9b62c-6814-43fc-9a8d-1b5b86227dd6")
 		(property "Reference" "R59"
 			(at 78.74 68.58 90)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -1770,6 +1723,8 @@
 		)
 		(property "Value" "10kΩ"
 			(at 78.74 71.12 90)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1778,29 +1733,35 @@
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 78.74 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 78.74 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Resistor, small symbol"
 			(at 78.74 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -1822,22 +1783,28 @@
 		(lib_id "power:+3V3")
 		(at 86.36 64.77 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(uuid "418209f7-e97b-4f29-ad77-02c5450579f2")
 		(property "Reference" "#PWR0162"
 			(at 86.36 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "+3V3"
 			(at 86.106 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1846,29 +1813,35 @@
 		)
 		(property "Footprint" ""
 			(at 86.36 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 86.36 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
 			(at 86.36 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -1887,22 +1860,28 @@
 		(lib_id "power:+3V3")
 		(at 127 64.77 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(uuid "4192e277-46a2-447d-b65c-7d089fb54d55")
 		(property "Reference" "#PWR0164"
 			(at 127 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "+3V3"
 			(at 126.746 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1911,29 +1890,35 @@
 		)
 		(property "Footprint" ""
 			(at 127 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 127 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
 			(at 127 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -1952,22 +1937,28 @@
 		(lib_id "power:+3V3")
 		(at 72.39 119.38 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(uuid "48cb0500-d574-41d3-8ddd-7b2eb19505bd")
 		(property "Reference" "#PWR0160"
 			(at 72.39 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "+3V3"
 			(at 70.866 114.554 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1976,29 +1967,35 @@
 		)
 		(property "Footprint" ""
 			(at 72.39 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 72.39 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
 			(at 72.39 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2017,23 +2014,29 @@
 		(lib_id "power:GND")
 		(at 205.74 74.93 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4b0ccb94-2e11-4bda-9ef2-18964cc1eb1d")
 		(property "Reference" "#PWR0169"
 			(at 205.74 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "GND"
 			(at 205.74 80.01 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2042,29 +2045,35 @@
 		)
 		(property "Footprint" ""
 			(at 205.74 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 205.74 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 205.74 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2083,14 +2092,18 @@
 		(lib_id "Device:R_Small")
 		(at 119.38 73.66 90)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4e72b634-4f92-473b-8f07-fdaf646494ec")
 		(property "Reference" "R60"
 			(at 119.38 68.58 90)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -2099,6 +2112,8 @@
 		)
 		(property "Value" "10kΩ"
 			(at 119.38 71.12 90)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2107,29 +2122,35 @@
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 119.38 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 119.38 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Resistor, small symbol"
 			(at 119.38 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -2148,167 +2169,21 @@
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
-		(at 161.29 129.54 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "56140665-4fa8-4320-9925-6112961cdf05")
-		(property "Reference" "D6"
-			(at 166.878 117.856 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "WS2812B"
-			(at 166.878 120.396 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
-			(at 162.56 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 163.83 139.065 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "RGB LED with integrated controller"
-			(at 161.29 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8ca35c48-f72a-4143-b81b-6c6e58c7e68f")
-		)
-		(pin "3"
-			(uuid "b2cf6603-89d7-4edc-8def-bbacd852c7a2")
-		)
-		(pin "4"
-			(uuid "d3d574f1-d37f-434a-bd60-5302c7a6c9bf")
-		)
-		(pin "2"
-			(uuid "0142f1be-58d3-47c5-b1c7-7df4e280a7b7")
-		)
-		(instances
-			(project "mpe32board"
-				(path "/90f9def3-561d-490b-a661-0a19546ece9e/96daed9c-596f-4728-8b5d-8474114f199f"
-					(reference "D6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B")
-		(at 125.73 129.54 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5ab97804-8385-484b-8294-469e88e8ada1")
-		(property "Reference" "D4"
-			(at 131.318 117.856 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "WS2812B"
-			(at 131.318 120.396 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
-			(at 127 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 128.27 139.065 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "RGB LED with integrated controller"
-			(at 125.73 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "43263144-be1a-4d52-9644-7cf1a1fcb0b3")
-		)
-		(pin "3"
-			(uuid "579ddde0-f2e6-4e79-a038-ad194c7926ec")
-		)
-		(pin "4"
-			(uuid "41cfee42-fb20-4b3a-b1da-d095e068954e")
-		)
-		(pin "2"
-			(uuid "e2949730-1c11-43a3-9a3e-69d76e8e1148")
-		)
-		(instances
-			(project "mpe32board"
-				(path "/90f9def3-561d-490b-a661-0a19546ece9e/96daed9c-596f-4728-8b5d-8474114f199f"
-					(reference "D4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Switch:SW_Push")
 		(at 157.48 66.04 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "630e6e04-040b-4ef5-a31a-6f0e3f6af254")
 		(property "Reference" "SW5"
 			(at 157.48 58.42 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2317,6 +2192,8 @@
 		)
 		(property "Value" "SW_Push"
 			(at 157.48 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2325,29 +2202,35 @@
 		)
 		(property "Footprint" "mxfoot:MX-Hotswap-1U"
 			(at 157.48 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 157.48 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
 			(at 157.48 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -2366,100 +2249,31 @@
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
-		(at 179.07 129.54 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "68e722e9-148d-4275-9036-ba0d704bdc53")
-		(property "Reference" "D7"
-			(at 184.658 117.856 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "WS2812B"
-			(at 184.658 120.396 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
-			(at 180.34 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 181.61 139.065 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "RGB LED with integrated controller"
-			(at 179.07 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ca9a39c2-bde6-4890-92fe-dea8e386377b")
-		)
-		(pin "3"
-			(uuid "055eefee-e15e-4f68-ac53-7d9109d8530b")
-		)
-		(pin "4"
-			(uuid "30fcf47d-ef00-43ad-b420-c29834667a6b")
-		)
-		(pin "2"
-			(uuid "c72a72a8-c0ce-4c54-a049-96f6eca09af4")
-		)
-		(instances
-			(project "mpe32board"
-				(path "/90f9def3-561d-490b-a661-0a19546ece9e/96daed9c-596f-4728-8b5d-8474114f199f"
-					(reference "D7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 72.39 139.7 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(uuid "71beb9c2-8a02-433b-add6-95e4f03c9bb4")
 		(property "Reference" "#PWR0161"
 			(at 72.39 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "GND"
 			(at 71.12 144.272 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2468,29 +2282,35 @@
 		)
 		(property "Footprint" ""
 			(at 72.39 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 72.39 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 72.39 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2506,17 +2326,108 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 119.38 66.04 0)
+		(lib_id "LED:SK6812MINI-E")
+		(at 107.95 129.54 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "74637bd4-4311-4cbf-a4f6-6f0d258116c4")
+		(property "Reference" "D4"
+			(at 116.078 117.348 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SK6812MINI-E"
+			(at 116.078 119.888 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount"
+			(at 109.22 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf"
+			(at 110.49 139.065 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "RGB LED with integrated controller"
+			(at 107.95 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4422bf9d-60b5-4155-8fc7-ecda86296c21")
+		)
+		(pin "2"
+			(uuid "c19c5b79-fa75-4f01-ae8b-de2a9551349c")
+		)
+		(pin "3"
+			(uuid "472e0df0-f6e1-4ed3-9385-5bc5db1fb758")
+		)
+		(pin "4"
+			(uuid "a96becc3-5cc4-45af-82f2-c28492f33aeb")
+		)
+		(instances
+			(project "mpe32board"
+				(path "/90f9def3-561d-490b-a661-0a19546ece9e/96daed9c-596f-4728-8b5d-8474114f199f"
+					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 119.38 66.04 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8848c9c0-30d2-4cde-a1f7-f89c6bfe093b")
 		(property "Reference" "SW4"
 			(at 119.38 58.42 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2525,6 +2436,8 @@
 		)
 		(property "Value" "SW_Push"
 			(at 119.38 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2533,29 +2446,35 @@
 		)
 		(property "Footprint" "mxfoot:MX-Hotswap-1U"
 			(at 119.38 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 119.38 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
 			(at 119.38 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -2574,26 +2493,119 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 127 74.93 0)
+		(lib_id "LED:SK6812MINI-E")
+		(at 125.73 129.54 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8ef921fc-e31a-46d6-941a-f904e5143537")
+		(property "Reference" "D5"
+			(at 133.858 117.348 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SK6812MINI-E"
+			(at 133.858 119.888 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount"
+			(at 127 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf"
+			(at 128.27 139.065 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "RGB LED with integrated controller"
+			(at 125.73 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "85d04625-8ea0-4b47-a73b-4f286580cfc7")
+		)
+		(pin "2"
+			(uuid "0bdba77a-5526-4e29-bad7-5ce0992b145e")
+		)
+		(pin "3"
+			(uuid "dda23a1f-1d49-4233-8345-275f62793931")
+		)
+		(pin "4"
+			(uuid "82589a31-5d9a-4347-a700-147c3147b614")
+		)
+		(instances
+			(project "mpe32board"
+				(path "/90f9def3-561d-490b-a661-0a19546ece9e/96daed9c-596f-4728-8b5d-8474114f199f"
+					(reference "D5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 127 74.93 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9b2bd737-6fa9-4fff-92ee-e41eb2d8bfd4")
 		(property "Reference" "#PWR0165"
 			(at 127 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "GND"
 			(at 127 80.01 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2602,29 +2614,35 @@
 		)
 		(property "Footprint" ""
 			(at 127 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 127 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 127 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -2640,92 +2658,21 @@
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
-		(at 107.95 129.54 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a17ab851-7dc0-481c-9732-da5528e09e8e")
-		(property "Reference" "D3"
-			(at 113.538 117.856 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "WS2812B"
-			(at 113.538 120.396 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
-			(at 109.22 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 110.49 139.065 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "RGB LED with integrated controller"
-			(at 107.95 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "98fb3486-fd66-41c9-9de0-48af2ad2ffe8")
-		)
-		(pin "3"
-			(uuid "09949fda-eb16-4ca4-8a35-4179337a74c5")
-		)
-		(pin "4"
-			(uuid "fa9c670f-4430-4a87-8738-5be9918a71f6")
-		)
-		(pin "2"
-			(uuid "97e537fb-df3a-4275-b8e2-3ccf12a82be4")
-		)
-		(instances
-			(project "mpe32board"
-				(path "/90f9def3-561d-490b-a661-0a19546ece9e/96daed9c-596f-4728-8b5d-8474114f199f"
-					(reference "D3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Switch:SW_Push")
 		(at 78.74 66.04 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b88abc92-fab0-4a27-b04f-08636131d54d")
 		(property "Reference" "SW3"
 			(at 78.74 58.42 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2734,6 +2681,8 @@
 		)
 		(property "Value" "SW_Push"
 			(at 78.74 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2742,29 +2691,35 @@
 		)
 		(property "Footprint" "mxfoot:MX-Hotswap-1U"
 			(at 78.74 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 78.74 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
 			(at 78.74 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -2783,75 +2738,87 @@
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
-		(at 196.85 129.54 0)
+		(lib_id "LED:SK6812MINI-E")
+		(at 143.51 129.54 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
-		(uuid "cab24292-5363-4c98-b901-a0fc5a02c836")
-		(property "Reference" "D8"
-			(at 202.438 117.856 0)
+		(uuid "c1786678-aaa7-4c27-bd42-6a868934ef99")
+		(property "Reference" "D6"
+			(at 151.638 117.348 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "WS2812B"
-			(at 202.438 120.396 0)
+		(property "Value" "SK6812MINI-E"
+			(at 151.638 119.888 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
-			(at 198.12 137.16 0)
+		(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount"
+			(at 144.78 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 199.39 139.065 0)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf"
+			(at 146.05 139.065 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
-			(at 196.85 129.54 0)
+			(at 143.51 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
-			(uuid "e1f80e94-787c-4356-9f46-5e5bc51f9371")
-		)
-		(pin "3"
-			(uuid "8fd9d240-fe9a-4dda-b152-4e17ea179c5c")
-		)
-		(pin "4"
-			(uuid "b3702a1f-8ff7-473b-ac09-e1d08581ae8c")
+			(uuid "db86e648-0f72-4d98-82bb-88387af827bc")
 		)
 		(pin "2"
-			(uuid "b6684aa8-6109-420a-9194-4597b78db488")
+			(uuid "bb8726fd-7fd0-4b22-a628-e754773318a0")
+		)
+		(pin "3"
+			(uuid "6041691f-49aa-416d-8913-87b0f2e823af")
+		)
+		(pin "4"
+			(uuid "f331ba4b-c74e-4fae-801e-82ddce15830c")
 		)
 		(instances
 			(project "mpe32board"
 				(path "/90f9def3-561d-490b-a661-0a19546ece9e/96daed9c-596f-4728-8b5d-8474114f199f"
-					(reference "D8")
+					(reference "D6")
 					(unit 1)
 				)
 			)
@@ -2861,14 +2828,18 @@
 		(lib_id "Device:R_Small")
 		(at 157.48 73.66 90)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cc0bc9cf-899c-4e74-b895-60ca96c20e61")
 		(property "Reference" "R77"
 			(at 157.48 68.58 90)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -2877,6 +2848,8 @@
 		)
 		(property "Value" "10kΩ"
 			(at 157.48 71.12 90)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2885,29 +2858,35 @@
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 157.48 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 157.48 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Resistor, small symbol"
 			(at 157.48 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -2929,14 +2908,18 @@
 		(lib_id "Switch:SW_Push")
 		(at 198.12 66.04 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cf40287d-c1e8-4902-bb23-83834fccd016")
 		(property "Reference" "SW6"
 			(at 198.12 58.42 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2945,6 +2928,8 @@
 		)
 		(property "Value" "SW_Push"
 			(at 198.12 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2953,29 +2938,35 @@
 		)
 		(property "Footprint" "mxfoot:MX-Hotswap-1U"
 			(at 198.12 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 198.12 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
 			(at 198.12 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -2994,25 +2985,118 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 205.74 64.77 0)
+		(lib_id "LED:SK6812MINI-E")
+		(at 72.39 129.54 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
-		(uuid "d6bcfe41-d3ec-4d6d-b27e-ec1799060540")
-		(property "Reference" "#PWR0168"
-			(at 205.74 68.58 0)
+		(uuid "cf4d42aa-85dc-4de7-a805-e8bd69eb2fd7")
+		(property "Reference" "D2"
+			(at 80.518 117.348 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
+			)
+		)
+		(property "Value" "SK6812MINI-E"
+			(at 80.518 119.888 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount"
+			(at 73.66 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf"
+			(at 74.93 139.065 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "RGB LED with integrated controller"
+			(at 72.39 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8422702d-b6ad-485d-8c04-e6ec336219d0")
+		)
+		(pin "2"
+			(uuid "6502068d-dd61-4284-b01a-caae570a186c")
+		)
+		(pin "3"
+			(uuid "2a4f53bf-8887-4e3c-8d7a-0f84d74eae0f")
+		)
+		(pin "4"
+			(uuid "71a5b7da-9cf1-42d4-89ef-990cbca858ca")
+		)
+		(instances
+			(project "mpe32board"
+				(path "/90f9def3-561d-490b-a661-0a19546ece9e/96daed9c-596f-4728-8b5d-8474114f199f"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 205.74 64.77 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d6bcfe41-d3ec-4d6d-b27e-ec1799060540")
+		(property "Reference" "#PWR0168"
+			(at 205.74 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(property "Value" "+3V3"
 			(at 205.486 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3021,29 +3105,35 @@
 		)
 		(property "Footprint" ""
 			(at 205.74 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 205.74 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
 			(at 205.74 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3062,23 +3152,29 @@
 		(lib_id "power:GND")
 		(at 86.36 74.93 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "db8a7ac2-a0fd-4e2b-a124-160adf6aadf3")
 		(property "Reference" "#PWR0163"
 			(at 86.36 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "GND"
 			(at 86.36 80.01 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3087,29 +3183,35 @@
 		)
 		(property "Footprint" ""
 			(at 86.36 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 86.36 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 86.36 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3128,14 +3230,18 @@
 		(lib_id "Device:R_Small")
 		(at 198.12 73.66 90)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dcb6c795-2a16-41d3-8395-1f58abcd4ac0")
 		(property "Reference" "R78"
 			(at 198.12 68.58 90)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -3144,6 +3250,8 @@
 		)
 		(property "Value" "10kΩ"
 			(at 198.12 71.12 90)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3152,29 +3260,35 @@
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 198.12 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 198.12 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Resistor, small symbol"
 			(at 198.12 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -3193,150 +3307,174 @@
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
-		(at 72.39 129.54 0)
+		(lib_id "LED:SK6812MINI-E")
+		(at 90.17 129.54 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
-		(uuid "e4f87dce-e16f-415d-ab98-01730be4b9a1")
-		(property "Reference" "D1"
-			(at 77.978 117.856 0)
+		(uuid "e4e1d65d-2c16-40d4-bc1f-4c6436f03bb4")
+		(property "Reference" "D3"
+			(at 98.298 117.348 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "WS2812B"
-			(at 77.978 120.396 0)
+		(property "Value" "SK6812MINI-E"
+			(at 98.298 119.888 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
-			(at 73.66 137.16 0)
+		(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount"
+			(at 91.44 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 74.93 139.065 0)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf"
+			(at 92.71 139.065 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
-			(at 72.39 129.54 0)
+			(at 90.17 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
-			(uuid "ac4882a3-3550-4fb6-b837-8197cc20d819")
-		)
-		(pin "3"
-			(uuid "eecfe776-b76d-4303-9a54-a08f15688aa4")
-		)
-		(pin "4"
-			(uuid "c8b2a59d-6f34-47b9-b81a-adcb21d6c582")
+			(uuid "742fc755-0a21-4d9d-9fe0-27138f5e2439")
 		)
 		(pin "2"
-			(uuid "28798be7-962f-4b96-b892-300a29e9259a")
+			(uuid "edc03dca-9e85-46f5-9868-c9ba0c9b5460")
+		)
+		(pin "3"
+			(uuid "2503157b-5e3c-433d-8fd5-98ae8c61343a")
+		)
+		(pin "4"
+			(uuid "24b5ead1-9b45-4b7f-bb96-3081d3741615")
 		)
 		(instances
 			(project "mpe32board"
 				(path "/90f9def3-561d-490b-a661-0a19546ece9e/96daed9c-596f-4728-8b5d-8474114f199f"
-					(reference "D1")
+					(reference "D3")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
-		(at 90.17 129.54 0)
+		(lib_id "LED:SK6812MINI-E")
+		(at 161.29 129.54 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
-		(uuid "f909637b-e2a2-41a5-9282-85986dd1e0a7")
-		(property "Reference" "D2"
-			(at 95.758 117.856 0)
+		(uuid "fce64de5-aef4-4240-85dc-82096d89c060")
+		(property "Reference" "D7"
+			(at 169.926 117.348 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "WS2812B"
-			(at 95.758 120.396 0)
+		(property "Value" "SK6812MINI-E"
+			(at 169.926 119.888 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
-			(at 91.44 137.16 0)
+		(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount"
+			(at 162.56 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 92.71 139.065 0)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf"
+			(at 163.83 139.065 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
-			(at 90.17 129.54 0)
+			(at 161.29 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
-			(uuid "54cde8e5-3e67-4808-90b2-7fb0512f4d2e")
-		)
-		(pin "3"
-			(uuid "a36fcf7f-7ccf-49d9-8a31-f2da97bf79a7")
-		)
-		(pin "4"
-			(uuid "212b503f-d5cb-4de8-b2cc-0df1cc95812f")
+			(uuid "19a4aa9d-8608-4e13-8581-5df394332cee")
 		)
 		(pin "2"
-			(uuid "dc90538c-0465-4fec-91b6-54fa12ba5996")
+			(uuid "d1c9e292-853c-447a-bc2e-6e14b340018b")
+		)
+		(pin "3"
+			(uuid "b9d0e752-a30e-4246-a0da-23d8e6cee672")
+		)
+		(pin "4"
+			(uuid "a7fc4c82-f49b-450e-bad7-01b7d5d4890d")
 		)
 		(instances
 			(project "mpe32board"
 				(path "/90f9def3-561d-490b-a661-0a19546ece9e/96daed9c-596f-4728-8b5d-8474114f199f"
-					(reference "D2")
+					(reference "D7")
 					(unit 1)
 				)
 			)
