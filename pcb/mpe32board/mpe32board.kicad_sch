@@ -8995,7 +8995,7 @@
 		)
 		(uuid "178715dc-363d-4d1c-be25-35f4b3e0a084")
 	)
-	(text "i2c4"
+	(text "i2c2\n"
 		(exclude_from_sim no)
 		(at 332.994 223.774 0)
 		(effects
@@ -9036,7 +9036,7 @@
 		)
 		(uuid "3c30e0d5-5877-4942-b5a8-fd84994f230c")
 	)
-	(text "i2c1"
+	(text "i2c4"
 		(exclude_from_sim no)
 		(at 358.2199 194.2105 0)
 		(effects
@@ -9106,7 +9106,7 @@
 		)
 		(uuid "81ad34a0-fa7e-4fb1-aa52-fea88e747d1e")
 	)
-	(text "i2c2"
+	(text "i2c1"
 		(exclude_from_sim no)
 		(at 254.762 201.168 0)
 		(effects
@@ -12916,6 +12916,30 @@
 			)
 		)
 	)
+	(global_label "TAC5212_GPI1"
+		(shape input)
+		(at 111.76 41.91 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "997ecf83-948c-42e3-bcf7-dac04e1f948e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 128.2313 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "FMC_D6"
 		(shape input)
 		(at 111.76 237.49 0)
@@ -12985,30 +13009,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(global_label "TAC5212_GPI1"
-		(shape input)
-		(at 111.76 118.11 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "9f4baac5-6cef-44f8-ba03-1b95c957c469")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 128.2313 118.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 	)
@@ -13420,6 +13420,30 @@
 			)
 		)
 	)
+	(global_label "TAC5212_GPO1"
+		(shape input)
+		(at 111.76 46.99 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d028db66-6f3d-4183-b3ac-55a502e4b381")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 128.957 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "BTN3_INTERNAL"
 		(shape input)
 		(at 111.76 184.15 0)
@@ -13505,30 +13529,6 @@
 		(uuid "ddec175f-388a-416e-9297-82a1bc00e7fe")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 122.0023 245.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "TAC5212_GPO1"
-		(shape input)
-		(at 111.76 115.57 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e0592c51-b094-489e-8625-3f442599bc7c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 128.957 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
