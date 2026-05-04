@@ -645,7 +645,7 @@
         "uuid": "90f9def3-561d-490b-a661-0a19546ece9e"
       }
     ],
-    "used_designators": "",
+    "used_designators": "JP1,#PWR149-150,#PWR159",
     "variants": []
   },
   "sheets": [

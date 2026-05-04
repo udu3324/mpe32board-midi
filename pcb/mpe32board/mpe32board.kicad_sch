@@ -10756,30 +10756,6 @@
 		)
 		(uuid "ff7a8611-011a-43ed-b94b-a6dd85535c69")
 	)
-	(global_label "TAC5212_GPIO1"
-		(shape input)
-		(at 111.76 110.49 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "002c228b-71ec-40ac-a73a-95a4dabc3de6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 129.5618 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "BOOT0"
 		(shape input)
 		(at 40.64 46.99 180)
@@ -10801,54 +10777,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(global_label "NEOPIXEL_INTERNAL"
-		(shape input)
-		(at 111.76 219.71 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "05af619d-d3c2-4a14-b53c-1fd757f669f9")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 133.5533 219.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "SDCARD_DET"
-		(shape input)
-		(at 111.76 44.45 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "05f2fe59-28e2-401c-8d6f-49bb06684d38")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 126.4775 44.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 	)
@@ -11956,6 +11884,30 @@
 			)
 		)
 	)
+	(global_label "TAC5212_GPIO1"
+		(shape input)
+		(at 40.64 102.87 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3a110e51-c7b4-486d-a400-94b9f25758ea")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 22.8382 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "SDMMC1_D1"
 		(shape input)
 		(at 111.76 151.13 0)
@@ -12004,7 +11956,7 @@
 			)
 		)
 	)
-	(global_label "OTG_FS_DM"
+	(global_label "OTG_FS_DN"
 		(shape input)
 		(at 283.21 143.51 0)
 		(fields_autoplaced yes)
@@ -12016,7 +11968,7 @@
 		)
 		(uuid "3ef1faf8-518e-4770-983b-0875643e3ede")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 296.718 143.51 0)
+			(at 296.5971 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12137,30 +12089,6 @@
 		(uuid "4d67a0df-689c-4b83-a7ae-72d97919c4ae")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 126.3566 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "TAC5212_GPIO2"
-		(shape input)
-		(at 111.76 113.03 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "4db8f83a-810c-4701-a5e6-5ec176a43f32")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 129.5618 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12364,30 +12292,6 @@
 			)
 		)
 	)
-	(global_label "NEOPIXEL_IN"
-		(shape input)
-		(at 40.64 102.87 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "610c2a2f-1a75-4947-8e68-8e4b10246a5d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 25.6805 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "JTDO"
 		(shape input)
 		(at 375.92 41.91 0)
@@ -12412,7 +12316,7 @@
 			)
 		)
 	)
-	(global_label "OTG_FS_DM"
+	(global_label "OTG_FS_DN"
 		(shape input)
 		(at 111.76 69.85 0)
 		(fields_autoplaced yes)
@@ -12424,7 +12328,7 @@
 		)
 		(uuid "669e3dd6-5248-44f4-886b-aa2caa866174")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 125.268 69.85 0)
+			(at 125.1471 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12529,6 +12433,30 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "SDCARD_DET"
+		(shape input)
+		(at 40.64 97.79 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "72b357a0-907d-4f8f-8ca4-64f2f2aeb3f5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 25.9225 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
@@ -13001,6 +12929,30 @@
 		(uuid "9cffee95-c073-4124-b517-92b6058cf542")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 32.8772 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "NEOPIXEL_IN"
+		(shape input)
+		(at 40.64 80.01 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a6145086-13e0-4d06-964a-432e85a410f8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 25.6805 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13588,6 +13540,30 @@
 			)
 		)
 	)
+	(global_label "TAC5212_GPIO2"
+		(shape input)
+		(at 40.64 100.33 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e68986ac-3930-4149-a3c8-c6cb32a70cbf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 22.8382 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "FMC_BA1"
 		(shape input)
 		(at 157.48 199.39 180)
@@ -13729,6 +13705,30 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "NEOPIXEL_INTERNAL"
+		(shape input)
+		(at 40.64 67.31 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fdee61e3-1973-40a1-b8a7-ecff5c02ba6d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 18.8467 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
