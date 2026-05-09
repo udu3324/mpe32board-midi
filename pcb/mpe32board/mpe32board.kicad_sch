@@ -9628,6 +9628,16 @@
 	)
 	(wire
 		(pts
+			(xy 143.51 62.23) (xy 143.51 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "13946f88-90f5-441d-9454-abe45d6a548c")
+	)
+	(wire
+		(pts
 			(xy 316.23 135.89) (xy 326.39 135.89)
 		)
 		(stroke
@@ -9815,6 +9825,16 @@
 			(type default)
 		)
 		(uuid "43b26a8e-ce0f-4c53-ae93-dbcfd41b6e86")
+	)
+	(wire
+		(pts
+			(xy 161.29 87.63) (xy 161.29 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43e7f788-0371-4a82-b531-283d32ea3de3")
 	)
 	(wire
 		(pts
@@ -10085,6 +10105,16 @@
 			(type default)
 		)
 		(uuid "8517b5b3-081e-4a05-a43e-616e8e335816")
+	)
+	(wire
+		(pts
+			(xy 143.51 63.5) (xy 146.05 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8713a0d4-8f4b-48a6-b4bc-e2b5ce8a4797")
 	)
 	(wire
 		(pts
@@ -10708,6 +10738,16 @@
 	)
 	(wire
 		(pts
+			(xy 161.29 86.36) (xy 158.75 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3b70f19-814d-4f6d-b3bb-edaa316f328c")
+	)
+	(wire
+		(pts
 			(xy 261.62 43.18) (xy 271.78 43.18)
 		)
 		(stroke
@@ -10755,6 +10795,30 @@
 			(type default)
 		)
 		(uuid "ff7a8611-011a-43ed-b94b-a6dd85535c69")
+	)
+	(global_label "GPIO_PI10"
+		(shape input)
+		(at 146.05 86.36 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0356f140-1d08-4671-b519-9d0a09779bbd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 133.3281 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 	)
 	(global_label "BOOT0"
 		(shape input)
@@ -11188,6 +11252,30 @@
 			)
 		)
 	)
+	(global_label "GPIO_PC14"
+		(shape input)
+		(at 146.05 83.82 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "12bc74fb-4097-43cf-aa6b-ce6c248bd284")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 132.6629 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "FMC_D5"
 		(shape input)
 		(at 111.76 234.95 0)
@@ -11500,6 +11588,54 @@
 			)
 		)
 	)
+	(global_label "GPIO_PI4"
+		(shape input)
+		(at 40.64 72.39 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "23a4a476-49cd-41f3-b91d-901236c18a32")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 29.1276 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GPIO_PI4"
+		(shape input)
+		(at 146.05 76.2 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "24632f7f-53b7-4925-8677-34f4b67f5e14")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 134.5376 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "BTN3_INTERNAL"
 		(shape input)
 		(at 111.76 146.05 0)
@@ -11521,6 +11657,30 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "GPIO_PF7"
+		(shape input)
+		(at 40.64 199.39 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "29c4f5e0-967e-4d7d-abee-3257628edf73")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 28.6438 199.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
@@ -11572,6 +11732,30 @@
 			)
 		)
 	)
+	(global_label "GPIO_PE4"
+		(shape input)
+		(at 111.76 224.79 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2ef7d4db-b91b-4f27-83f4-bfa6e50af508")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 123.8166 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "FMC_SDCKE0"
 		(shape input)
 		(at 111.76 135.89 0)
@@ -11593,6 +11777,30 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "GPIO_PF10"
+		(shape input)
+		(at 40.64 207.01 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3062bf3f-228a-4747-a39e-114a0f0bf3d4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 27.4343 207.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
@@ -12052,6 +12260,30 @@
 			)
 		)
 	)
+	(global_label "GPIO_PE5"
+		(shape input)
+		(at 146.05 78.74 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "45853bee-4e38-49ba-9800-465338f6ae8b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 133.9934 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "FMC_SDCLK"
 		(shape input)
 		(at 157.48 240.03 180)
@@ -12089,6 +12321,30 @@
 		(uuid "4d67a0df-689c-4b83-a7ae-72d97919c4ae")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 126.3566 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "GPIO_PE5"
+		(shape input)
+		(at 111.76 227.33 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4e787679-8628-4265-8bba-768bb7b76031")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 123.8166 227.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12244,6 +12500,30 @@
 			)
 		)
 	)
+	(global_label "LPUART1_TX"
+		(shape input)
+		(at 158.75 66.04 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5b17b456-5a05-4146-8e94-e00d3376a0d7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 173.0442 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "SWCLK"
 		(shape input)
 		(at 375.92 36.83 0)
@@ -12340,6 +12620,30 @@
 			)
 		)
 	)
+	(global_label "GPIO_PC14"
+		(shape input)
+		(at 111.76 163.83 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "698a001a-e1d7-4199-a688-585cc7f7314e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 125.1471 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "SWCLK"
 		(shape input)
 		(at 111.76 77.47 0)
@@ -12361,6 +12665,30 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "GPIO_PI6"
+		(shape input)
+		(at 146.05 66.04 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6e0666fb-b076-4fa0-be35-a04ec5514be5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 134.5376 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
@@ -12449,6 +12777,54 @@
 		(uuid "72b357a0-907d-4f8f-8ca4-64f2f2aeb3f5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 25.9225 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GPIO_PI6"
+		(shape input)
+		(at 40.64 77.47 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "74113bb2-386b-46e1-82e4-954481bed46c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 29.1276 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GPIO_PI10"
+		(shape input)
+		(at 40.64 87.63 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "75e00b0b-6ca8-481d-9523-743f31ae280e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 27.9181 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12700,6 +13076,54 @@
 			)
 		)
 	)
+	(global_label "GPIO_PC15"
+		(shape input)
+		(at 158.75 83.82 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "84179406-83b5-4e19-94f0-961a4361fd4e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 172.1371 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "GPIO_PE3"
+		(shape input)
+		(at 111.76 222.25 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "86a2196d-67fe-4b6a-8396-a3f2f511ba0e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 123.8166 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "JTDI"
 		(shape input)
 		(at 375.92 44.45 0)
@@ -12892,6 +13316,30 @@
 			)
 		)
 	)
+	(global_label "GPIO_PF9"
+		(shape input)
+		(at 40.64 204.47 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "99a1186b-f6d2-4397-ade5-fc58e9c7e512")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 28.6438 204.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "FMC_D6"
 		(shape input)
 		(at 111.76 237.49 0)
@@ -12964,6 +13412,54 @@
 			)
 		)
 	)
+	(global_label "LPUART1_RX"
+		(shape input)
+		(at 158.75 71.12 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a2686fd5-f542-4752-90c2-47a4efbefcb1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 173.3466 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "GPIO_PE2"
+		(shape input)
+		(at 111.76 219.71 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a305d74e-6754-4f68-a3ba-1e39f7009d8e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 123.8166 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "NEOPIXEL_IN"
 		(shape input)
 		(at 40.64 80.01 180)
@@ -12985,6 +13481,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "GPIO_PF8"
+		(shape input)
+		(at 158.75 68.58 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a8bb6205-5707-496b-8305-abdb532c3816")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 170.7462 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -13156,6 +13676,30 @@
 			)
 		)
 	)
+	(global_label "GPIO_PI5"
+		(shape input)
+		(at 40.64 74.93 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "af13e7fd-8629-4af2-b3ab-cf1d68f5b8db")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 29.1276 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "FMC_A2"
 		(shape input)
 		(at 40.64 186.69 180)
@@ -13276,6 +13820,78 @@
 			)
 		)
 	)
+	(global_label "GPIO_PH0"
+		(shape input)
+		(at 40.64 95.25 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c417ba8f-d346-40e0-94ae-03ba4f8ca61c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 28.4019 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GPIO_PE2"
+		(shape input)
+		(at 146.05 81.28 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c6af7f34-12f7-4f68-aaa6-6b8cf35ea38c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 133.9934 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GPIO_PF9"
+		(shape input)
+		(at 158.75 73.66 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c9d2e6fd-8450-4a1a-ab30-e7425499db22")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 170.7462 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "NRST"
 		(shape input)
 		(at 375.92 31.75 0)
@@ -13337,6 +13953,78 @@
 		(uuid "cdd3b084-e7d3-4fb9-a220-de27b5745db2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 144.8791 242.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GPIO_PF8"
+		(shape input)
+		(at 40.64 201.93 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ce050158-ad2d-44ac-98a2-e26246aad303")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 28.6438 201.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GPIO_PF7"
+		(shape input)
+		(at 158.75 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ce060846-2d0d-4a4e-b6e3-703fd32cbe3e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 170.7462 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "GPIO_PI5"
+		(shape input)
+		(at 146.05 71.12 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ce5f6969-d4e3-48a5-94d9-36ade907de02")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 134.5376 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13492,6 +14180,54 @@
 			)
 		)
 	)
+	(global_label "GPIO_PC15"
+		(shape input)
+		(at 111.76 166.37 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d63b75f3-8b28-48e2-a905-b67571058b28")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 125.1471 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "GPIO_PF10"
+		(shape input)
+		(at 158.75 76.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d999da6f-d96f-47df-ab34-a0b74b5e0bfd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 171.9557 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "FMC_SDNWE"
 		(shape input)
 		(at 111.76 128.27 0)
@@ -13588,6 +14324,102 @@
 			)
 		)
 	)
+	(global_label "GPIO_PE4"
+		(shape input)
+		(at 146.05 73.66 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e234139c-0f6f-414f-b824-4797654deace")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 133.9934 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GPIO_PE3"
+		(shape input)
+		(at 146.05 68.58 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e3a58aad-06d9-41e6-bfe0-ecb91a075189")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 133.9934 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GPIO_PI9"
+		(shape input)
+		(at 40.64 85.09 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e427e52f-9081-4820-a70f-fe7ba59ca54b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 29.1276 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GPIO_PH0"
+		(shape input)
+		(at 158.75 81.28 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e657d02d-fbba-408f-9ee0-9b9594426b4a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 170.9881 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "TAC5212_GPIO2"
 		(shape input)
 		(at 40.64 100.33 180)
@@ -13609,6 +14441,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "GPIO_PI9"
+		(shape input)
+		(at 158.75 78.74 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ea2e1931-fb43-4566-9221-89a7f57beffa")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 170.2624 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -17039,10 +17895,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "8a173374-42e2-4762-aff9-2f8f8175f5ac")
 		(property "Reference" "J46"
-			(at 152.4 57.15 0)
+			(at 151.13 51.054 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17052,7 +17907,7 @@
 			)
 		)
 		(property "Value" "Conn_02x10_Counter_Clockwise"
-			(at 152.4 59.69 0)
+			(at 151.13 53.594 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17673,6 +18528,84 @@
 			(project "mpe32board"
 				(path "/90f9def3-561d-490b-a661-0a19546ece9e"
 					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 143.51 62.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a3947613-c99d-444d-bf31-0ee124f2562d")
+		(property "Reference" "#PWR0179"
+			(at 143.51 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 143.51 57.15 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 143.51 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 143.51 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 143.51 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6a245864-1882-4383-b0c2-8b073dec4411")
+		)
+		(instances
+			(project "mpe32board"
+				(path "/90f9def3-561d-490b-a661-0a19546ece9e"
+					(reference "#PWR0179")
 					(unit 1)
 				)
 			)
@@ -20344,6 +21277,83 @@
 			(project "mpe32board"
 				(path "/90f9def3-561d-490b-a661-0a19546ece9e"
 					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 161.29 87.63 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e8964429-e30b-4897-97b5-4a6bca593e15")
+		(property "Reference" "#PWR0180"
+			(at 161.29 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 160.02 92.202 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 161.29 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 161.29 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 161.29 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6cd295e6-6165-47ef-9800-466cc7c236a6")
+		)
+		(instances
+			(project "mpe32board"
+				(path "/90f9def3-561d-490b-a661-0a19546ece9e"
+					(reference "#PWR0180")
 					(unit 1)
 				)
 			)
