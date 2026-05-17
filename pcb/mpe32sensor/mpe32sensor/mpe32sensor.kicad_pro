@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.0,
-          "height": 2.1,
-          "width": 2.1
+          "drill": 0.8,
+          "height": 1.27,
+          "width": 2.54
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -50,7 +50,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.0
+          "min_clearance": 0.5
         }
       },
       "diff_pair_dimensions": [],
@@ -94,9 +94,9 @@
         "missing_tuning_profile": "warning",
         "net_conflict": "warning",
         "nonmirrored_text_on_back_layer": "warning",
-        "npth_inside_courtyard": "ignore",
+        "npth_inside_courtyard": "error",
         "padstack": "warning",
-        "pth_inside_courtyard": "ignore",
+        "pth_inside_courtyard": "error",
         "shorting_items": "error",
         "silk_edge_clearance": "warning",
         "silk_over_copper": "warning",
@@ -137,10 +137,10 @@
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.0,
+        "min_track_width": 0.2,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.5,
-        "solder_mask_to_copper_clearance": 0.005,
+        "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -433,7 +433,6 @@
       "footprint_filter": "ignore",
       "footprint_link_issues": "warning",
       "four_way_junction": "ignore",
-      "global_label_dangling": "warning",
       "ground_pin_not_ground": "warning",
       "hier_label_mismatch": "error",
       "isolated_pin_label": "warning",
@@ -473,7 +472,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "mpe32board.kicad_pro",
+    "filename": "mpe32sensor.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -507,14 +506,10 @@
   },
   "pcbnew": {
     "last_paths": {
-      "gencad": "",
       "idf": "",
       "netlist": "",
       "plot": "",
-      "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
-      "svg": "",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -625,24 +620,16 @@
     "meta": {
       "version": 1
     },
-    "net_format_name": "",
     "page_layout_descr_file": "",
     "plot_directory": "",
     "reuse_designators": true,
-    "space_save_all_events": true,
-    "spice_current_sheet_as_root": false,
-    "spice_external_command": "spice \"%I\"",
-    "spice_model_current_sheet_as_root": true,
-    "spice_save_all_currents": false,
-    "spice_save_all_dissipations": false,
-    "spice_save_all_voltages": false,
     "subpart_first_id": 65,
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "mpe32board.kicad_sch",
-        "name": "mpe32board",
-        "uuid": "90f9def3-561d-490b-a661-0a19546ece9e"
+        "filename": "mpe32sensor.kicad_sch",
+        "name": "Root",
+        "uuid": "28e16491-411c-4a6f-894a-eec69843ffc9"
       }
     ],
     "used_designators": "",
@@ -650,32 +637,8 @@
   },
   "sheets": [
     [
-      "90f9def3-561d-490b-a661-0a19546ece9e",
-      "mpe32board"
-    ],
-    [
-      "1c6f62f6-e211-4f02-8e3c-4e943d655a89",
-      "Sensors"
-    ],
-    [
-      "47cc9e28-bc0a-48c2-8b50-ab5238ab7463",
-      "Sensor Connectors"
-    ],
-    [
-      "61580c48-69b8-477c-a7ec-2670dc79cb6a",
-      "MicroSD Card"
-    ],
-    [
-      "117e1584-29cf-485e-a9aa-2eeb8261960f",
-      "16x2-4 LCD Display"
-    ],
-    [
-      "9a9bbe28-fd3c-4e18-9aae-0f4323bbcc15",
-      "Audio Codec"
-    ],
-    [
-      "96daed9c-596f-4728-8b5d-8474114f199f",
-      "Control Debug Keys and Internal Neopixels"
+      "28e16491-411c-4a6f-894a-eec69843ffc9",
+      "Root"
     ]
   ],
   "text_variables": {},
