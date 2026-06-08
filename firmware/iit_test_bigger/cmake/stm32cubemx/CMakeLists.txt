@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.22)
 # Enable CMake support for ASM and C languages
 enable_language(C ASM)
+
+# TINYUSB here https://github.com/hathach/tinyusb/discussions/3356
+include(${CMAKE_CURRENT_SOURCE_DIR}/../../Libs/tinyusb/src/CMakeLists.txt)
+tinyusb_sources_get(TUSB_SRC)
+# message(STATUS "TUSB_SRC=${TUSB_SRC}")
+
 # STM32CubeMX generated symbols (macros)
 set(MX_Defines_Syms 
 	USE_PWR_LDO_SUPPLY 
@@ -16,16 +22,36 @@ set(MX_Include_Dirs
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Drivers/CMSIS/Device/ST/STM32H7xx/Include
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Drivers/CMSIS/Include
+    #${CMAKE_CURRENT_SOURCE_DIR}/../../Libs/tinyusb/src # tinyusb here https://ejaaskel.dev/making-usb-device-with-stm32-tinyusb/
+    #${CMAKE_CURRENT_SOURCE_DIR}/../../Libs/tinyusb/hw  # tinyusb here
 )
 
 # STM32CubeMX generated application sources
 set(MX_Application_Src
+    #${TUSB_SRC}
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/main.c
+    #${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/usb_descriptors.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/stm32h7xx_it.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/stm32h7xx_hal_msp.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/sysmem.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/syscalls.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../startup_stm32h743xx.s
+)
+
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE
+    ${TUSB_SRC}
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/usb_descriptors.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Libs/tinyusb/src/portable/synopsys/dwc2/dcd_dwc2.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Libs/tinyusb/src/portable/synopsys/dwc2/dwc2_common.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Libs/tinyusb/src/portable/synopsys/dwc2/hcd_dwc2.c
+    #${CMAKE_CURRENT_SOURCE_DIR}/../../Libs/tinyusb/hw/bsp/stm32/board_stm32.c
+    #${CMAKE_CURRENT_SOURCE_DIR}/../../Libs/tinyusb/hw/bsp/board_api.c
+)
+
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
+    ${CMAKE_CURRENT_LIST_DIR}/../../Libs/tinyusb/src
+    ${CMAKE_CURRENT_LIST_DIR}/../../Libs/tinyusb/hw
+    ${CMAKE_CURRENT_LIST_DIR}/../../Core/Inc
 )
 
 # STM32 HAL/LL Drivers

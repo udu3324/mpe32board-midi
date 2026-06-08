@@ -23,7 +23,7 @@
 /* USER CODE BEGIN Includes */
 
 #include "stm32h7xx_hal.h"
-//#include "tusb.h" 
+#include "tusb.h" 
 
 /* USER CODE END Includes */
 
@@ -127,11 +127,11 @@ int main(void)
 
 
   // init device stack for tiny usb!!! https://docs.tinyusb.org/en/latest/integration.html
-  //tusb_rhport_init_t host_init = {
-  //  .role  = TUSB_ROLE_HOST,
-  //  .speed = TUSB_SPEED_FULL
-  //};
-	//tusb_init(BOARD_DEVICE_RHPORT_NUM, &host_init);
+  tusb_rhport_init_t host_init = {
+    .role  = TUSB_ROLE_HOST,
+    .speed = TUSB_SPEED_FULL
+  };
+	tusb_init(BOARD_DEVICE_RHPORT_NUM, &host_init);
 
   /* USER CODE END 2 */
 
@@ -142,7 +142,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    //tud_task();
+    tud_task();
   }
   /* USER CODE END 3 */
 }

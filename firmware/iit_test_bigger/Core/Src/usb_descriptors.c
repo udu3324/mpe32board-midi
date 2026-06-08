@@ -86,7 +86,8 @@ uint16_t const* tud_descriptor_string_cb(uint8_t index, uint16_t langid) {
 		memcpy(&_desc_str[1], string_desc_arr[0], 2);
 		chr_count = 1;
 	} else if (index == STRID_SERIAL) {
-		chr_count = board_usb_get_serial(_desc_str + 1, 32);
+		// https://github.com/hathach/tinyusb/discussions/3356#discussioncomment-15038549
+		//chr_count = board_usb_get_serial(_desc_str + 1, 32);
 	} else {
 		const char *str = string_desc_arr[index];
 		if (!str)
