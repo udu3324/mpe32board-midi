@@ -15,3 +15,4 @@ An mpe midi controller that has onboard sound processing with an expandable and 
 
  * https://github.com/jtainer/i2c-mux
  * https://github.com/berndoJ/libneopixel32
+ * https://github.com/devOramaMan/stm32_TMAG5273 (modified/fixed)

@@ -45,6 +45,8 @@ add_executable(${CMAKE_PROJECT_NAME}
     Core/Inc/i2c-mux.h
     Core/Src/neopixel32.c
     Core/Inc/neopixel32.h
+    Core/Src/TMAG5273.c
+    Core/Inc/TMAG5273.h
 )
 
 # Add STM32CubeMX generated sources
