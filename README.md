@@ -11,3 +11,7 @@ An mpe midi controller that has onboard sound processing with an expandable and 
  * sd card for loading sounds
  * ram for recording and more
 
+### Libs used
+
+ * https://github.com/jtainer/i2c-mux
+ * https://github.com/berndoJ/libneopixel32

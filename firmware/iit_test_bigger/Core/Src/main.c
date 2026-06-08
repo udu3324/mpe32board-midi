@@ -24,6 +24,8 @@
 
 #include "stm32h7xx_hal.h"
 #include "tusb.h" 
+#include "i2c-mux.h"
+#include "neopixel32.h"
 
 /* USER CODE END Includes */
 
@@ -80,7 +82,30 @@ static void MX_USB_OTG_FS_PCD_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+i2c_mux_t tca_mux_1 = {
+  .hi2c = &hi2c1,
+	.rst_port = GPIOI,
+	.rst_pin = GPIO_PIN_3,
+	.addr_offset = 0
+};
 
+i2c_mux_t tca_mux_2 = {
+  .hi2c = &hi2c1,
+	.rst_port = GPIOI,
+	.rst_pin = GPIO_PIN_3,
+	.addr_offset = 1
+};
+
+i2c_mux_t tca_mux_3 = {
+  .hi2c = &hi2c1,
+	.rst_port = GPIOI,
+	.rst_pin = GPIO_PIN_3,
+	.addr_offset = 2
+};
+
+NP32_Instance_t neopixel_instance_internal = {
+  .LED_Count = 6
+};
 /* USER CODE END 0 */
 
 /**
@@ -125,6 +150,25 @@ int main(void)
   MX_USB_OTG_FS_PCD_Init();
   /* USER CODE BEGIN 2 */
 
+  // init neopixels
+  NP32_Init(&neopixel_instance_internal);
+
+  // set mp-reset on the i2c mux to be high as it is active-low reset input
+	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_SET);
+
+  // disable all i2c channels for a clean slate bruh
+	if (i2c_mux_reset(&tca_mux_1) != 0) {
+    NP32_SetLED_RGB(&neopixel_instance_internal, 0, (NP32_RGB_t){255, 0, 0});
+		//HAL_GPIO_WritePin(DEBUG2_LED_GPIO_Port, DEBUG2_LED_Pin, GPIO_PIN_SET);
+	}
+
+  if (i2c_mux_reset(&tca_mux_2) != 0) {
+    NP32_SetLED_RGB(&neopixel_instance_internal, 0, (NP32_RGB_t){255, 0, 0});
+	}
+
+  if (i2c_mux_reset(&tca_mux_3) != 0) {
+    NP32_SetLED_RGB(&neopixel_instance_internal, 0, (NP32_RGB_t){255, 0, 0});
+	}
 
   // init device stack for tiny usb!!! https://docs.tinyusb.org/en/latest/integration.html
   tusb_rhport_init_t host_init = {
