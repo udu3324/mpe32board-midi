@@ -31,12 +31,21 @@ message("Build type: " ${CMAKE_BUILD_TYPE})
 # Enable CMake support for ASM and C languages
 enable_language(C ASM)
 
+# TINYUSB here https://github.com/hathach/tinyusb/discussions/3356
+# also used https://ejaaskel.dev/making-usb-device-with-stm32-tinyusb/
+include(Libs/tinyusb/src/CMakeLists.txt)
+tinyusb_sources_get(TUSB_SRC)
+# message(STATUS "TUSB_SRC=${TUSB_SRC}")
+
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
+    Core/Src/usb_descriptors.c
+    Core/Inc/usb_descriptors.h
     Core/Src/i2c-mux.c
     Core/Inc/i2c-mux.h
     Core/Src/neopixel32.c
-    Core/Inc/neopixel32.h)
+    Core/Inc/neopixel32.h
+)
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
@@ -49,11 +58,19 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
+    ${TUSB_SRC}
+    Libs/tinyusb/src/portable/synopsys/dwc2/dcd_dwc2.c
+    Libs/tinyusb/src/portable/synopsys/dwc2/dwc2_common.c
+    Libs/tinyusb/src/portable/synopsys/dwc2/hcd_dwc2.c
+    # ${CMAKE_CURRENT_SOURCE_DIR}/../../Libs/tinyusb/hw/bsp/stm32/board_stm32.c
+    # ${CMAKE_CURRENT_SOURCE_DIR}/../../Libs/tinyusb/hw/bsp/board_api.c
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
+    Libs/tinyusb/src
+    Libs/tinyusb/hw
 )
 
 # Add project symbols (macros)
