@@ -413,37 +413,64 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Jumper:SolderJumper_3_Bridged12"
+		(symbol "Transistor_FET:BSS138"
 			(pin_names
 				(offset 0)
 				(hide yes)
 			)
 			(exclude_from_sim no)
-			(in_bom no)
+			(in_bom yes)
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "JP"
-				(at -2.54 -2.54 0)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Value" "SolderJumper_3_Bridged12"
-				(at 0 2.794 0)
+			(property "Value" "BSS138"
+				(at 5.08 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+				(at 5.08 -1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF"
+				(at 5.08 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -454,29 +481,7 @@
 					)
 				)
 			)
-			(property "Datasheet" ""
-				(at 0 -15.24 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "3-pole Solder Jumper, pins 1+2 closed/bridged"
-				(at 0 -12.7 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "Solder Jumper SPDT"
+			(property "ki_keywords" "N-Channel MOSFET"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -487,7 +492,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "SolderJumper*Bridged12*"
+			(property "ki_fp_filters" "SOT?23*"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -498,10 +503,22 @@
 					)
 				)
 			)
-			(symbol "SolderJumper_3_Bridged12_0_1"
+			(symbol "BSS138_0_1"
 				(polyline
 					(pts
-						(xy -2.54 0) (xy -2.032 0)
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
 					)
 					(stroke
 						(width 0)
@@ -513,77 +530,43 @@
 				)
 				(polyline
 					(pts
-						(xy -1.016 1.016) (xy -1.016 -1.016)
+						(xy 0.762 2.286) (xy 0.762 1.27)
 					)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
-				(rectangle
-					(start -1.016 0.508)
-					(end -0.508 -0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(arc
-					(start -1.016 -1.016)
-					(mid -2.0276 0)
-					(end -1.016 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start -0.508 1.016)
-					(end 0.508 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
 				(polyline
 					(pts
-						(xy 0 -1.27) (xy 0 -1.016)
+						(xy 0.762 0.508) (xy 0.762 -0.508)
 					)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
-				(arc
-					(start 1.016 1.016)
-					(mid 2.0276 0)
-					(end 1.016 -1.016)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
-						(type outline)
+						(type none)
 					)
 				)
 				(polyline
 					(pts
-						(xy 1.016 1.016) (xy 1.016 -1.016)
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
 					)
 					(stroke
 						(width 0)
@@ -595,7 +578,88 @@
 				)
 				(polyline
 					(pts
-						(xy 2.54 0) (xy 2.032 0)
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.921 0.381) (xy 3.683 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
 					)
 					(stroke
 						(width 0)
@@ -606,11 +670,11 @@
 					)
 				)
 			)
-			(symbol "SolderJumper_3_Bridged12_1_1"
-				(pin passive line
+			(symbol "BSS138_1_1"
+				(pin input line
 					(at -5.08 0 0)
 					(length 2.54)
-					(name "A"
+					(name "G"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -626,9 +690,9 @@
 					)
 				)
 				(pin passive line
-					(at 0 -3.81 90)
+					(at 2.54 -5.08 90)
 					(length 2.54)
-					(name "C"
+					(name "S"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -644,9 +708,9 @@
 					)
 				)
 				(pin passive line
-					(at 5.08 0 180)
+					(at 2.54 5.08 270)
 					(length 2.54)
-					(name "B"
+					(name "D"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1069,6 +1133,17 @@
 		)
 		(uuid "2e818972-d678-4bbe-a07c-7d50bbb3ea43")
 	)
+	(text "v1 modification before fab:\n\nadded level shifter for safety\n\nhttps://cdn.sparkfun.com/datasheets/BreakoutBoards/Logic_Level_Bidirectional.pdf"
+		(exclude_from_sim no)
+		(at 119.126 140.716 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a5070ff4-eb2f-4312-959d-216e5c399c94")
+	)
 	(text "https://www.digikey.com/en/products/detail/sunfounder/CN0295D/18668612"
 		(exclude_from_sim no)
 		(at 157.48 121.92 0)
@@ -1081,30 +1156,60 @@
 		(uuid "d5204f5f-408e-487e-a683-c1a370dfea92")
 	)
 	(junction
-		(at 189.23 82.55)
+		(at 228.6 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "924be3dd-c75e-4fd9-8145-b6ee465821d9")
+		(uuid "25f4ff56-5540-452a-8c27-960647e7b6b8")
+	)
+	(junction
+		(at 228.6 85.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3ac21bba-6d6d-4f27-b0c8-cb2cf44dbd1d")
+	)
+	(junction
+		(at 246.38 107.95)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b37895b7-b507-4081-a6b3-cb67ff6db74c")
+	)
+	(junction
+		(at 228.6 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bd8dcfe9-5038-4a54-bfdd-ad66c85d2fa8")
+	)
+	(junction
+		(at 246.38 85.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "beaf51ac-c805-4016-9193-e6a79da41877")
+	)
+	(junction
+		(at 228.6 107.95)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f7cdfb0d-150f-4750-b499-aae693f6ed68")
 	)
 	(wire
 		(pts
-			(xy 121.92 96.52) (xy 121.92 92.71)
+			(xy 237.49 99.06) (xy 228.6 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "075e7baf-f8e7-4018-84ff-4eb57849d38e")
+		(uuid "0d8b892e-7797-470a-8f0e-df3f73fbf32b")
 	)
 	(wire
 		(pts
-			(xy 189.23 87.63) (xy 189.23 82.55)
+			(xy 228.6 82.55) (xy 228.6 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "153dc6cb-9153-47e3-a26e-52f7b7059f36")
+		(uuid "13a87021-ee16-4225-93a0-377264dfb741")
 	)
 	(wire
 		(pts
@@ -1118,33 +1223,53 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 64.77) (xy 88.9 64.77)
+			(xy 228.6 99.06) (xy 228.6 100.33)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2941536a-70a5-4db3-855f-8cbed51deb66")
+		(uuid "1ce39b48-47dc-4df7-acde-dfbc7296a222")
 	)
 	(wire
 		(pts
-			(xy 121.92 80.01) (xy 121.92 82.55)
+			(xy 246.38 107.95) (xy 250.19 107.95)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "434cdab6-1110-4169-8c5f-853a82dfe65e")
+		(uuid "1d5f0603-f46d-4986-9ec4-0f7e3ea7ea30")
 	)
 	(wire
 		(pts
-			(xy 139.7 87.63) (xy 125.73 87.63)
+			(xy 246.38 97.79) (xy 246.38 100.33)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "493be310-3ac4-418a-bbd3-94c55664c6d2")
+		(uuid "2c875025-4736-4ec4-b1e7-c0f819fed4a1")
+	)
+	(wire
+		(pts
+			(xy 237.49 77.47) (xy 237.49 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b21dcc5-d203-417f-914d-95b8499f603d")
+	)
+	(wire
+		(pts
+			(xy 120.65 87.63) (xy 139.7 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b7ee201-4c65-426e-b18f-bbf356820fd1")
 	)
 	(wire
 		(pts
@@ -1158,67 +1283,201 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 96.52) (xy 121.92 96.52)
+			(xy 246.38 105.41) (xy 246.38 107.95)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a0866fb4-dd65-47b4-96f4-a6fd8d51c94f")
+		(uuid "6b5724a5-d2a2-4550-8ce1-337f32caa97e")
 	)
 	(wire
 		(pts
-			(xy 88.9 64.77) (xy 88.9 60.96)
+			(xy 246.38 74.93) (xy 246.38 77.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "abce8420-e356-4033-97a5-33b6d97b6fed")
+		(uuid "809da561-c745-4b79-8ff1-f4d37ee0ac18")
 	)
 	(wire
 		(pts
-			(xy 189.23 82.55) (xy 189.23 81.28)
+			(xy 224.79 107.95) (xy 228.6 107.95)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bfc766ab-980d-42d5-87a9-8a5a5f0a07da")
+		(uuid "8955973a-05a2-4e0b-8331-8c823e451eea")
 	)
 	(wire
 		(pts
-			(xy 186.69 82.55) (xy 189.23 82.55)
+			(xy 228.6 74.93) (xy 228.6 76.2)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ce265aab-9711-4ea0-a9d0-9b75fb785271")
+		(uuid "9b5813e5-6b3c-4ea8-9600-5194f315f051")
 	)
 	(wire
 		(pts
-			(xy 186.69 87.63) (xy 189.23 87.63)
+			(xy 228.6 76.2) (xy 228.6 77.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "df0d515f-7d5d-4475-8f30-a317ce170682")
+		(uuid "a1bd7eba-350e-48b8-abb1-16314547b243")
 	)
 	(wire
 		(pts
-			(xy 125.73 95.25) (xy 125.73 96.52)
+			(xy 242.57 107.95) (xy 246.38 107.95)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "eed6a8b1-72ba-4cb4-9173-ba523168010e")
+		(uuid "a1eeabab-e278-4e7e-92bd-393e6e681b62")
+	)
+	(wire
+		(pts
+			(xy 246.38 85.09) (xy 250.19 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "adae7f44-b1e9-4ba3-a3c8-4f3ea4d84ab8")
+	)
+	(wire
+		(pts
+			(xy 237.49 76.2) (xy 228.6 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c6e7c1a2-42c0-43f9-bed6-59815f0627a8")
+	)
+	(wire
+		(pts
+			(xy 228.6 105.41) (xy 228.6 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7adbedc-601d-4f3c-801f-334e62384b4d")
+	)
+	(wire
+		(pts
+			(xy 224.79 85.09) (xy 228.6 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c97ee3f2-5ffb-4ee8-8623-2d8df39fef06")
+	)
+	(wire
+		(pts
+			(xy 242.57 85.09) (xy 246.38 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb16bf89-d476-44d9-b69c-4bc8b57f0828")
+	)
+	(wire
+		(pts
+			(xy 246.38 82.55) (xy 246.38 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d209451e-7c5f-43f1-9f3c-ac4de0a20059")
+	)
+	(wire
+		(pts
+			(xy 228.6 97.79) (xy 228.6 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc6ab73d-92ba-4d0c-91c6-03484ec297f7")
+	)
+	(wire
+		(pts
+			(xy 228.6 85.09) (xy 232.41 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9f8297d-bd5d-4e93-8c66-cb2e8888dbac")
+	)
+	(wire
+		(pts
+			(xy 228.6 107.95) (xy 232.41 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f675bb78-fada-4807-8bce-162c6192122c")
+	)
+	(wire
+		(pts
+			(xy 237.49 100.33) (xy 237.49 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fdeb2d5c-f650-4499-b143-e9bd75bc5c07")
+	)
+	(wire
+		(pts
+			(xy 120.65 87.63) (xy 120.65 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff9281e1-5d88-44c1-a46a-55c01a5bfcdd")
+	)
+	(global_label "I2C4_SCL_5V"
+		(shape input)
+		(at 250.19 85.09 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "415d5a61-ac9c-44c7-ab2f-f4070e341d49")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 265.2099 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 	)
 	(global_label "I2C4_SDA"
 		(shape input)
-		(at 181.61 87.63 180)
+		(at 224.79 107.95 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1226,9 +1485,9 @@
 			)
 			(justify right)
 		)
-		(uuid "52aef143-9f30-4205-82ce-44a545a23348")
+		(uuid "4c5733f3-5374-4ea0-bc0b-95537ad94d33")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 169.7953 87.63 0)
+			(at 212.9753 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1240,7 +1499,7 @@
 			)
 		)
 	)
-	(global_label "I2C4_SDA"
+	(global_label "I2C4_SDA_5V"
 		(shape input)
 		(at 139.7 85.09 180)
 		(fields_autoplaced yes)
@@ -1252,7 +1511,7 @@
 		)
 		(uuid "5fa5b821-8640-4512-ab40-8a3093070dc6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 127.8853 85.09 0)
+			(at 124.6196 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1265,6 +1524,54 @@
 		)
 	)
 	(global_label "I2C4_SCL"
+		(shape input)
+		(at 224.79 85.09 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "87a9f944-e65f-4cb6-9662-4380a8718ca3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 213.0358 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "I2C4_SDA_5V"
+		(shape input)
+		(at 250.19 107.95 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "886e0c52-d6db-46f1-b5b9-27bae6b96b3c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 265.2704 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "I2C4_SCL_5V"
 		(shape input)
 		(at 139.7 82.55 180)
 		(fields_autoplaced yes)
@@ -1276,31 +1583,7 @@
 		)
 		(uuid "93a7f3ad-cab1-47c2-9c44-a96f9a0ba699")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 127.9458 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "I2C4_SCL"
-		(shape input)
-		(at 181.61 82.55 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "ab30efea-702b-4821-8607-b09f0717c42e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 169.8558 82.55 0)
+			(at 124.6801 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1401,6 +1684,164 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_Small")
+		(at 228.6 102.87 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1ebfe853-f756-4cad-b47e-59e1ea5c2398")
+		(property "Reference" "R100"
+			(at 231.902 102.87 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "10kΩ"
+			(at 230.378 102.87 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 228.6 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 228.6 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "da8b83b5-2384-4760-8670-00b6d4e5410f")
+		)
+		(pin "1"
+			(uuid "bebc16c4-998c-4d7f-ba53-6ad40dd5100e")
+		)
+		(instances
+			(project "mpe32board"
+				(path "/90f9def3-561d-490b-a661-0a19546ece9e/117e1584-29cf-485e-a9aa-2eeb8261960f"
+					(reference "R100")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 246.38 80.01 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "20a8f31b-e4be-4395-872d-1f04c9bde671")
+		(property "Reference" "R22"
+			(at 243.078 80.01 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "10kΩ"
+			(at 244.602 80.01 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 246.38 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 246.38 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "65451143-0ae2-45b1-893a-3da83c301f88")
+		)
+		(pin "1"
+			(uuid "2c758419-2355-49d3-9099-7d30d669413e")
+		)
+		(instances
+			(project "mpe32board"
+				(path "/90f9def3-561d-490b-a661-0a19546ece9e/117e1584-29cf-485e-a9aa-2eeb8261960f"
+					(reference "R22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 137.16 91.44 0)
 		(unit 1)
@@ -1479,320 +1920,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 88.9 60.96 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "447ae546-a50a-4118-a9c1-2fa3dc8642bb")
-		(property "Reference" "#PWR0150"
-			(at 88.9 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 88.9 57.15 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 88.9 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 88.9 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 88.9 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b3f6fab5-9b0d-4605-8c61-e59d0c3beae3")
-		)
-		(instances
-			(project "mpe32board"
-				(path "/90f9def3-561d-490b-a661-0a19546ece9e/117e1584-29cf-485e-a9aa-2eeb8261960f"
-					(reference "#PWR0150")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small")
-		(at 184.15 87.63 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "500a39ae-e34f-40fe-a1e4-ece5ad1b0d15")
-		(property "Reference" "R22"
-			(at 184.15 84.328 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Value" "10kΩ"
-			(at 184.15 85.852 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 184.15 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 184.15 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 184.15 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "3d93663e-3291-4383-a2eb-c4cb55ab7483")
-		)
-		(pin "1"
-			(uuid "9cf642ce-d9c2-488b-9a67-4bb8632bc825")
-		)
-		(instances
-			(project "mpe32board"
-				(path "/90f9def3-561d-490b-a661-0a19546ece9e/117e1584-29cf-485e-a9aa-2eeb8261960f"
-					(reference "R22")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3V3")
-		(at 189.23 81.28 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "50a6215e-a098-4692-8b53-936e5e6b4979")
-		(property "Reference" "#PWR040"
-			(at 189.23 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 189.23 77.47 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 189.23 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 189.23 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 189.23 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f6b2480d-704c-46a9-bff6-7bc3e9b86791")
-		)
-		(instances
-			(project "mpe32board"
-				(path "/90f9def3-561d-490b-a661-0a19546ece9e/117e1584-29cf-485e-a9aa-2eeb8261960f"
-					(reference "#PWR040")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small")
-		(at 184.15 82.55 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5f8d0c58-c4da-4a40-9750-670974bfe86c")
-		(property "Reference" "R21"
-			(at 184.15 79.248 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Value" "10kΩ"
-			(at 184.15 80.772 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 184.15 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 184.15 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 184.15 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "cdb3714e-8f37-4ff0-b1f3-253c9beb13ea")
-		)
-		(pin "1"
-			(uuid "7080dcbc-e36f-49e9-a494-f98f316fdb42")
-		)
-		(instances
-			(project "mpe32board"
-				(path "/90f9def3-561d-490b-a661-0a19546ece9e/117e1584-29cf-485e-a9aa-2eeb8261960f"
-					(reference "R21")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 125.73 95.25 0)
+		(lib_id "Transistor_FET:BSS138")
+		(at 237.49 82.55 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1801,9 +1930,174 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "7f2207ae-c4b1-45ef-88fd-c603720be294")
-		(property "Reference" "#PWR0149"
-			(at 125.73 99.06 0)
+		(uuid "4fd0405e-586e-4508-9dec-1887c097ad33")
+		(property "Reference" "Q1"
+			(at 237.49 88.9 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BSS138"
+			(at 237.49 91.44 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 235.585 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF"
+			(at 233.68 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
+			(at 237.49 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9bbc1dd5-98c8-4c04-bc1b-98d620f8b05e")
+		)
+		(pin "2"
+			(uuid "9f6bca1b-1c93-4472-8eb3-7894604be152")
+		)
+		(pin "3"
+			(uuid "e18daf70-71cb-4800-9cdb-fb6b29b13789")
+		)
+		(instances
+			(project "mpe32board"
+				(path "/90f9def3-561d-490b-a661-0a19546ece9e/117e1584-29cf-485e-a9aa-2eeb8261960f"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 246.38 102.87 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5c016d29-578f-439f-afbe-ffdb1190a32c")
+		(property "Reference" "R101"
+			(at 243.078 102.87 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "10kΩ"
+			(at 244.602 102.87 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 246.38 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 246.38 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "b0f57c4e-6460-4ff0-8969-fb3fbc1a56f9")
+		)
+		(pin "1"
+			(uuid "f39641d3-0c67-467a-8277-0de7ac0f6aaa")
+		)
+		(instances
+			(project "mpe32board"
+				(path "/90f9def3-561d-490b-a661-0a19546ece9e/117e1584-29cf-485e-a9aa-2eeb8261960f"
+					(reference "R101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 246.38 97.79 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6854f6de-01fb-46c5-899e-8f429699cb16")
+		(property "Reference" "#PWR0159"
+			(at 246.38 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1814,7 +2108,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 125.73 90.17 0)
+			(at 246.38 92.71 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1824,7 +2118,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 125.73 95.25 0)
+			(at 246.38 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1835,7 +2129,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 125.73 95.25 0)
+			(at 246.38 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1846,7 +2140,85 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 125.73 95.25 0)
+			(at 246.38 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7e559f2c-df32-4783-9a7d-274b562447e3")
+		)
+		(instances
+			(project "mpe32board"
+				(path "/90f9def3-561d-490b-a661-0a19546ece9e/117e1584-29cf-485e-a9aa-2eeb8261960f"
+					(reference "#PWR0159")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 120.65 82.55 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7f2207ae-c4b1-45ef-88fd-c603720be294")
+		(property "Reference" "#PWR0149"
+			(at 120.65 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 120.65 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 120.65 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 120.65 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 120.65 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1870,7 +2242,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 121.92 80.01 0)
+		(at 228.6 74.93 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1878,9 +2250,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "b4c926a6-b414-493b-9b93-88f45c362780")
-		(property "Reference" "#PWR0159"
-			(at 121.92 83.82 0)
+		(fields_autoplaced yes)
+		(uuid "a3efdcfe-28dd-4562-9619-28e4d9c45172")
+		(property "Reference" "#PWR013"
+			(at 228.6 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1891,7 +2264,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 121.92 76.2 0)
+			(at 228.6 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1901,7 +2274,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 121.92 80.01 0)
+			(at 228.6 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1912,7 +2285,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 121.92 80.01 0)
+			(at 228.6 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1923,7 +2296,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 121.92 80.01 0)
+			(at 228.6 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1934,53 +2307,52 @@
 			)
 		)
 		(pin "1"
-			(uuid "dfe52c6e-7601-428a-be06-6e3c07a02490")
+			(uuid "411b75d2-2543-46c9-b3c2-c6154001f9d6")
 		)
 		(instances
 			(project "mpe32board"
 				(path "/90f9def3-561d-490b-a661-0a19546ece9e/117e1584-29cf-485e-a9aa-2eeb8261960f"
-					(reference "#PWR0159")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Jumper:SolderJumper_3_Bridged12")
-		(at 121.92 87.63 90)
+		(lib_id "power:+3V3")
+		(at 228.6 97.79 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "cb9ead37-2a46-4f9d-8ae8-bb95a8a2361e")
-		(property "Reference" "JP1"
-			(at 119.38 86.3599 90)
+		(uuid "c57b63f4-922c-4118-a656-e6d08786b242")
+		(property "Reference" "#PWR014"
+			(at 228.6 101.6 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "SolderJumper_3_Bridged12"
-			(at 119.38 88.8999 90)
+		(property "Value" "+3V3"
+			(at 228.6 92.71 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm"
-			(at 121.92 87.63 0)
+		(property "Footprint" ""
+			(at 228.6 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1991,7 +2363,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 137.16 87.63 0)
+			(at 228.6 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2001,8 +2373,8 @@
 				)
 			)
 		)
-		(property "Description" "3-pole Solder Jumper, pins 1+2 closed/bridged"
-			(at 134.62 87.63 0)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 228.6 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2011,20 +2383,257 @@
 					(size 1.27 1.27)
 				)
 			)
-		)
-		(pin "3"
-			(uuid "195943fc-86ff-41ad-9a66-dce070d0b504")
-		)
-		(pin "2"
-			(uuid "efc33d56-319b-4203-ab24-efb4473320da")
 		)
 		(pin "1"
-			(uuid "77d37d0f-2f75-4acd-bbf6-f088acbc273b")
+			(uuid "b6e6d872-c07e-4090-8d06-b494d69563d6")
 		)
 		(instances
 			(project "mpe32board"
 				(path "/90f9def3-561d-490b-a661-0a19546ece9e/117e1584-29cf-485e-a9aa-2eeb8261960f"
-					(reference "JP1")
+					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:BSS138")
+		(at 237.49 105.41 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d9346f6f-0c32-4373-8cc0-685bafa97d77")
+		(property "Reference" "Q2"
+			(at 237.49 111.76 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BSS138"
+			(at 237.49 114.3 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 235.585 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF"
+			(at 233.68 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
+			(at 237.49 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "67d91965-beb8-487a-8a03-186fcd93d75b")
+		)
+		(pin "2"
+			(uuid "43b75949-5081-4f71-a865-b1edbeda04ad")
+		)
+		(pin "3"
+			(uuid "8e9b222a-a4aa-4711-988f-1b7f5124147c")
+		)
+		(instances
+			(project "mpe32board"
+				(path "/90f9def3-561d-490b-a661-0a19546ece9e/117e1584-29cf-485e-a9aa-2eeb8261960f"
+					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 228.6 80.01 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "de20187a-ac28-43a8-af6c-71bc39cc940f")
+		(property "Reference" "R21"
+			(at 231.902 80.01 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "10kΩ"
+			(at 230.378 80.01 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 228.6 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 228.6 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "613829a4-1651-43a3-b873-21a327c4a288")
+		)
+		(pin "1"
+			(uuid "0753c1d5-93ea-4832-81d5-fa070fb4d0ec")
+		)
+		(instances
+			(project "mpe32board"
+				(path "/90f9def3-561d-490b-a661-0a19546ece9e/117e1584-29cf-485e-a9aa-2eeb8261960f"
+					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 246.38 74.93 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ff239692-a88c-4fa6-b766-451e73408aae")
+		(property "Reference" "#PWR0150"
+			(at 246.38 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 246.38 69.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 246.38 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 246.38 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "53ec227e-565d-4181-bac4-f317d3bfb18d")
+		)
+		(instances
+			(project "mpe32board"
+				(path "/90f9def3-561d-490b-a661-0a19546ece9e/117e1584-29cf-485e-a9aa-2eeb8261960f"
+					(reference "#PWR0150")
 					(unit 1)
 				)
 			)
