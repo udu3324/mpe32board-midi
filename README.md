@@ -19,6 +19,9 @@ Some information is redacted on this export, DM me for the full version!
 ## Firmware
 The firmware uses the stm32cubemx software to generate a .ioc of its pinout functions and its cmake gcc code template. I then chose Visual Studio Code as the choice of my IDE to code the rest in C/C++.
 
+There is sample code [here](https://gist.github.com/udu3324/de9aada8e3ea0addc13870c6bbbebc0f) for trying out the mpe32sensors standalone on the Arduino platform.
+![alt text](screenshot/flexure_sample.jpg)
+
 ### Libraries Used
  * https://github.com/hathach/tinyusb
  * https://github.com/jtainer/i2c-mux
