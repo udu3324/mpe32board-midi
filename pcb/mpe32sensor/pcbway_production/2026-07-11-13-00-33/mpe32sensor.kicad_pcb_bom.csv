@@ -1,0 +1,6 @@
+﻿Designator,Quantity,Value,Footprint,Package,MPN,DNP,Mount_Type,Description,KiLib_Generator,LCSC Part
+C1,1,100nF,C_0603_1608Metric,,,,smt,Unpolarized capacitor,SMD_2terminal_chip_molded,
+D1,1,SK6812MINI-E,LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount,,,,smt,RGB LED with integrated controller,,
+J1,1,Conn_01x04,JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal,,,,smt,"Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)",connector/SMD_single_row_plus_mounting_pad,
+"J2, J3",2,Conn_01x01,PinSocket_1x01_P2.54mm_Horizontal,,,,tht,"Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)",connector/pin_header_socket,
+U1,1,TMAG5273,SOT-23-6,,,,smt,,package/gullwing,C3716049

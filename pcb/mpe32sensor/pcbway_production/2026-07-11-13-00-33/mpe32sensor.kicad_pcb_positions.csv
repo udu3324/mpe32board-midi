@@ -1,0 +1,7 @@
+﻿pos_x,pos_y,rotation,side,designator,mpn,pack,footprint,value,mount_type
+107.96,-94.15,0.0,top,C1,,,C_0603_1608Metric,100nF,smt
+107.96,-97.35,0.0,bottom,D1,,,LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount,SK6812MINI-E,smt
+108.0,-82.3,180.0,top,J1,,,JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal,Conn_01x04,smt
+102.35,-89.56,-90.0,top,J2,,,PinSocket_1x01_P2.54mm_Horizontal,Conn_01x01,tht
+113.7,-89.56,-90.0,top,J3,,,PinSocket_1x01_P2.54mm_Horizontal,Conn_01x01,tht
+108.0,-91.7,0.0,top,U1,,,SOT-23-6,TMAG5273,smt

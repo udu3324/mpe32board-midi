@@ -21,6 +21,7 @@
  */
 
 /* Includes ------------------------------------------------------------------*/
+#include <stdio.h>
 #include "TMAG5273.h"
 #include "stdbool.h"
 #include "main.h"

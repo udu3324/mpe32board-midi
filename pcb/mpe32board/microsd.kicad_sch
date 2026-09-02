@@ -1438,6 +1438,17 @@
 				)
 			)
 		)
+		(property "MPN" "47k 0603"
+			(at 146.05 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "4758984a-ef8a-415c-afa8-82c758363f01")
 		)
@@ -1509,6 +1520,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 130.81 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "47k 0603"
 			(at 130.81 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -1678,6 +1700,17 @@
 				)
 			)
 		)
+		(property "MPN" "47k 0603"
+			(at 123.19 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "bdb8292f-a0c2-474f-a30e-66d2c86f5bfc")
 		)
@@ -1748,6 +1781,17 @@
 			)
 		)
 		(property "Description" "Micro SD Card Socket with card detection pins"
+			(at 198.12 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "DM3D-SF"
 			(at 198.12 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -2176,6 +2220,17 @@
 				)
 			)
 		)
+		(property "MPN" "47k 0603"
+			(at 138.43 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "e9eb0744-f0f4-45fa-bce5-d484e8c8f971")
 		)
@@ -2247,6 +2302,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 153.67 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "47k 0603"
 			(at 153.67 86.36 0)
 			(hide yes)
 			(show_name no)

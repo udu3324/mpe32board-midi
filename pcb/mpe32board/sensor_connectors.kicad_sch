@@ -6467,6 +6467,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 104.14 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "1ec6c7ae-2ce8-4950-8be8-7b4df84058c6")
 		)
@@ -6631,6 +6642,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 66.04 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "5473fbb4-00b0-4256-a2d5-f9dbed866563")
 		)
@@ -6785,6 +6807,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 142.24 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BM04B-SRSS-TB"
 			(at 142.24 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -7113,6 +7146,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 237.49 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "e57adf23-e8cc-41ef-be94-05ee3a88b58b")
 		)
@@ -7267,6 +7311,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 199.39 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BM04B-SRSS-TB"
 			(at 199.39 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -7595,6 +7650,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 161.29 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "c5bf8865-de09-4535-b7cd-e204306adf86")
 		)
@@ -7749,6 +7815,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 218.44 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BM04B-SRSS-TB"
 			(at 218.44 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -7923,6 +8000,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 180.34 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "b8143b1b-d69a-4d2e-9ebf-0fc0d082c5bd")
 		)
@@ -8087,6 +8175,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 66.04 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "b3524153-f783-4b42-8541-76734bc022f7")
 		)
@@ -8165,6 +8264,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x01, script generated"
+			(at 157.48 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "DNP"
 			(at 157.48 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -8407,6 +8517,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 85.09 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "b763e918-795e-492a-9f81-d39da8edb56a")
 		)
@@ -8484,6 +8605,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 180.34 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BM04B-SRSS-TB"
 			(at 180.34 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -8812,6 +8944,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 199.39 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "78dc4f35-e900-4c99-bd55-953bf6d6ad5a")
 		)
@@ -8976,6 +9119,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 142.24 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "7bcba825-863e-412c-ab31-b78d245a3c98")
 		)
@@ -9130,6 +9284,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 123.19 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BM04B-SRSS-TB"
 			(at 123.19 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -9371,6 +9536,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 275.59 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BM04B-SRSS-TB"
 			(at 275.59 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -9699,6 +9875,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 256.54 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "907737ed-8aa8-472a-927f-24e8fe7e3150")
 		)
@@ -9776,6 +9963,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 66.04 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BM04B-SRSS-TB"
 			(at 66.04 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -10248,6 +10446,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 161.29 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BM04B-SRSS-TB"
 			(at 161.29 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -11115,6 +11324,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 180.34 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "9ed2d199-7a2b-4446-9a6d-ac5c740f4a43")
 		)
@@ -11664,6 +11884,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 104.14 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "b8f38a77-21b1-4200-a7c9-034cd01b8fb1")
 		)
@@ -11905,6 +12136,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 123.19 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "3593230c-6fc1-4850-9ad2-3b9011cc393e")
 		)
@@ -12069,6 +12311,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 237.49 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "084ab16b-832c-42e4-91da-28ba857cb478")
 		)
@@ -12146,6 +12399,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 275.59 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BM04B-SRSS-TB"
 			(at 275.59 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -12397,6 +12661,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 256.54 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "2898bca4-37c3-4f40-bf7f-2268e59ae125")
 		)
@@ -12484,6 +12759,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 256.54 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "34de432e-6ee7-47ef-b078-bdddfbe0bd2a")
 		)
@@ -12561,6 +12847,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 275.59 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BM04B-SRSS-TB"
 			(at 275.59 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -12812,6 +13109,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 218.44 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f5a3faa5-773d-4093-976a-49dea0ce7d78")
 		)
@@ -13053,6 +13361,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 199.39 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "d5b41986-dafc-4035-9b8a-5b772b526db8")
 		)
@@ -13140,6 +13459,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 104.14 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "67e140d8-ebbe-4953-8f58-3d33708d65a6")
 		)
@@ -13217,6 +13547,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 123.19 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BM04B-SRSS-TB"
 			(at 123.19 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -13391,6 +13732,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 237.49 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "59537dee-efd1-4a87-b964-c803e5fc5631")
 		)
@@ -13468,6 +13820,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 85.09 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BM04B-SRSS-TB"
 			(at 85.09 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -13642,6 +14005,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 85.09 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "efc8f0da-ae6e-4c2e-8337-6c7730195ad7")
 		)
@@ -13719,6 +14093,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 66.04 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BM04B-SRSS-TB"
 			(at 66.04 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -14355,6 +14740,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 218.44 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "04a5b648-7f82-4c7c-8cf8-5efbd6cc33c4")
 		)
@@ -14586,6 +14982,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 123.19 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BM04B-SRSS-TB"
 			(at 123.19 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -15145,6 +15552,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 161.29 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "d32bea12-00f3-427e-88fb-d181cd7d64bd")
 		)
@@ -15386,6 +15804,17 @@
 				)
 			)
 		)
+		(property "MPN" "BM04B-SRSS-TB"
+			(at 85.09 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "dd33af42-12bc-4c31-b27e-7d0c3365cb19")
 		)
@@ -15540,6 +15969,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 104.14 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BM04B-SRSS-TB"
 			(at 104.14 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -15858,6 +16298,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 142.24 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BM04B-SRSS-TB"
 			(at 142.24 74.93 0)
 			(hide yes)
 			(show_name no)

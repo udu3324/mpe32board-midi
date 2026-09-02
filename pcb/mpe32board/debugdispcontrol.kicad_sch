@@ -1764,6 +1764,17 @@
 				)
 			)
 		)
+		(property "MPN" "10k 0603"
+			(at 78.74 73.66 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "d99e5d2d-3756-4609-8e75-5b7610a89e2a")
 		)
@@ -2153,6 +2164,17 @@
 				)
 			)
 		)
+		(property "MPN" "10k 0603"
+			(at 119.38 73.66 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "1c468d4e-d8ab-4c90-ba9a-930ca44ab51c")
 		)
@@ -2223,6 +2245,17 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 157.48 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "DNP"
 			(at 157.48 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -2391,6 +2424,17 @@
 				)
 			)
 		)
+		(property "MPN" "SK6812MINI-E"
+			(at 107.95 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "4422bf9d-60b5-4155-8fc7-ecda86296c21")
 		)
@@ -2477,6 +2521,17 @@
 				)
 			)
 		)
+		(property "MPN" "DNP"
+			(at 119.38 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "37af4d0b-b319-467b-9ea0-3384444c10c9")
 		)
@@ -2548,6 +2603,17 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
+			(at 125.73 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "SK6812MINI-E"
 			(at 125.73 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -2722,6 +2788,17 @@
 				)
 			)
 		)
+		(property "MPN" "DNP"
+			(at 78.74 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "d4964e1f-b95a-4659-9406-2cc353a2dbdf")
 		)
@@ -2793,6 +2870,17 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
+			(at 143.51 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "SK6812MINI-E"
 			(at 143.51 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -2889,6 +2977,17 @@
 				)
 			)
 		)
+		(property "MPN" "10k 0603"
+			(at 157.48 73.66 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "9c91747c-3dec-4be4-bc41-d3bd05983371")
 		)
@@ -2959,6 +3058,17 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 198.12 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "DNP"
 			(at 198.12 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -3040,6 +3150,17 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
+			(at 72.39 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "SK6812MINI-E"
 			(at 72.39 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -3291,6 +3412,17 @@
 				)
 			)
 		)
+		(property "MPN" "10k 0603"
+			(at 198.12 73.66 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "3b791132-c16e-456e-bd62-4e09bb87b75b")
 		)
@@ -3362,6 +3494,17 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
+			(at 90.17 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "SK6812MINI-E"
 			(at 90.17 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -3449,6 +3592,17 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
+			(at 161.29 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "SK6812MINI-E"
 			(at 161.29 129.54 0)
 			(hide yes)
 			(show_name no)

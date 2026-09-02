@@ -1,0 +1,6 @@
+"Reference","Qty","Value","DNP","Exclude from BOM","Exclude from Board","Footprint","Datasheet","MPN"
+"C1","1","100nF","","","","Capacitor_SMD:C_0603_1608Metric","","100nF 0603 X7R "
+"D1","1","SK6812MINI-E","","","","LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount","https://www.lcsc.com/datasheet/C5149201.pdf","SK6812MINI-E-012"
+"J1","1","Conn_01x04","","","","Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal","","SM04B-SRSS-TB"
+"J2,J3","2","Conn_01x01","","","","Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Horizontal","","DNP"
+"U1","1","TMAG5273","","","","Package_TO_SOT_SMD:SOT-23-6","","TMAG5273A1"

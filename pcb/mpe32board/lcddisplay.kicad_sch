@@ -1662,6 +1662,17 @@
 				)
 			)
 		)
+		(property "MPN" "DNP"
+			(at 144.78 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "7c9ea644-2bbd-4ce1-a681-c4ba42bdefca")
 		)
@@ -1747,6 +1758,17 @@
 				)
 			)
 		)
+		(property "MPN" "10k 0603"
+			(at 228.6 102.87 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "da8b83b5-2384-4760-8670-00b6d4e5410f")
 		)
@@ -1817,6 +1839,17 @@
 		)
 		(property "Description" "Resistor, small symbol"
 			(at 246.38 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "10k 0603"
+			(at 246.38 80.01 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1987,6 +2020,17 @@
 				)
 			)
 		)
+		(property "MPN" "BSS138"
+			(at 237.49 82.55 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "9bbc1dd5-98c8-4c04-bc1b-98d620f8b05e")
 		)
@@ -2060,6 +2104,17 @@
 		)
 		(property "Description" "Resistor, small symbol"
 			(at 246.38 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "10k 0603"
+			(at 246.38 102.87 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2464,6 +2519,17 @@
 				)
 			)
 		)
+		(property "MPN" "BSS138"
+			(at 237.49 105.41 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "67d91965-beb8-487a-8a03-186fcd93d75b")
 		)
@@ -2537,6 +2603,17 @@
 		)
 		(property "Description" "Resistor, small symbol"
 			(at 228.6 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "10k 0603"
+			(at 228.6 80.01 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

@@ -15265,6 +15265,17 @@
 				)
 			)
 		)
+		(property "MPN" "100nF 0603 X7R"
+			(at 302.26 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "e53334ee-30fa-4adb-b55e-93d7837af579")
 		)
@@ -15337,6 +15348,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 163.83 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "100nF 0603 X7R"
 			(at 163.83 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -15507,6 +15529,17 @@
 				)
 			)
 		)
+		(property "MPN" "100nF 0603 X7R"
+			(at 261.62 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "e3d51023-0d49-4b11-ab21-201df3df87d3")
 		)
@@ -15579,6 +15612,17 @@
 			)
 		)
 		(property "Description" "128Mb Synchronous DRAM, 2 Mb x 16 b x 4 Banks, 133 MHz, TSOP-II-54"
+			(at 170.18 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "W9812G6KH-75"
 			(at 170.18 224.79 0)
 			(hide yes)
 			(show_name no)
@@ -16138,6 +16182,17 @@
 				)
 			)
 		)
+		(property "MPN" "100nF 0603 X7R"
+			(at 16.51 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "d6d96394-9bac-463d-bea7-f4a2fee78f90")
 		)
@@ -16453,6 +16508,17 @@
 				)
 			)
 		)
+		(property "MPN" "10uF 1206 X7R"
+			(at 322.58 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "45714ad3-fca1-485b-a47d-067c99595eac")
 		)
@@ -16613,6 +16679,17 @@
 				)
 			)
 		)
+		(property "MPN" "10uF 1206 X7R"
+			(at 356.87 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "87b0d9c1-5857-486b-a5d0-1ddc5ea87a36")
 		)
@@ -16685,6 +16762,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 281.94 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "100nF 0603 X7R"
 			(at 281.94 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -16841,6 +16929,17 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 246.38 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "DNP"
 			(at 246.38 100.33 0)
 			(hide yes)
 			(show_name no)
@@ -17086,6 +17185,17 @@
 				)
 			)
 		)
+		(property "MPN" "SS14"
+			(at 266.7 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a273cb7f-6184-49b1-a2b4-03c277dffaa5")
 		)
@@ -17158,6 +17268,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 175.26 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "100nF 0603 X7R"
 			(at 175.26 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -17250,6 +17371,17 @@
 				)
 			)
 		)
+		(property "MPN" "100nF 0603 X7R"
+			(at 231.14 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "6eaae13c-8a94-42da-945f-158b31d7df59")
 		)
@@ -17322,6 +17454,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 36.83 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2uF 0603 X7R"
 			(at 36.83 231.14 0)
 			(hide yes)
 			(show_name no)
@@ -17801,6 +17944,17 @@
 				)
 			)
 		)
+		(property "MPN" "100nF 0603 X7R"
+			(at 151.13 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "3a996d10-8bfe-4130-b296-75b54f8c1f68")
 		)
@@ -17873,6 +18027,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 187.96 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "100nF 0603 X7R"
 			(at 187.96 165.1 0)
 			(hide yes)
 			(show_name no)
@@ -18031,6 +18196,17 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 279.4 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "DNP"
 			(at 279.4 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -18278,6 +18454,17 @@
 				)
 			)
 		)
+		(property "MPN" "100nF 0603 X7R"
+			(at 231.14 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "c9f218e4-da36-4e66-b48b-a16a9b89d914")
 		)
@@ -18348,6 +18535,17 @@
 		)
 		(property "Description" "Resistor, small symbol"
 			(at 264.16 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "5.1k 0603"
+			(at 264.16 135.89 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18593,6 +18791,17 @@
 				)
 			)
 		)
+		(property "MPN" "100nF 0603 X7R"
+			(at 241.3 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "49dca60d-e200-40bf-a6b5-989d8daedb12")
 		)
@@ -18668,6 +18877,17 @@
 			)
 		)
 		(property "Description" "Very low capacitance ESD protection diode, 2 data-line, SOT-666"
+			(at 273.05 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "USBLC6-2P6"
 			(at 273.05 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -18772,6 +18992,17 @@
 				)
 			)
 		)
+		(property "MPN" "100nF 0603 X7R"
+			(at 163.83 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "0877d59b-9f66-4c83-9ad4-0684fa764855")
 		)
@@ -18854,6 +19085,17 @@
 				)
 			)
 		)
+		(property "MPN" "100nF 0603 X7R"
+			(at 241.3 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "c9a4cd41-f54c-4a90-b20e-230184b34060")
 		)
@@ -18926,6 +19168,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 251.46 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "100nF 0603 X7R"
 			(at 251.46 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -19092,6 +19345,17 @@
 				)
 			)
 		)
+		(property "MPN" "DNP"
+			(at 151.13 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "45d044e4-efd9-4ef4-9145-e996d973a57f")
 		)
@@ -19225,6 +19489,17 @@
 				)
 			)
 		)
+		(property "MPN" "5.1k 0603"
+			(at 264.16 133.35 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "c0b85e97-a5f8-490e-a16d-387340cdec3b")
 		)
@@ -19297,6 +19572,17 @@
 			)
 		)
 		(property "Description" "ST Debug Connector, standard ARM Cortex-M SWD and JTAG interface plus UART"
+			(at 363.22 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "FTSH-107-01-F-DV-K-P-TR"
 			(at 363.22 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -19503,6 +19789,17 @@
 				)
 			)
 		)
+		(property "MPN" "100nF 0603 X7R"
+			(at 292.1 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "763867ba-b2e4-4f1b-9628-9fa58dc692cb")
 		)
@@ -19575,6 +19872,17 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 177.8 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "DNP"
 			(at 177.8 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -19664,6 +19972,17 @@
 				)
 			)
 		)
+		(property "MPN" "100nF 0603 X7R"
+			(at 151.13 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "5f08cf12-d2ed-4980-b702-ade5215195b9")
 		)
@@ -19736,6 +20055,17 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 154.94 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "DNP"
 			(at 154.94 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -19902,6 +20232,17 @@
 				)
 			)
 		)
+		(property "MPN" "100nF 0603 X7R"
+			(at 298.45 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "6c89ed16-e842-44d8-959e-a800af837582")
 		)
@@ -19984,6 +20325,17 @@
 				)
 			)
 		)
+		(property "MPN" "100nF 0603 X7R"
+			(at 251.46 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "e80140b3-54d8-43e9-b694-53c5a5f17c4e")
 		)
@@ -20056,6 +20408,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 302.26 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "100nF 0603 X7R"
 			(at 302.26 27.94 0)
 			(hide yes)
 			(show_name no)
@@ -20378,6 +20741,17 @@
 				)
 			)
 		)
+		(property "MPN" "LM1117MP-3.3"
+			(at 340.36 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "7119441f-395b-42f6-b714-b64a29281778")
 		)
@@ -20463,6 +20837,17 @@
 				)
 			)
 		)
+		(property "MPN" "100nF 0603 X7R"
+			(at 281.94 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "97671dfc-d145-48af-aeec-2de2e126273d")
 		)
@@ -20535,6 +20920,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 271.78 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "100nF 0603 X7R"
 			(at 271.78 27.94 0)
 			(hide yes)
 			(show_name no)
@@ -20704,6 +21100,17 @@
 				)
 			)
 		)
+		(property "MPN" "DNP"
+			(at 154.94 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "449278a7-9829-4167-b9bf-31e8c71fff8e")
 		)
@@ -20851,6 +21258,17 @@
 			)
 		)
 		(property "Description" "STMicroelectronics Arm Cortex-M7 MCU, 2048KB flash, 1024KB RAM, 480 MHz, 1.62-3.6V, 140 GPIO, LQFP176"
+			(at 76.2 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "STM32H743IIT"
 			(at 76.2 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -21465,6 +21883,17 @@
 				)
 			)
 		)
+		(property "MPN" "1uF 0603 X7R"
+			(at 250.19 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "b1004439-7ce8-4070-93b6-3062f4d12879")
 		)
@@ -21614,6 +22043,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 271.78 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "100nF 0603 X7R"
 			(at 271.78 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -21784,6 +22224,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2uF 0603 X7R"
+			(at 26.67 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "30e79b4d-ab52-4851-b3a8-4f32df5b893e")
 		)
@@ -21932,6 +22383,17 @@
 		)
 		(property "Description" "Resistor, small symbol"
 			(at 279.4 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "10k 0603"
+			(at 279.4 99.06 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22091,6 +22553,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 261.62 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "100nF 0603 X7R"
 			(at 261.62 27.94 0)
 			(hide yes)
 			(show_name no)
@@ -22413,6 +22886,17 @@
 				)
 			)
 		)
+		(property "MPN" "10k 0603"
+			(at 246.38 91.44 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "4fabc897-55b3-4a17-a708-75316090de36")
 		)
@@ -22649,6 +23133,17 @@
 				)
 			)
 		)
+		(property "MPN" "1uF 0603 X7R"
+			(at 27.94 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "13661b6a-76c8-49a7-99cf-28e4e46f21d1")
 		)
@@ -22731,6 +23226,17 @@
 				)
 			)
 		)
+		(property "MPN" "100nF 0603 X7R"
+			(at 292.1 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "15206a5f-bf9d-4492-80a0-0a7dedf324d4")
 		)
@@ -22803,6 +23309,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 175.26 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "100nF 0603 X7R"
 			(at 175.26 165.1 0)
 			(hide yes)
 			(show_name no)
@@ -23051,6 +23568,17 @@
 				)
 			)
 		)
+		(property "MPN" "USB4105-GF-A"
+			(at 245.11 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "A7"
 			(uuid "280987c8-7722-4e44-8f50-e759b9038f0e")
 		)
@@ -23246,6 +23774,17 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 177.8 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "DNP"
 			(at 177.8 128.27 0)
 			(hide yes)
 			(show_name no)

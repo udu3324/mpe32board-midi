@@ -8424,6 +8424,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 153.67 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "29cedc12-0d24-4b20-9149-45ada1456965")
 		)
@@ -8495,6 +8506,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 55.88 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 55.88 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -8586,6 +8608,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 238.76 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "e97e860c-e1a2-4854-9387-c71fac4fdf89")
 		)
@@ -8657,6 +8690,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 251.46 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 251.46 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -8826,6 +8870,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 254 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "ab51cd63-0c22-4526-a5e6-8d2aa792bc60")
 		)
@@ -8907,6 +8962,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 166.37 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "cb3f362f-c4fb-4bd3-bc8d-3e3c18ae5222")
 		)
@@ -8978,6 +9044,17 @@
 			)
 		)
 		(property "Description" "Low voltage 8-channel I2C switch with reset, QFN-24"
+			(at 128.27 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "TCA9548ARGER"
 			(at 128.27 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -9216,6 +9293,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 86.36 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "85dbdb17-21f8-49a4-b84d-fb017e9557a5")
 		)
@@ -9287,6 +9375,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 156.21 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 156.21 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -9378,6 +9477,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 146.05 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "e555fba3-9e13-48d1-8cc9-2e7faa66108a")
 		)
@@ -9459,6 +9569,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 60.96 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "5e2f9485-0a64-4aba-85e8-e885f404f7b5")
 		)
@@ -9530,6 +9651,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 243.84 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 243.84 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -9699,6 +9831,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 86.36 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "eaf97f39-76be-4a67-a71e-f16c99f06210")
 		)
@@ -9770,6 +9913,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 158.75 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 158.75 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -9861,6 +10015,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 158.75 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a364267b-29bf-4dd2-a2ce-1d4d03593fec")
 		)
@@ -9932,6 +10097,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 148.59 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 148.59 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -10100,6 +10276,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 261.62 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "11b3b8b4-0507-4fa0-aeb6-b3fa5da95257")
 		)
@@ -10258,6 +10445,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 53.34 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "2d722edb-dc6a-4e97-a901-c66326e8b508")
 		)
@@ -10329,6 +10527,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 166.37 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 166.37 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -10487,6 +10696,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 50.8 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 50.8 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -10656,6 +10876,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 73.66 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "ca770684-5d9b-4031-9e55-bec00ea83b04")
 		)
@@ -10727,6 +10958,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 81.28 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 81.28 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -10818,6 +11060,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 156.21 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "abc4fe9b-6388-4af9-84d0-99cb735b29b5")
 		)
@@ -10889,6 +11142,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 264.16 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 264.16 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -10980,6 +11244,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 50.8 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "2dd3d30b-6825-40f2-a06b-cc5bd8213a59")
 		)
@@ -11052,6 +11327,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 232.41 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "1719710005"
 			(at 232.41 146.05 0)
 			(hide yes)
 			(show_name no)
@@ -11219,6 +11505,17 @@
 			)
 		)
 		(property "Description" "Low voltage 8-channel I2C switch with reset, QFN-24"
+			(at 35.56 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "TCA9548ARGER"
 			(at 35.56 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -11455,6 +11752,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 48.26 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "bb7bb1ae-f146-42bf-ad8a-ef4d435e1fa8")
 		)
@@ -11536,6 +11844,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 163.83 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "e893a0fe-058e-4ce7-bbc6-1b49f153eac9")
 		)
@@ -11607,6 +11926,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 140.97 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 140.97 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -11775,6 +12105,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 81.28 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "fd0ceec3-a07c-41df-9c8a-3ab09ef6acfe")
 		)
@@ -11856,6 +12197,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 236.22 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "3f521835-a891-4222-89dc-b925ad1c6952")
 		)
@@ -11927,6 +12279,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 58.42 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 58.42 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -12096,6 +12459,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 168.91 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "9b58c559-c3e2-415f-afc9-371e30528715")
 		)
@@ -12167,6 +12541,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 76.2 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 76.2 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -12335,6 +12720,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 151.13 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "9fb1bc9d-b4ff-423a-b633-747fde402331")
 		)
@@ -12406,6 +12802,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 148.59 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 148.59 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -12653,6 +13060,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 151.13 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "3281970e-3984-4466-8c95-3bb3712956ef")
 		)
@@ -12734,6 +13152,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 76.2 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "3e94c12c-8ad4-4c44-b204-7b18b645cfee")
 		)
@@ -12804,6 +13233,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 140.97 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 140.97 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -12895,6 +13335,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 173.99 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "1221d952-5252-4b74-8ad2-c1aef45281e7")
 		)
@@ -12966,6 +13417,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 241.3 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 241.3 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -13057,6 +13519,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 176.53 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "65f3e77e-e0f3-4e9f-ae0b-e3c2bd70c779")
 		)
@@ -13138,6 +13611,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 55.88 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "5fc22327-849c-4151-aad2-8e080002f67b")
 		)
@@ -13209,6 +13693,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 71.12 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 71.12 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -13376,6 +13871,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 228.6 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "44c5c2e6-cbd2-42fa-aa6a-706954ef7029")
 		)
@@ -13447,6 +13953,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 233.68 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 233.68 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -13538,6 +14055,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 173.99 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "7877fee9-9558-427b-84d4-4364e9d3be38")
 		)
@@ -13609,6 +14137,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 161.29 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 161.29 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -13700,6 +14239,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 143.51 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "7d926ce6-efda-4387-a3dc-67fc12c8ad58")
 		)
@@ -13771,6 +14321,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 78.74 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 78.74 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -13939,6 +14500,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 53.34 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "436a3ff3-a733-4e9e-84e1-d0bbb063d99c")
 		)
@@ -14010,6 +14582,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 71.12 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 71.12 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -14178,6 +14761,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 161.29 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "40200f0f-0d21-451b-ab77-1261c1453f99")
 		)
@@ -14250,6 +14844,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 143.51 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 143.51 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -14341,6 +14946,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 176.53 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "70e6dec5-61cc-45a3-a28a-b8787ef68202")
 		)
@@ -14411,6 +15027,17 @@
 		)
 		(property "Description" "Resistor, small symbol"
 			(at 237.49 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "10k 0603"
+			(at 237.49 120.65 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14501,6 +15128,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 60.96 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "40e1e94b-d024-472c-9937-be1ab89c7a2d")
 		)
@@ -14572,6 +15210,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 248.92 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 248.92 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -14740,6 +15389,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 66.04 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f6fbc7aa-6302-4900-be45-787b0abbcdcb")
 		)
@@ -14821,6 +15481,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 171.45 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "0442d3af-d8a5-4e06-94e9-3ff97e567808")
 		)
@@ -14892,6 +15563,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 63.5 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 63.5 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -15060,6 +15742,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 246.38 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "3632f2a3-d7e7-4eea-bf44-bd311e7d732a")
 		)
@@ -15131,6 +15824,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 259.08 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 259.08 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -15222,6 +15926,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 78.74 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "9bbb0e51-3ce3-4d1f-990e-8a718bc3cc2c")
 		)
@@ -15303,6 +16018,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 66.04 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "7147469c-68eb-4428-a397-ce0ceeeb3023")
 		)
@@ -15374,6 +16100,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 73.66 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 73.66 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -15543,6 +16280,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 179.07 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "0b9e4946-46fd-48f9-b134-b0a9b3cb8676")
 		)
@@ -15614,6 +16362,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 63.5 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 63.5 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -15773,6 +16532,17 @@
 			)
 		)
 		(property "Description" "Low voltage 8-channel I2C switch with reset, QFN-24"
+			(at 215.9 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "TCA9548ARGER"
 			(at 215.9 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -16009,6 +16779,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 48.26 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "cbc48ad1-2d39-4bbc-be29-3b373d29d828")
 		)
@@ -16168,6 +16949,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 266.7 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "cbc51a7d-7a75-4ae2-b82f-c669224553fd")
 		)
@@ -16239,6 +17031,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 153.67 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 153.67 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -16330,6 +17133,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 68.58 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "794d43e6-48c3-4c4f-8c2f-783e87fbc3df")
 		)
@@ -16411,6 +17225,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 58.42 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "9b7df464-bdd4-4b33-9368-3c4311bead24")
 		)
@@ -16482,6 +17307,17 @@
 			)
 		)
 		(property "Description" "Low voltage 8-channel I2C switch with reset, QFN-24"
+			(at 128.27 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "TCA9548ARGER"
 			(at 128.27 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -16720,6 +17556,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 68.58 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "9265affd-883a-4015-8e4f-af9d04458ad6")
 		)
@@ -16790,6 +17637,17 @@
 		)
 		(property "Description" "Resistor, small symbol"
 			(at 237.49 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "10k 0603"
+			(at 237.49 115.57 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16870,6 +17728,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 168.91 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 168.91 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -17116,6 +17985,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 83.82 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "64bd64e3-b08a-4b66-a7a1-b176b799e64f")
 		)
@@ -17187,6 +18067,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 163.83 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 163.83 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -17278,6 +18169,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 179.07 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "cfed7c18-40a4-4952-9b4b-ca04c121c190")
 		)
@@ -17349,6 +18251,17 @@
 			)
 		)
 		(property "Description" "Low voltage 8-channel I2C switch with reset, QFN-24"
+			(at 35.56 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "TCA9548ARGER"
 			(at 35.56 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -17509,6 +18422,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 146.05 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "5f31e04c-2901-4905-8847-e784437ed911")
 		)
@@ -17590,6 +18514,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 231.14 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "2806db88-86b0-459c-91e5-7e72ce5369cd")
 		)
@@ -17661,6 +18596,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 171.45 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 171.45 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -17829,6 +18775,17 @@
 				)
 			)
 		)
+		(property "MPN" "2.2k 0603"
+			(at 256.54 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "18186e52-a5db-42a2-bb62-da86265beb4d")
 		)
@@ -17900,6 +18857,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 83.82 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2.2k 0603"
 			(at 83.82 26.67 0)
 			(hide yes)
 			(show_name no)
