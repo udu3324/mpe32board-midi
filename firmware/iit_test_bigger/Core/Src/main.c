@@ -22,6 +22,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include <stdio.h>
+
 #include "stm32h7xx_hal.h"
 #include "tusb.h" 
 #include "i2c-mux.h"
@@ -56,32 +58,14 @@ UART_HandleTypeDef hlpuart1;
 
 SD_HandleTypeDef hsd1;
 
+TIM_HandleTypeDef htim8;
+DMA_HandleTypeDef hdma_tim8_ch4;
+
 PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 SDRAM_HandleTypeDef hsdram1;
 
 /* USER CODE BEGIN PV */
-
-/* USER CODE END PV */
-
-/* Private function prototypes -----------------------------------------------*/
-void SystemClock_Config(void);
-static void MPU_Config(void);
-static void MX_GPIO_Init(void);
-static void MX_FMC_Init(void);
-static void MX_I2C1_Init(void);
-static void MX_I2C2_Init(void);
-static void MX_I2C4_Init(void);
-static void MX_SDMMC1_SD_Init(void);
-static void MX_I2S1_Init(void);
-static void MX_LPUART1_UART_Init(void);
-static void MX_USB_OTG_FS_PCD_Init(void);
-/* USER CODE BEGIN PFP */
-
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
 i2c_mux_t tca_mux_1 = {
   .hi2c = &hi2c1,
 	.rst_port = GPIOI,
@@ -103,9 +87,52 @@ i2c_mux_t tca_mux_3 = {
 	.addr_offset = 2
 };
 
-NP32_Instance_t neopixel_instance_internal = {
-  .LED_Count = 6
-};
+NP32_Instance_t neopixel_instance_internal;
+
+NP32_RGB_t color_red = {10, 0, 0};
+NP32_RGB_t color_blue = {0, 0, 10};
+
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+static void MPU_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
+static void MX_FMC_Init(void);
+static void MX_I2C1_Init(void);
+static void MX_I2C2_Init(void);
+static void MX_I2C4_Init(void);
+static void MX_SDMMC1_SD_Init(void);
+static void MX_I2S1_Init(void);
+static void MX_LPUART1_UART_Init(void);
+static void MX_TIM8_Init(void);
+static void MX_USB_OTG_FS_PCD_Init(void);
+/* USER CODE BEGIN PFP */
+
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+void debugtalk(char *msg) {
+  uint16_t len = (uint16_t)strlen(msg);
+  HAL_UART_Transmit(&hlpuart1, (uint8_t *)(msg), len, HAL_MAX_DELAY);
+}
+
+//ty https://github.com/ElisaCastellari/prova-cps-progettob
+int8_t Start_LED_DMA(uint16_t *buf, uint16_t len) {
+  HAL_StatusTypeDef status = HAL_TIM_PWM_Start_DMA(&htim8, TIM_CHANNEL_4, (uint32_t *)buf, len);
+  return status == HAL_OK ? 0 : -1;
+}
+
+void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
+  if (htim->Instance == TIM8) {
+    // Avvisa la libreria che il buffer è libero
+    NP32_DMAComplete_Callback(&neopixel_instance_internal);
+    // Ferma il PWM
+    HAL_TIM_PWM_Stop_DMA(&htim8, TIM_CHANNEL_4);
+  }
+}
 /* USER CODE END 0 */
 
 /**
@@ -140,34 +167,55 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_FMC_Init();
   MX_I2C1_Init();
   MX_I2C2_Init();
   MX_I2C4_Init();
-  MX_SDMMC1_SD_Init();
+  //MX_SDMMC1_SD_Init();
   MX_I2S1_Init();
   MX_LPUART1_UART_Init();
+  MX_TIM8_Init();
   MX_USB_OTG_FS_PCD_Init();
   /* USER CODE BEGIN 2 */
 
+  debugtalk("pre\r\n");
+
   // init neopixels
-  NP32_Init(&neopixel_instance_internal);
+  neopixel_instance_internal.LED_Count = 6;
+  neopixel_instance_internal.StartDMA_Call = Start_LED_DMA;
+
+  if (NP32_Init(&neopixel_instance_internal) != 0) {
+    // error initializing!@!!
+    debugtalk("bad0\r\n");
+    Error_Handler();
+  }
+  debugtalk("hello\r\n");
+  debugtalk("world\r\n");
+  NP32_ClearAllLEDs(&neopixel_instance_internal);
+  NP32_Update(&neopixel_instance_internal);
 
   // set mp-reset on the i2c mux to be high as it is active-low reset input
 	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_SET);
 
   // disable all i2c channels for a clean slate bruh
 	if (i2c_mux_reset(&tca_mux_1) != 0) {
-    NP32_SetLED_RGB(&neopixel_instance_internal, 0, (NP32_RGB_t){255, 0, 0});
+    debugtalk("bad1\r\n");
+    NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_red);
+    NP32_Update(&neopixel_instance_internal);
 		//HAL_GPIO_WritePin(DEBUG2_LED_GPIO_Port, DEBUG2_LED_Pin, GPIO_PIN_SET);
 	}
-
+  
   if (i2c_mux_reset(&tca_mux_2) != 0) {
-    NP32_SetLED_RGB(&neopixel_instance_internal, 0, (NP32_RGB_t){255, 0, 0});
+    debugtalk("bad2\r\n");
+    NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_red);
+    NP32_Update(&neopixel_instance_internal);
 	}
 
   if (i2c_mux_reset(&tca_mux_3) != 0) {
-    NP32_SetLED_RGB(&neopixel_instance_internal, 0, (NP32_RGB_t){255, 0, 0});
+    debugtalk("bad3\r\n");
+    NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_red);
+    NP32_Update(&neopixel_instance_internal);
 	}
 
   // init device stack for tiny usb!!! https://docs.tinyusb.org/en/latest/integration.html
@@ -186,7 +234,17 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_red);
+    NP32_Update(&neopixel_instance_internal);
     tud_task();
+    debugtalk("looping\r\n");
+    HAL_Delay(1000U);
+    NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_blue);
+    NP32_Update(&neopixel_instance_internal);
+    tud_task();
+    debugtalk("looping\r\n");
+    HAL_Delay(1000U);
+    
   }
   /* USER CODE END 3 */
 }
@@ -511,6 +569,75 @@ static void MX_SDMMC1_SD_Init(void)
 }
 
 /**
+  * @brief TIM8 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM8_Init(void)
+{
+
+  /* USER CODE BEGIN TIM8_Init 0 */
+
+  /* USER CODE END TIM8_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+  TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
+
+  /* USER CODE BEGIN TIM8_Init 1 */
+
+  /* USER CODE END TIM8_Init 1 */
+  htim8.Instance = TIM8;
+  htim8.Init.Prescaler = 0;
+  htim8.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim8.Init.Period = 104;
+  htim8.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim8.Init.RepetitionCounter = 0;
+  htim8.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_PWM_Init(&htim8) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterOutputTrigger2 = TIM_TRGO2_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim8, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 0;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  sConfigOC.OCIdleState = TIM_OCIDLESTATE_RESET;
+  sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
+  if (HAL_TIM_PWM_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
+  sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_DISABLE;
+  sBreakDeadTimeConfig.LockLevel = TIM_LOCKLEVEL_OFF;
+  sBreakDeadTimeConfig.DeadTime = 0;
+  sBreakDeadTimeConfig.BreakState = TIM_BREAK_DISABLE;
+  sBreakDeadTimeConfig.BreakPolarity = TIM_BREAKPOLARITY_HIGH;
+  sBreakDeadTimeConfig.BreakFilter = 0;
+  sBreakDeadTimeConfig.Break2State = TIM_BREAK2_DISABLE;
+  sBreakDeadTimeConfig.Break2Polarity = TIM_BREAK2POLARITY_HIGH;
+  sBreakDeadTimeConfig.Break2Filter = 0;
+  sBreakDeadTimeConfig.AutomaticOutput = TIM_AUTOMATICOUTPUT_DISABLE;
+  if (HAL_TIMEx_ConfigBreakDeadTime(&htim8, &sBreakDeadTimeConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM8_Init 2 */
+
+  /* USER CODE END TIM8_Init 2 */
+  HAL_TIM_MspPostInit(&htim8);
+
+}
+
+/**
   * @brief USB_OTG_FS Initialization Function
   * @param None
   * @retval None
@@ -543,6 +670,22 @@ static void MX_USB_OTG_FS_PCD_Init(void)
   /* USER CODE BEGIN USB_OTG_FS_PCD_Init 2 */
 
   /* USER CODE END USB_OTG_FS_PCD_Init 2 */
+
+}
+
+/**
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Stream0_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
 
 }
 
@@ -623,8 +766,8 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_14|GPIO_PIN_15, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOI, GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_2|GPIO_PIN_4
-                          |GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOI, GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_4|GPIO_PIN_5
+                          |GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOF, GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10, GPIO_PIN_RESET);
@@ -649,10 +792,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PI9 PI10 PI2 PI4
-                           PI5 PI6 PI7 */
-  GPIO_InitStruct.Pin = GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_2|GPIO_PIN_4
-                          |GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7;
+  /*Configure GPIO pins : PI9 PI10 PI4 PI5
+                           PI6 PI7 */
+  GPIO_InitStruct.Pin = GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_4|GPIO_PIN_5
+                          |GPIO_PIN_6|GPIO_PIN_7;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

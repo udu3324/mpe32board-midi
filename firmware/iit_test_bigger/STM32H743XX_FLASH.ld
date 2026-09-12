@@ -63,12 +63,14 @@ ITCMRAM (xrw)      : ORIGIN = 0x00000000, LENGTH = 64K
 FLASH (rx)      : ORIGIN = 0x8000000, LENGTH = 2048K
 }
 
-/* Highest address of the user mode stack */
+/* Keep the stack in DTCM; the heap is placed in DMA-accessible AXI SRAM below. */
 _estack = ORIGIN(DTCMRAM) + LENGTH(DTCMRAM);    /* end of RAM */
 _sstack = _estack - _Min_Stack_Size;
 /* Generate a link error if heap and stack don't fit into RAM */
 _Min_Heap_Size = 0x200;      /* required amount of heap  */
 _Min_Stack_Size = 0x400; /* required amount of stack */
+_heap_start = ORIGIN(RAM);
+_heap_end = ORIGIN(RAM) + LENGTH(RAM);
 
 /* Define output sections */
 SECTIONS
@@ -236,7 +238,6 @@ SECTIONS
     . = ALIGN(8);
     PROVIDE ( end = . );
     PROVIDE ( _end = . );
-    . = . + _Min_Heap_Size;
     . = . + _Min_Stack_Size;
     . = ALIGN(8);
   } >DTCMRAM
