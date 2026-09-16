@@ -174,7 +174,7 @@ int main(void)
   MX_I2C1_Init();
   MX_I2C2_Init();
   MX_I2C4_Init();
-  //MX_SDMMC1_SD_Init();
+  MX_SDMMC1_SD_Init();
   MX_I2S1_Init();
   MX_LPUART1_UART_Init();
   MX_TIM8_Init();
@@ -305,12 +305,12 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLM = 4;
-  RCC_OscInitStruct.PLL.PLLN = 10;
+  RCC_OscInitStruct.PLL.PLLN = 25;
   RCC_OscInitStruct.PLL.PLLP = 2;
-  RCC_OscInitStruct.PLL.PLLQ = 2;
+  RCC_OscInitStruct.PLL.PLLQ = 5;
   RCC_OscInitStruct.PLL.PLLR = 2;
   RCC_OscInitStruct.PLL.PLLRGE = RCC_PLL1VCIRANGE_3;
-  RCC_OscInitStruct.PLL.PLLVCOSEL = RCC_PLL1VCOMEDIUM;
+  RCC_OscInitStruct.PLL.PLLVCOSEL = RCC_PLL1VCOWIDE;
   RCC_OscInitStruct.PLL.PLLFRACN = 0;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
@@ -578,13 +578,20 @@ static void MX_SDMMC1_SD_Init(void)
 
   /* USER CODE BEGIN SDMMC1_Init 1 */
 
+  if (!HAL_GPIO_ReadPin(GPIOH, GPIO_PIN_1)) {
+    return;
+  }
+
+  __HAL_RCC_SDMMC1_FORCE_RESET();
+  __HAL_RCC_SDMMC1_RELEASE_RESET();
+
   /* USER CODE END SDMMC1_Init 1 */
   hsd1.Instance = SDMMC1;
   hsd1.Init.ClockEdge = SDMMC_CLOCK_EDGE_RISING;
   hsd1.Init.ClockPowerSave = SDMMC_CLOCK_POWER_SAVE_DISABLE;
   hsd1.Init.BusWide = SDMMC_BUS_WIDE_4B;
   hsd1.Init.HardwareFlowControl = SDMMC_HARDWARE_FLOW_CONTROL_DISABLE;
-  hsd1.Init.ClockDiv = 23;
+  hsd1.Init.ClockDiv = 2;
   if (HAL_SD_Init(&hsd1) != HAL_OK)
   {
     Error_Handler();
