@@ -25,6 +25,7 @@
 #include <stdio.h>
 
 #include "stm32h7xx_hal.h"
+#include "stm32h7xx_hal_gpio.h"
 #include "tusb.h" 
 #include "i2c-mux.h"
 #include "neopixel32.h"
@@ -89,6 +90,7 @@ i2c_mux_t tca_mux_3 = {
 
 NP32_Instance_t neopixel_instance_internal;
 
+NP32_RGB_t color_black = {0, 0, 0};
 NP32_RGB_t color_red = {10, 0, 0};
 NP32_RGB_t color_blue = {0, 0, 10};
 
@@ -192,7 +194,7 @@ int main(void)
   }
   debugtalk("hello\r\n");
   debugtalk("world\r\n");
-  NP32_ClearAllLEDs(&neopixel_instance_internal);
+  NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_black);
   NP32_Update(&neopixel_instance_internal);
 
   // set mp-reset on the i2c mux to be high as it is active-low reset input
@@ -234,16 +236,41 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_red);
+    //NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_red);
+    //
+    //tud_task();
+    //debugtalk("looping\r\n");
+    //HAL_Delay(1000U);
+    //NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_blue);
+    //NP32_Update(&neopixel_instance_internal);
+    if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6)) {
+      //PG6_BTN1_INT
+      NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_blue);
+    } else {
+      NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_black);
+    }
+    if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7)) {
+      //PG7_BTN2_INT
+      NP32_SetLED_RGB(&neopixel_instance_internal, 2+2, color_blue);
+    } else {
+      NP32_SetLED_RGB(&neopixel_instance_internal, 2+2, color_black);
+    }
+    if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7)) {
+      //PC7_BTN3_INT
+      NP32_SetLED_RGB(&neopixel_instance_internal, 1+2, color_blue);
+    } else {
+      NP32_SetLED_RGB(&neopixel_instance_internal, 1+2, color_black);
+    }
+    if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8)) {
+      //PA8_BTN4_INT
+      NP32_SetLED_RGB(&neopixel_instance_internal, 0+2, color_blue);
+    } else {
+      NP32_SetLED_RGB(&neopixel_instance_internal, 0+2, color_black);
+    }
     NP32_Update(&neopixel_instance_internal);
     tud_task();
-    debugtalk("looping\r\n");
-    HAL_Delay(1000U);
-    NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_blue);
-    NP32_Update(&neopixel_instance_internal);
-    tud_task();
-    debugtalk("looping\r\n");
-    HAL_Delay(1000U);
+    //debugtalk("looping\r\n");
+    //HAL_Delay(1000U);
     
   }
   /* USER CODE END 3 */
@@ -557,7 +584,7 @@ static void MX_SDMMC1_SD_Init(void)
   hsd1.Init.ClockPowerSave = SDMMC_CLOCK_POWER_SAVE_DISABLE;
   hsd1.Init.BusWide = SDMMC_BUS_WIDE_4B;
   hsd1.Init.HardwareFlowControl = SDMMC_HARDWARE_FLOW_CONTROL_DISABLE;
-  hsd1.Init.ClockDiv = 0;
+  hsd1.Init.ClockDiv = 23;
   if (HAL_SD_Init(&hsd1) != HAL_OK)
   {
     Error_Handler();
@@ -712,19 +739,19 @@ static void MX_FMC_Init(void)
   hsdram1.Init.RowBitsNumber = FMC_SDRAM_ROW_BITS_NUM_12;
   hsdram1.Init.MemoryDataWidth = FMC_SDRAM_MEM_BUS_WIDTH_16;
   hsdram1.Init.InternalBankNumber = FMC_SDRAM_INTERN_BANKS_NUM_4;
-  hsdram1.Init.CASLatency = FMC_SDRAM_CAS_LATENCY_2;
+  hsdram1.Init.CASLatency = FMC_SDRAM_CAS_LATENCY_3;
   hsdram1.Init.WriteProtection = FMC_SDRAM_WRITE_PROTECTION_DISABLE;
   hsdram1.Init.SDClockPeriod = FMC_SDRAM_CLOCK_PERIOD_2;
   hsdram1.Init.ReadBurst = FMC_SDRAM_RBURST_ENABLE;
-  hsdram1.Init.ReadPipeDelay = FMC_SDRAM_RPIPE_DELAY_2;
+  hsdram1.Init.ReadPipeDelay = FMC_SDRAM_RPIPE_DELAY_1;
   /* SdramTiming */
-  SdramTiming.LoadToActiveDelay = 16;
-  SdramTiming.ExitSelfRefreshDelay = 16;
-  SdramTiming.SelfRefreshTime = 16;
-  SdramTiming.RowCycleDelay = 16;
-  SdramTiming.WriteRecoveryTime = 16;
-  SdramTiming.RPDelay = 16;
-  SdramTiming.RCDDelay = 16;
+  SdramTiming.LoadToActiveDelay = 2;
+  SdramTiming.ExitSelfRefreshDelay = 7;
+  SdramTiming.SelfRefreshTime = 4;
+  SdramTiming.RowCycleDelay = 7;
+  SdramTiming.WriteRecoveryTime = 3;
+  SdramTiming.RPDelay = 2;
+  SdramTiming.RCDDelay = 2;
 
   if (HAL_SDRAM_Init(&hsdram1, &SdramTiming) != HAL_OK)
   {
