@@ -25,6 +25,7 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#include "class/cdc/cdc_device.h"
 #include "stm32h7xx_hal.h"
 #include "stm32h7xx_hal_gpio.h"
 #include "tusb.h" 
@@ -123,6 +124,11 @@ static void MX_USB_OTG_FS_PCD_Init(void);
 void debugtalk(char *msg) {
   uint16_t len = (uint16_t)strlen(msg);
   HAL_UART_Transmit(&hlpuart1, (uint8_t *)(msg), len, HAL_MAX_DELAY);
+
+  if (tud_cdc_connected()) {
+    tud_cdc_write((uint8_t *)(msg), len);
+    tud_cdc_write_flush();
+  }
 }
 
 //ty https://github.com/ElisaCastellari/prova-cps-progettob
@@ -298,6 +304,7 @@ int main(void)
       //PG6_BTN1_INT
       NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_blue);
       lcd_puts(&lcd, "Hello, LCD 1!");
+      debugtalk("1");
     } else {
       NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_black);
     }
@@ -305,6 +312,7 @@ int main(void)
       //PG7_BTN2_INT
       NP32_SetLED_RGB(&neopixel_instance_internal, 2+2, color_blue);
       lcd_puts(&lcd, "aaaaaaaaaaaaaaaaaaaa");
+      debugtalk("2");
     } else {
       NP32_SetLED_RGB(&neopixel_instance_internal, 2+2, color_black);
     }
