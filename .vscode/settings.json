@@ -6,5 +6,6 @@
     "cmake.preferredGenerators": [
         "Ninja"
     ],
-    "stm32cube-ide-clangd.path": "cube"
+    "stm32cube-ide-clangd.path": "cube",
+    "cmake.sourceDirectory": "C:/Users/rice/Documents/!git/mpe32board-midi/firmware/iit_test_bigger"
 }

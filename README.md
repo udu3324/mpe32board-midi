@@ -27,6 +27,7 @@ There is sample code [here](https://gist.github.com/udu3324/de9aada8e3ea0addc138
  * https://github.com/jtainer/i2c-mux
  * https://github.com/berndoJ/libneopixel32
  * https://github.com/devOramaMan/stm32_TMAG5273 (modified/fixed)
+ * https://github.com/alixahedi/i2c-lcd-stm32
 
 ## CAD
 ### Case

@@ -22,6 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include <stdint.h>
 #include <stdio.h>
 
 #include "stm32h7xx_hal.h"
@@ -29,6 +30,7 @@
 #include "tusb.h" 
 #include "i2c-mux.h"
 #include "neopixel32.h"
+#include "i2clcd.h"
 
 /* USER CODE END Includes */
 
@@ -94,6 +96,8 @@ NP32_RGB_t color_black = {0, 0, 0};
 NP32_RGB_t color_red = {10, 0, 0};
 NP32_RGB_t color_blue = {0, 0, 10};
 
+I2C_LCD_HandleTypeDef lcd;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -134,6 +138,33 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
     // Ferma il PWM
     HAL_TIM_PWM_Stop_DMA(&htim8, TIM_CHANNEL_4);
   }
+}
+
+//ty https://deepbluembedded.com/stm32-i2c-scanner-hal-code-example/
+int16_t probe_lcd_i2c_addr() {
+
+  char Buffer[25] = {0};
+  uint8_t i = 0;
+  HAL_StatusTypeDef ret;
+
+  debugtalk("Starting I2C Scanning: \r\n");
+
+  for (i=1; i < 128; i++) {
+    ret = HAL_I2C_IsDeviceReady(&hi2c4, (uint16_t)(i<<1), 3, 5);
+
+    if (ret != HAL_OK) { /* No ACK Received At That Address */
+      debugtalk(" - ");
+    } else if(ret == HAL_OK) {
+      sprintf(Buffer, "0x%X", i);
+      //debugtalk("found it \r\n");
+      debugtalk(Buffer);
+      return (uint16_t)(i<<1);
+    }
+  }
+
+  return (uint16_t)(0<<1);
+
+  debugtalk("Done! \r\n");
 }
 /* USER CODE END 0 */
 
@@ -181,9 +212,9 @@ int main(void)
   MX_USB_OTG_FS_PCD_Init();
   /* USER CODE BEGIN 2 */
 
-  debugtalk("pre\r\n");
+  debugtalk("hello world\r\n");
 
-  // init neopixels
+  // init neopixels -------------------------------------------------------------------------------------------------------------------
   neopixel_instance_internal.LED_Count = 6;
   neopixel_instance_internal.StartDMA_Call = Start_LED_DMA;
 
@@ -192,10 +223,24 @@ int main(void)
     debugtalk("bad0\r\n");
     Error_Handler();
   }
-  debugtalk("hello\r\n");
-  debugtalk("world\r\n");
+
   NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_black);
   NP32_Update(&neopixel_instance_internal);
+  
+  // init i2c lcd display --------------------------------------------------------------------------------------------------------------
+  //scan all addresses on i2c as some lcd modules use random
+  uint16_t lcd_address = probe_lcd_i2c_addr();
+
+  if (HAL_I2C_IsDeviceReady(&hi2c4, lcd_address, 3, 100) != HAL_OK) {
+    debugtalk("LCD not found\r\n");
+  } else {
+    debugtalk("LCD found\r\n");
+  }
+
+  lcd.hi2c = &hi2c4;
+  lcd.address = (uint8_t)lcd_address;
+  lcd_init(&lcd);
+  lcd_clear(&lcd);
 
   // set mp-reset on the i2c mux to be high as it is active-low reset input
 	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_SET);
@@ -246,27 +291,33 @@ int main(void)
     if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6)) {
       //PG6_BTN1_INT
       NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_blue);
+      lcd_puts(&lcd, "Hello, LCD 1!");
     } else {
       NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_black);
     }
     if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7)) {
       //PG7_BTN2_INT
       NP32_SetLED_RGB(&neopixel_instance_internal, 2+2, color_blue);
+      lcd_puts(&lcd, "aaaaaaaaaaaaaaaaaaaa");
     } else {
       NP32_SetLED_RGB(&neopixel_instance_internal, 2+2, color_black);
     }
     if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7)) {
       //PC7_BTN3_INT
       NP32_SetLED_RGB(&neopixel_instance_internal, 1+2, color_blue);
+      lcd_puts(&lcd, "ok bro");
     } else {
       NP32_SetLED_RGB(&neopixel_instance_internal, 1+2, color_black);
     }
     if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8)) {
       //PA8_BTN4_INT
       NP32_SetLED_RGB(&neopixel_instance_internal, 0+2, color_blue);
+      lcd_puts(&lcd, "its not fair");
     } else {
       NP32_SetLED_RGB(&neopixel_instance_internal, 0+2, color_black);
     }
+    //lcd_gotoxy(&lcd, 0, 1);
+    
     NP32_Update(&neopixel_instance_internal);
     tud_task();
     //debugtalk("looping\r\n");
