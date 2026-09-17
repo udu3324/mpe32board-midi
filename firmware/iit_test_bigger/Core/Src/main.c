@@ -162,7 +162,7 @@ int16_t probe_lcd_i2c_addr() {
     }
   }
 
-  return (uint16_t)(0<<1);
+  return (uint16_t)(0<<1); //todo missing address handle
 
   debugtalk("Done! \r\n");
 }
@@ -214,7 +214,7 @@ int main(void)
 
   debugtalk("hello world\r\n");
 
-  // init neopixels -------------------------------------------------------------------------------------------------------------------
+  // init neopixels --------------------------------------------------------------------------------------------------------------------
   neopixel_instance_internal.LED_Count = 6;
   neopixel_instance_internal.StartDMA_Call = Start_LED_DMA;
 
@@ -242,6 +242,7 @@ int main(void)
   lcd_init(&lcd);
   lcd_clear(&lcd);
 
+  // init i2c muxes 4 sensors ----------------------------------------------------------------------------------------------------------
   // set mp-reset on the i2c mux to be high as it is active-low reset input
 	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_SET);
 
@@ -265,12 +266,14 @@ int main(void)
     NP32_Update(&neopixel_instance_internal);
 	}
 
-  // init device stack for tiny usb!!! https://docs.tinyusb.org/en/latest/integration.html
-  tusb_rhport_init_t host_init = {
-    .role  = TUSB_ROLE_HOST,
-    .speed = TUSB_SPEED_FULL
-  };
-	tusb_init(BOARD_DEVICE_RHPORT_NUM, &host_init);
+  // init device stack for tiny usb!!! https://docs.tinyusb.org/en/latest/integration.html ----------------------------------------------
+	tud_cdc_write_clear();
+  
+  if (tusb_init(BOARD_DEVICE_RHPORT_NUM, NULL)) {
+    debugtalk("inited tusb sucessfully\r\n");
+  } else {
+    debugtalk("bad4\r\n");
+  }
 
   /* USER CODE END 2 */
 
@@ -281,6 +284,9 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+    tud_task();
+
     //NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_red);
     //
     //tud_task();
@@ -319,7 +325,7 @@ int main(void)
     //lcd_gotoxy(&lcd, 0, 1);
     
     NP32_Update(&neopixel_instance_internal);
-    tud_task();
+    
     //debugtalk("looping\r\n");
     //HAL_Delay(1000U);
     
