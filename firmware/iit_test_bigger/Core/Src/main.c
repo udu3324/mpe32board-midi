@@ -33,6 +33,7 @@
 #include "i2clcd.h"
 #include "helper.h"
 #include "lcd-helper.h"
+#include "TMAG5273.h"
 
 /* USER CODE END Includes */
 
@@ -100,6 +101,11 @@ NP32_RGB_t color_blue = {0, 0, 10};
 
 I2C_LCD_HandleTypeDef lcd;
 
+
+
+
+TMAG5273_Handle_t tmag_handles[25];
+bool runOneshot = true;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -243,9 +249,7 @@ int main(void)
     NP32_Update(&neopixel_instance_internal);
 	}
 
-
-
-
+  
   
 
   // init device stack for tiny usb!!! https://docs.tinyusb.org/en/latest/integration.html ----------------------------------------------
@@ -276,12 +280,63 @@ int main(void)
     //HAL_Delay(1000U);
     //NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_blue);
     //NP32_Update(&neopixel_instance_internal);
-    if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6)) {
+    if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6) && runOneshot) {
+      runOneshot = false;
       //PG6_BTN1_INT
       NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_blue);
-      lcd_puts(&lcd, "Hello, LCD 1!");
+      //lcd_puts(&lcd, "Hello, LCD 1!");
       debugtalk("1");
+
+      //char Buffer[25] = {0};
+      //uint8_t i = 0;
+      //HAL_StatusTypeDef rete;
+      //
+      //debugtalk("Starting I2C Scanning: \r\n");
+      //uint16_t tmag_addr;
+//
+      //for (i=1; i < 128; i++) {
+      //  rete = HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t)(i<<1), 3, 5);
+      //
+      //  if (rete != HAL_OK) { /* No ACK Received At That Address */
+      //    debugtalk(" - ");
+      //  } else if(rete == HAL_OK) {
+      //    sprintf(Buffer, "0x%X", i);
+      //    //debugtalk("found it \r\n");
+      //    debugtalk(Buffer);
+      //    debugtalk("Done! \r\n");
+      //    lcd_clear(&lcd);
+      //  
+      //    lcd_puts(&lcd, Buffer);
+      //    tmag_addr = (uint16_t)(i<<1);
+      //  }
+      //}
+
+      if (i2c_mux_select(&tca_mux_1, 0) != 0) {
+        debugtalk("TMAG mux channel select failed\r\n");
+        Error_Handler();
+      }
+    
+      tmag_handles[0] = TMAG5273_CreateHandle(&hi2c1, 0x35);
+      TMAG5273_Init(&tmag_handles[0]);
+
+      char Buffer[50] = {0};
+
+      // reading rotation from sensor
+		  TMAG5273_Axis_t mag;
+		  TMAG5273_Angle_t angle;
+		  uint8_t ret = -1;
+
+		  // reading sensor magnet pos. to output led/etc.
+		  ret = TMAG5273_ReadMagneticField(&tmag_handles[0], &mag);
+		  if (ret == 0) {
+		  	sprintf(Buffer, "Bx = %.3f mT, By = %.3f mT, Bz = %.3f mT\r\n", mag.Bx, mag.By, mag.Bz);
+        debugtalk(Buffer);
+		  	sprintf(Buffer, "Return value: %u\r\n", ret);
+        debugtalk(Buffer);
+      }
+      debugtalk("Buffer done");
     } else {
+      runOneshot = true;
       NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_black);
     }
     if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7)) {
