@@ -36,7 +36,8 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-
+extern UART_HandleTypeDef hlpuart1;
+extern I2C_HandleTypeDef hi2c4;
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/

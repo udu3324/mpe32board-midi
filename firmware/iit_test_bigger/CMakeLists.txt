@@ -49,6 +49,10 @@ add_executable(${CMAKE_PROJECT_NAME}
     Core/Inc/TMAG5273.h
     Core/Src/i2clcd.c
     Core/Inc/i2clcd.h
+    Core/Src/helper.c
+    Core/Inc/helper.h
+    Core/Src/lcd-helper.c
+    Core/Inc/lcd-helper.h
 )
 
 # Add STM32CubeMX generated sources

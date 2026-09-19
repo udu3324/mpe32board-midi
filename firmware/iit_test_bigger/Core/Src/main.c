@@ -25,13 +25,14 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#include "class/cdc/cdc_device.h"
 #include "stm32h7xx_hal.h"
 #include "stm32h7xx_hal_gpio.h"
 #include "tusb.h" 
 #include "i2c-mux.h"
 #include "neopixel32.h"
 #include "i2clcd.h"
+#include "helper.h"
+#include "lcd-helper.h"
 
 /* USER CODE END Includes */
 
@@ -121,15 +122,6 @@ static void MX_USB_OTG_FS_PCD_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void debugtalk(char *msg) {
-  uint16_t len = (uint16_t)strlen(msg);
-  HAL_UART_Transmit(&hlpuart1, (uint8_t *)(msg), len, HAL_MAX_DELAY);
-
-  if (tud_cdc_connected()) {
-    tud_cdc_write((uint8_t *)(msg), len);
-    tud_cdc_write_flush();
-  }
-}
 
 //ty https://github.com/ElisaCastellari/prova-cps-progettob
 int8_t Start_LED_DMA(uint16_t *buf, uint16_t len) {
@@ -146,32 +138,6 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
   }
 }
 
-//ty https://deepbluembedded.com/stm32-i2c-scanner-hal-code-example/
-int16_t probe_lcd_i2c_addr() {
-
-  char Buffer[25] = {0};
-  uint8_t i = 0;
-  HAL_StatusTypeDef ret;
-
-  debugtalk("Starting I2C Scanning: \r\n");
-
-  for (i=1; i < 128; i++) {
-    ret = HAL_I2C_IsDeviceReady(&hi2c4, (uint16_t)(i<<1), 3, 5);
-
-    if (ret != HAL_OK) { /* No ACK Received At That Address */
-      debugtalk(" - ");
-    } else if(ret == HAL_OK) {
-      sprintf(Buffer, "0x%X", i);
-      //debugtalk("found it \r\n");
-      debugtalk(Buffer);
-      return (uint16_t)(i<<1);
-    }
-  }
-
-  return (uint16_t)(0<<1); //todo missing address handle
-
-  debugtalk("Done! \r\n");
-}
 /* USER CODE END 0 */
 
 /**
@@ -248,6 +214,11 @@ int main(void)
   lcd_init(&lcd);
   lcd_clear(&lcd);
 
+  lcd_puts(&lcd, "welcome to");
+  lcd_gotoxy(&lcd, 0, 1);
+  lcd_puts(&lcd, "mpe32board.");
+
+
   // init i2c muxes 4 sensors ----------------------------------------------------------------------------------------------------------
   // set mp-reset on the i2c mux to be high as it is active-low reset input
 	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_SET);
@@ -255,22 +226,27 @@ int main(void)
   // disable all i2c channels for a clean slate bruh
 	if (i2c_mux_reset(&tca_mux_1) != 0) {
     debugtalk("bad1\r\n");
-    NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_red);
+    NP32_SetLED_RGB(&neopixel_instance_internal, 0, color_red);
     NP32_Update(&neopixel_instance_internal);
 		//HAL_GPIO_WritePin(DEBUG2_LED_GPIO_Port, DEBUG2_LED_Pin, GPIO_PIN_SET);
 	}
   
   if (i2c_mux_reset(&tca_mux_2) != 0) {
     debugtalk("bad2\r\n");
-    NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_red);
+    NP32_SetLED_RGB(&neopixel_instance_internal, 1, color_red);
     NP32_Update(&neopixel_instance_internal);
 	}
 
   if (i2c_mux_reset(&tca_mux_3) != 0) {
     debugtalk("bad3\r\n");
-    NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_red);
+    NP32_SetLED_RGB(&neopixel_instance_internal, 0, color_blue);
     NP32_Update(&neopixel_instance_internal);
 	}
+
+
+
+
+  
 
   // init device stack for tiny usb!!! https://docs.tinyusb.org/en/latest/integration.html ----------------------------------------------
 	tud_cdc_write_clear();
@@ -865,8 +841,8 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_14|GPIO_PIN_15, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOI, GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_4|GPIO_PIN_5
-                          |GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOI, GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_3|GPIO_PIN_4
+                          |GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOF, GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10, GPIO_PIN_RESET);
@@ -891,10 +867,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PI9 PI10 PI4 PI5
-                           PI6 PI7 */
-  GPIO_InitStruct.Pin = GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_4|GPIO_PIN_5
-                          |GPIO_PIN_6|GPIO_PIN_7;
+  /*Configure GPIO pins : PI9 PI10 PI3 PI4
+                           PI5 PI6 PI7 */
+  GPIO_InitStruct.Pin = GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_3|GPIO_PIN_4
+                          |GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
