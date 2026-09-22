@@ -105,7 +105,16 @@ I2C_LCD_HandleTypeDef lcd;
 
 
 TMAG5273_Handle_t tmag_handles[25];
+bool enabled_tmags[25];
+uint8_t tmag_addr_arr[25] = { 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16,
+		0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F, 0x20, 0x21, 0x22,
+		0x23,
+		0x24, 0x25, 0x26, 0x27, 0x28 }; 
+
+  
 bool runOneshot = true;
+
+char buffer[50] = {0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -141,6 +150,85 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
     NP32_DMAComplete_Callback(&neopixel_instance_internal);
     // Ferma il PWM
     HAL_TIM_PWM_Stop_DMA(&htim8, TIM_CHANNEL_4);
+  }
+}
+
+void Init_TMAGS() {
+  //mux1
+  for (int i = 0; i < 8; i++) {
+    if (i2c_mux_select(&tca_mux_1, i) != 0) {
+      debugtalk("TMAG mux channel 1 select failed\r\n");
+      Error_Handler();
+    }
+
+    uint8_t ret = HAL_I2C_IsDeviceReady(&hi2c1, 0x35 << 1, 3, 5);
+    if (ret != HAL_OK) {
+      //skip channel as the sensor may not be plugged in
+      snprintf(buffer, sizeof(buffer), "skipped mux1:%u\r\n", i);
+      debugtalk(buffer);
+    } else {
+      tmag_handles[i] = TMAG5273_CreateHandle(&hi2c1, 0x35);
+      TMAG5273_Init(&tmag_handles[i]);
+      TMAG5273_RewriteI2CAddress(&tmag_handles[i], tmag_addr_arr[i]);
+
+      snprintf(buffer, sizeof(buffer), "init mux1:%u\r\n", i);
+      debugtalk(buffer);
+    }
+    enabled_tmags[i] = (ret == HAL_OK);
+  }
+
+  //mux2
+  for (int i = 0; i < 8; i++) {
+    if (i2c_mux_select(&tca_mux_2, i) != 0) {
+      debugtalk("TMAG mux channel 2 select failed\r\n");
+      Error_Handler();
+    }
+
+    uint8_t ret = HAL_I2C_IsDeviceReady(&hi2c1, 0x35 << 1, 3, 5);
+    if (ret != HAL_OK) {
+      //skip channel as the sensor may not be plugged in
+      snprintf(buffer, sizeof(buffer), "skipped mux2:%u\r\n", i);
+      debugtalk(buffer);
+    } else {
+      tmag_handles[i + 8] = TMAG5273_CreateHandle(&hi2c1, 0x35);
+      TMAG5273_Init(&tmag_handles[i + 8]);
+      TMAG5273_RewriteI2CAddress(&tmag_handles[i + 8], tmag_addr_arr[i + 8]);
+
+      snprintf(buffer, sizeof(buffer), "init mux2:%u\r\n", i);
+      debugtalk(buffer);
+    }
+    enabled_tmags[i + 8] = (ret == HAL_OK);
+  }
+
+  //mux3
+  for (int i = 0; i < 8; i++) {
+    if (i2c_mux_select(&tca_mux_3, i) != 0) {
+      debugtalk("TMAG mux channel 3 select failed\r\n");
+      Error_Handler();
+    }
+
+    uint8_t ret = HAL_I2C_IsDeviceReady(&hi2c1, 0x35 << 1, 3, 5);
+    if (ret != HAL_OK) {
+      //skip channel as the sensor may not be plugged in
+      snprintf(buffer, sizeof(buffer), "skipped mux3:%u\r\n", i);
+      debugtalk(buffer);
+    } else {
+      tmag_handles[i + 16] = TMAG5273_CreateHandle(&hi2c1, 0x35);
+      TMAG5273_Init(&tmag_handles[i + 16]);
+      TMAG5273_RewriteI2CAddress(&tmag_handles[i + 16], tmag_addr_arr[i + 16]);
+
+      snprintf(buffer, sizeof(buffer), "init mux3:%u\r\n", i);
+      debugtalk(buffer);
+    }
+    enabled_tmags[i + 16] = (ret == HAL_OK);
+  }
+}
+
+static void PrintEnabledTmags(void) {
+  for (int i = 0; i < 25; i++) {
+    snprintf(buffer, sizeof(buffer), "en_tmags[%d] = %u\r\n", i,
+             enabled_tmags[i] ? 1U : 0U);
+    debugtalk(buffer);
   }
 }
 
@@ -229,6 +317,27 @@ int main(void)
   // set mp-reset on the i2c mux to be high as it is active-low reset input
 	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_SET);
 
+  uint8_t mret = HAL_I2C_IsDeviceReady(&hi2c1, 0x70 << 1, 3, 5);
+  if (mret != HAL_OK) {
+    debugtalk("bad mux1");
+  } else {
+    debugtalk("good mux1");
+  }
+
+  uint8_t mret2 = HAL_I2C_IsDeviceReady(&hi2c1, 0x71 << 1, 3, 5);
+  if (mret2 != HAL_OK) {
+    debugtalk("bad mux2");
+  } else {
+    debugtalk("good mux2");
+  }
+
+  uint8_t mret3 = HAL_I2C_IsDeviceReady(&hi2c1, 0x72 << 1, 3, 5);
+  if (mret3 != HAL_OK) {
+    debugtalk("bad mux3");
+  } else {
+    debugtalk("good mux3");
+  }
+  
   // disable all i2c channels for a clean slate bruh
 	if (i2c_mux_reset(&tca_mux_1) != 0) {
     debugtalk("bad1\r\n");
@@ -251,6 +360,7 @@ int main(void)
 
   
   
+  //Init_TMAGS();
 
   // init device stack for tiny usb!!! https://docs.tinyusb.org/en/latest/integration.html ----------------------------------------------
 	tud_cdc_write_clear();
@@ -284,64 +394,25 @@ int main(void)
       runOneshot = false;
       //PG6_BTN1_INT
       NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_blue);
-      //lcd_puts(&lcd, "Hello, LCD 1!");
+
+      
+      Init_TMAGS();
+
+
+      lcd_puts(&lcd, "Hello, LCD 1!");
       debugtalk("1");
-
-      //char Buffer[25] = {0};
-      //uint8_t i = 0;
-      //HAL_StatusTypeDef rete;
-      //
-      //debugtalk("Starting I2C Scanning: \r\n");
-      //uint16_t tmag_addr;
-//
-      //for (i=1; i < 128; i++) {
-      //  rete = HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t)(i<<1), 3, 5);
-      //
-      //  if (rete != HAL_OK) { /* No ACK Received At That Address */
-      //    debugtalk(" - ");
-      //  } else if(rete == HAL_OK) {
-      //    sprintf(Buffer, "0x%X", i);
-      //    //debugtalk("found it \r\n");
-      //    debugtalk(Buffer);
-      //    debugtalk("Done! \r\n");
-      //    lcd_clear(&lcd);
-      //  
-      //    lcd_puts(&lcd, Buffer);
-      //    tmag_addr = (uint16_t)(i<<1);
-      //  }
-      //}
-
-      if (i2c_mux_select(&tca_mux_1, 0) != 0) {
-        debugtalk("TMAG mux channel select failed\r\n");
-        Error_Handler();
-      }
-    
-      tmag_handles[0] = TMAG5273_CreateHandle(&hi2c1, 0x35);
-      TMAG5273_Init(&tmag_handles[0]);
-
-      char Buffer[50] = {0};
-
-      // reading rotation from sensor
-		  TMAG5273_Axis_t mag;
-		  TMAG5273_Angle_t angle;
-		  uint8_t ret = -1;
-
-		  // reading sensor magnet pos. to output led/etc.
-		  ret = TMAG5273_ReadMagneticField(&tmag_handles[0], &mag);
-		  if (ret == 0) {
-		  	sprintf(Buffer, "Bx = %.3f mT, By = %.3f mT, Bz = %.3f mT\r\n", mag.Bx, mag.By, mag.Bz);
-        debugtalk(Buffer);
-		  	sprintf(Buffer, "Return value: %u\r\n", ret);
-        debugtalk(Buffer);
-      }
-      debugtalk("Buffer done");
-    } else {
+    } else if (!HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6) && !runOneshot) {
       runOneshot = true;
       NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_black);
     }
     if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7)) {
       //PG7_BTN2_INT
       NP32_SetLED_RGB(&neopixel_instance_internal, 2+2, color_blue);
+
+      
+      PrintEnabledTmags();
+
+
       lcd_puts(&lcd, "aaaaaaaaaaaaaaaaaaaa");
       debugtalk("2");
     } else {
@@ -350,7 +421,8 @@ int main(void)
     if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7)) {
       //PC7_BTN3_INT
       NP32_SetLED_RGB(&neopixel_instance_internal, 1+2, color_blue);
-      lcd_puts(&lcd, "ok bro");
+      lcd_puts(&lcd, "ok bro ");
+      debugtalk("3");
     } else {
       NP32_SetLED_RGB(&neopixel_instance_internal, 1+2, color_black);
     }
@@ -358,15 +430,70 @@ int main(void)
       //PA8_BTN4_INT
       NP32_SetLED_RGB(&neopixel_instance_internal, 0+2, color_blue);
       lcd_puts(&lcd, "its not fair");
+      debugtalk("4");
     } else {
       NP32_SetLED_RGB(&neopixel_instance_internal, 0+2, color_black);
     }
     //lcd_gotoxy(&lcd, 0, 1);
+
+
+
+
+
+
+    for (int d = 0; d < 25; d++) {
+      // skip sensors that are not plugged in
+      if (!enabled_tmags[d]) {
+        continue;
+      }
+
+      int ret2;
+      
+      if (d >= 16) {
+        ret2 = i2c_mux_select_multi(&tca_mux_3, 0xFF);
+      } else if (d >= 8) {
+        ret2 = i2c_mux_select_multi(&tca_mux_2, 0xFF);
+      } else {
+        ret2 = i2c_mux_select_multi(&tca_mux_1, 0xFF);
+      }
+
+      snprintf(buffer, sizeof(buffer), "Ret: %u\r\n", ret2);
+      debugtalk(buffer);
+
+      // reading rotation from sensor
+		  TMAG5273_Axis_t mag;
+		  TMAG5273_Angle_t angle;
+		  uint8_t ret = -1;
+
+		  // reading sensor magnet pos. to output led/etc.
+		  ret = TMAG5273_ReadMagneticField(&tmag_handles[d], &mag);
+		  if (ret == 0) {
+		  	snprintf(buffer, sizeof(buffer), "d=%d, z=%.3fmT\r\n", d, mag.Bz);
+        debugtalk(buffer);
+        lcd_puts(&lcd, buffer);
+		  	snprintf(buffer, sizeof(buffer), "Return value: %u\r\n", ret);
+        debugtalk(buffer);
+      }
+      snprintf(buffer, sizeof(buffer), "Buffer done d=%d\r\n", d);
+      debugtalk(buffer);
+      //debugtalk("Buffer done");
+    }
+
+
+
+
+
+
+
+
+
+
+
     
     NP32_Update(&neopixel_instance_internal);
     
     //debugtalk("looping\r\n");
-    //HAL_Delay(1000U);
+    //HAL_Delay(100U);
     
   }
   /* USER CODE END 3 */

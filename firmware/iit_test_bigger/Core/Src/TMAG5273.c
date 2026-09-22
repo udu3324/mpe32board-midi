@@ -23,6 +23,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include <stdio.h>
 #include "TMAG5273.h"
+#include "helper.h"
 #include "stdbool.h"
 #include "main.h"
 
@@ -158,8 +159,8 @@ void TMAG5273_Init(TMAG5273_Handle_t *pHandle) {
 		if (!adr) {
 			//Error_Handler();
 			while (1) {
-				printf("error 1\r\n");
-				HAL_GPIO_TogglePin(DEBUG2_LED_GPIO_Port, DEBUG2_LED_Pin);
+				debugtalk("error 1\r\n");
+				
 				HAL_Delay(1000);
 			}
 		}
@@ -170,9 +171,8 @@ void TMAG5273_Init(TMAG5273_Handle_t *pHandle) {
 				&pHandle->deviceId)) {
 			//Error_Handler();
 			while (1) {
-				printf("error 2\r\n");
-				HAL_GPIO_TogglePin(DEBUG2_LED_GPIO_Port, DEBUG2_LED_Pin);
-				HAL_GPIO_TogglePin(DEBUG4_LED_GPIO_Port, DEBUG4_LED_Pin);
+				debugtalk("error 2\r\n");
+				
 				HAL_Delay(1000);
 			}
 		}
@@ -182,9 +182,8 @@ void TMAG5273_Init(TMAG5273_Handle_t *pHandle) {
 			(uint8_t*) &pHandle->manufactorerId)) {
 		//Error_Handler();
 		while (1) {
-			printf("error 3\r\n");
-			HAL_GPIO_TogglePin(DEBUG2_LED_GPIO_Port, DEBUG2_LED_Pin);
-			HAL_GPIO_TogglePin(DEBUG3_LED_GPIO_Port, DEBUG3_LED_Pin);
+			debugtalk("error 3\r\n");
+			
 			HAL_Delay(1000);
 		}
 	}
@@ -192,10 +191,8 @@ void TMAG5273_Init(TMAG5273_Handle_t *pHandle) {
 	if (TMAG5273_ReadRegisterStd(pHandle, MANUFACTURER_ID_MSB, 1, &val)) {
 		//Error_Handler();
 		while (1) {
-			printf("error 4\r\n");
-			HAL_GPIO_TogglePin(DEBUG2_LED_GPIO_Port, DEBUG2_LED_Pin);
-			HAL_GPIO_TogglePin(DEBUG4_LED_GPIO_Port, DEBUG4_LED_Pin);
-			HAL_GPIO_TogglePin(DEBUG3_LED_GPIO_Port, DEBUG3_LED_Pin);
+			debugtalk("error 4\r\n");
+			
 			HAL_Delay(1000);
 		}
 	}
