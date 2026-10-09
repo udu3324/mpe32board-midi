@@ -107,7 +107,77 @@ static void MX_USB_OTG_FS_PCD_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void button_debug() {
+  if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6) && runOneshot) { //PG6_BTN1_INT
+    runOneshot = false;
+    NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_blue);
+    //Init_TMAGS();
+    lcd_puts(&lcd, "Hello, LCD 1!");
+    debugtalk("1");
+  } else if (!HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6) && !runOneshot) {
+    runOneshot = true;
+    NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_black);
+  }
+  if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7)) { //PG7_BTN2_INT
+    NP32_SetLED_RGB(&neopixel_instance_internal, 2+2, color_blue);
 
+    PrintEnabledTmags();
+
+    lcd_puts(&lcd, "aaaaaaaaaaaaaaaaaaaa");
+    debugtalk("2");
+  } else {
+    NP32_SetLED_RGB(&neopixel_instance_internal, 2+2, color_black);
+  }
+  if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7)) { //PC7_BTN3_INT
+    NP32_SetLED_RGB(&neopixel_instance_internal, 1+2, color_blue);
+    lcd_puts(&lcd, "ok bro ");
+    debugtalk("3");
+  } else {
+    NP32_SetLED_RGB(&neopixel_instance_internal, 1+2, color_black);
+  }
+  if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8)) { //PA8_BTN4_INT
+    NP32_SetLED_RGB(&neopixel_instance_internal, 0+2, color_blue);
+    lcd_puts(&lcd, "its not fair");
+    debugtalk("4");
+  } else {
+    NP32_SetLED_RGB(&neopixel_instance_internal, 0+2, color_black);
+  }
+}
+
+void button_handle() {
+  //todo
+}
+
+void sensor_handle() {
+  for (int d = 0; d < 25; d++) {
+    // skip sensors that are not plugged in
+    if (!enabled_tmags[d]) {
+      continue;
+    }
+
+    int ret2;
+    
+    if (d >= 16) {
+      ret2 = i2c_mux_select_multi(&tca_mux_3, 0xFF);
+    } else if (d >= 8) {
+      ret2 = i2c_mux_select_multi(&tca_mux_2, 0xFF);
+    } else {
+      ret2 = i2c_mux_select_multi(&tca_mux_1, 0xFF);
+    }
+
+    // reading rotation from sensor
+	  TMAG5273_Axis_t mag;
+	  TMAG5273_Angle_t angle;
+	  uint8_t ret = -1;
+
+	  // reading sensor magnet pos. to output led/etc.
+	  ret = TMAG5273_ReadMagneticField(&tmag_handles[d], &mag);
+	  if (ret == 0) {
+	  	snprintf(buffer, sizeof(buffer), "d=%d, z=%.3fmT\r\n", d, mag.Bz);
+      debugtalk(buffer);
+    }
+  }
+}
 /* USER CODE END 0 */
 
 /**
@@ -259,119 +329,14 @@ int main(void)
 
     tud_task();
 
-    //NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_red);
-    //
-    //tud_task();
-    //debugtalk("looping\r\n");
-    //HAL_Delay(1000U);
-    //NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_blue);
-    //NP32_Update(&neopixel_instance_internal);
-    if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6) && runOneshot) {
-      runOneshot = false;
-      //PG6_BTN1_INT
-      NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_blue);
+    // SWITCH HERE BETWEEN DEVELOPMENT AND PRODUCTION ENVIRONMENTS //TODO 
+    button_debug();
+    //button_handle();
 
-      
-      //Init_TMAGS();
-
-
-      lcd_puts(&lcd, "Hello, LCD 1!");
-      debugtalk("1");
-    } else if (!HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6) && !runOneshot) {
-      runOneshot = true;
-      NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_black);
-    }
-    if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7)) {
-      //PG7_BTN2_INT
-      NP32_SetLED_RGB(&neopixel_instance_internal, 2+2, color_blue);
-
-      
-      PrintEnabledTmags();
-
-
-      lcd_puts(&lcd, "aaaaaaaaaaaaaaaaaaaa");
-      debugtalk("2");
-    } else {
-      NP32_SetLED_RGB(&neopixel_instance_internal, 2+2, color_black);
-    }
-    if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7)) {
-      //PC7_BTN3_INT
-      NP32_SetLED_RGB(&neopixel_instance_internal, 1+2, color_blue);
-      lcd_puts(&lcd, "ok bro ");
-      debugtalk("3");
-    } else {
-      NP32_SetLED_RGB(&neopixel_instance_internal, 1+2, color_black);
-    }
-    if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8)) {
-      //PA8_BTN4_INT
-      NP32_SetLED_RGB(&neopixel_instance_internal, 0+2, color_blue);
-      lcd_puts(&lcd, "its not fair");
-      debugtalk("4");
-    } else {
-      NP32_SetLED_RGB(&neopixel_instance_internal, 0+2, color_black);
-    }
-    //lcd_gotoxy(&lcd, 0, 1);
-
-
-
-
-
-
-    for (int d = 0; d < 25; d++) {
-      // skip sensors that are not plugged in
-      if (!enabled_tmags[d]) {
-        continue;
-      }
-
-      int ret2;
-      
-      if (d >= 16) {
-        ret2 = i2c_mux_select_multi(&tca_mux_3, 0xFF);
-      } else if (d >= 8) {
-        ret2 = i2c_mux_select_multi(&tca_mux_2, 0xFF);
-      } else {
-        ret2 = i2c_mux_select_multi(&tca_mux_1, 0xFF);
-      }
-
-      //snprintf(buffer, sizeof(buffer), "Ret: %u\r\n", ret2);
-      //debugtalk(buffer);
-
-      // reading rotation from sensor
-		  TMAG5273_Axis_t mag;
-		  TMAG5273_Angle_t angle;
-		  uint8_t ret = -1;
-
-		  // reading sensor magnet pos. to output led/etc.
-		  ret = TMAG5273_ReadMagneticField(&tmag_handles[d], &mag);
-		  if (ret == 0) {
-		  	snprintf(buffer, sizeof(buffer), "d=%d, z=%.3fmT\r\n", d, mag.Bz);
-        debugtalk(buffer);
-        //lcd_clear(&lcd);
-        //lcd_puts(&lcd, buffer);
-		  	//snprintf(buffer, sizeof(buffer), "Return value: %u\r\n", ret);
-        //debugtalk(buffer);
-      }
-      //snprintf(buffer, sizeof(buffer), "Buffer done d=%d\r\n", d);
-      //debugtalk(buffer);
-      //debugtalk("Buffer done");
-    }
-
-
-
-
-
-
-
-
-
-
-
+    sensor_handle();
     
     NP32_Update(&neopixel_instance_internal);
-    
-    //debugtalk("looping\r\n");
-    //HAL_Delay(100U);
-    
+
   }
   /* USER CODE END 3 */
 }
