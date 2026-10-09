@@ -2,6 +2,8 @@
 
 #include "stm32h7xx_hal.h"
 #include "main.h"
+#include <stdio.h>
+#include "i2c-mux.h"
 
 #include <string.h>
 
@@ -18,20 +20,60 @@ void debugtalk(const char *msg) {
   }
 }
 
-TMAG5273_Handle_t TMAG5273_CreateHandle(I2C_HandleTypeDef *hi2c,
-		uint8_t address) {
-	TMAG5273_Handle_t tmag = { .pI2c = hi2c, .address = address,
-			.magTempcoMode = TMAG5273_NO_MAG_TEMPCO, .convAvgMode =
-					TMAG5273_CONV_AVG_32X, .readMode =
-					TMAG5273_READ_MODE_STANDARD, .lplnMode = TMAG5273_LOW_NOISE,
-			.operatingMode = TMAG5273_OPERATING_MODE_STANDBY, .magXYRange =
-					TMAG5273_MAG_RANGE_40MT_133MT, .magZRange =
-					TMAG5273_MAG_RANGE_40MT_133MT, .magXYRange =
-					TMAG5273_MAG_RANGE_40MT_133MT, .magZRange =
-					TMAG5273_MAG_RANGE_80MT_266MT, .tempChEn =
-					TMAG5273_TEMP_CH_DISABLED, .angEn = TMAG5273_ANG_X_Z,
-			.magChEn = TMAG5276_MAG_Z_X, .crcEna = TMAG5273_CRC_DISABLE,
-			.sensor_id = 0, .sleep = TMAG5276_10MS };
+//ty https://deepbluembedded.com/stm32-i2c-scanner-hal-code-example/
+int16_t probe_i2c_addr(I2C_HandleTypeDef *hi2c) {
 
-	return tmag;
+  char Buffer[25] = {0};
+  uint8_t i = 0;
+  HAL_StatusTypeDef ret;
+
+  debugtalk("i2c scan: ");
+
+  for (i=1; i < 128; i++) {
+    // remove tca muxes as they show on the list
+    if (i == 0x70 || i == 0x71 || i == 0x72) {
+      continue;
+    }
+
+    ret = HAL_I2C_IsDeviceReady(hi2c, (uint16_t)(i<<1), 3, 5);
+
+    if (ret != HAL_OK) { /* No ACK Received At That Address */
+      //debugtalk(" - ");
+    } else if(ret == HAL_OK) {
+      debugtalk("--> ");
+      sprintf(Buffer, "0x%X", i);
+      debugtalk(Buffer);
+      debugtalk(" <--\r\n");
+      return (uint16_t)(i<<1);
+    }
+  }
+
+
+  debugtalk("not found!\r\n");
+
+
+  return (uint16_t)(0<<1); //todo missing address handle
 }
+
+char buffer[50] = {0};
+
+i2c_mux_t tca_mux_1 = {
+  .hi2c = &hi2c1,
+	.rst_port = GPIOI,
+	.rst_pin = GPIO_PIN_3,
+	.addr_offset = 0
+};
+
+i2c_mux_t tca_mux_2 = {
+  .hi2c = &hi2c1,
+	.rst_port = GPIOI,
+	.rst_pin = GPIO_PIN_3,
+	.addr_offset = 1
+};
+
+i2c_mux_t tca_mux_3 = {
+  .hi2c = &hi2c1,
+	.rst_port = GPIOI,
+	.rst_pin = GPIO_PIN_3,
+	.addr_offset = 2
+};

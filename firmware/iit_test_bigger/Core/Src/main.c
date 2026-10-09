@@ -34,6 +34,8 @@
 #include "helper.h"
 #include "lcd-helper.h"
 #include "TMAG5273.h"
+#include "tmag-helper.h"
+#include "rgb-helper.h"
 
 /* USER CODE END Includes */
 
@@ -72,37 +74,6 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 SDRAM_HandleTypeDef hsdram1;
 
 /* USER CODE BEGIN PV */
-i2c_mux_t tca_mux_1 = {
-  .hi2c = &hi2c1,
-	.rst_port = GPIOI,
-	.rst_pin = GPIO_PIN_3,
-	.addr_offset = 0
-};
-
-i2c_mux_t tca_mux_2 = {
-  .hi2c = &hi2c1,
-	.rst_port = GPIOI,
-	.rst_pin = GPIO_PIN_3,
-	.addr_offset = 1
-};
-
-i2c_mux_t tca_mux_3 = {
-  .hi2c = &hi2c1,
-	.rst_port = GPIOI,
-	.rst_pin = GPIO_PIN_3,
-	.addr_offset = 2
-};
-
-NP32_Instance_t neopixel_instance_internal;
-
-NP32_RGB_t color_black = {0, 0, 0};
-NP32_RGB_t color_red = {10, 0, 0};
-NP32_RGB_t color_blue = {0, 0, 10};
-
-I2C_LCD_HandleTypeDef lcd;
-
-
-
 
 TMAG5273_Handle_t tmag_handles[25];
 bool enabled_tmags[25];
@@ -114,7 +85,6 @@ uint8_t tmag_addr_arr[25] = { 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16,
   
 bool runOneshot = true;
 
-char buffer[50] = {0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -137,100 +107,6 @@ static void MX_USB_OTG_FS_PCD_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
-//ty https://github.com/ElisaCastellari/prova-cps-progettob
-int8_t Start_LED_DMA(uint16_t *buf, uint16_t len) {
-  HAL_StatusTypeDef status = HAL_TIM_PWM_Start_DMA(&htim8, TIM_CHANNEL_4, (uint32_t *)buf, len);
-  return status == HAL_OK ? 0 : -1;
-}
-
-void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
-  if (htim->Instance == TIM8) {
-    // Avvisa la libreria che il buffer è libero
-    NP32_DMAComplete_Callback(&neopixel_instance_internal);
-    // Ferma il PWM
-    HAL_TIM_PWM_Stop_DMA(&htim8, TIM_CHANNEL_4);
-  }
-}
-
-void Init_TMAGS() {
-  //mux1
-  for (int i = 0; i < 8; i++) {
-    if (i2c_mux_select(&tca_mux_1, i) != 0) {
-      debugtalk("TMAG mux channel 1 select failed\r\n");
-      Error_Handler();
-    }
-
-    uint8_t ret = HAL_I2C_IsDeviceReady(&hi2c1, 0x35 << 1, 3, 5);
-    if (ret != HAL_OK) {
-      //skip channel as the sensor may not be plugged in
-      snprintf(buffer, sizeof(buffer), "skipped mux1:%u\r\n", i);
-      debugtalk(buffer);
-    } else {
-      tmag_handles[i] = TMAG5273_CreateHandle(&hi2c1, 0x35);
-      TMAG5273_Init(&tmag_handles[i]);
-      TMAG5273_RewriteI2CAddress(&tmag_handles[i], tmag_addr_arr[i]);
-
-      snprintf(buffer, sizeof(buffer), "init mux1:%u\r\n", i);
-      debugtalk(buffer);
-    }
-    enabled_tmags[i] = (ret == HAL_OK);
-  }
-
-  //mux2
-  for (int i = 0; i < 8; i++) {
-    if (i2c_mux_select(&tca_mux_2, i) != 0) {
-      debugtalk("TMAG mux channel 2 select failed\r\n");
-      Error_Handler();
-    }
-
-    uint8_t ret = HAL_I2C_IsDeviceReady(&hi2c1, 0x35 << 1, 3, 5);
-    if (ret != HAL_OK) {
-      //skip channel as the sensor may not be plugged in
-      snprintf(buffer, sizeof(buffer), "skipped mux2:%u\r\n", i);
-      debugtalk(buffer);
-    } else {
-      tmag_handles[i + 8] = TMAG5273_CreateHandle(&hi2c1, 0x35);
-      TMAG5273_Init(&tmag_handles[i + 8]);
-      TMAG5273_RewriteI2CAddress(&tmag_handles[i + 8], tmag_addr_arr[i + 8]);
-
-      snprintf(buffer, sizeof(buffer), "init mux2:%u\r\n", i);
-      debugtalk(buffer);
-    }
-    enabled_tmags[i + 8] = (ret == HAL_OK);
-  }
-
-  //mux3
-  for (int i = 0; i < 8; i++) {
-    if (i2c_mux_select(&tca_mux_3, i) != 0) {
-      debugtalk("TMAG mux channel 3 select failed\r\n");
-      Error_Handler();
-    }
-
-    uint8_t ret = HAL_I2C_IsDeviceReady(&hi2c1, 0x35 << 1, 3, 5);
-    if (ret != HAL_OK) {
-      //skip channel as the sensor may not be plugged in
-      snprintf(buffer, sizeof(buffer), "skipped mux3:%u\r\n", i);
-      debugtalk(buffer);
-    } else {
-      tmag_handles[i + 16] = TMAG5273_CreateHandle(&hi2c1, 0x35);
-      TMAG5273_Init(&tmag_handles[i + 16]);
-      TMAG5273_RewriteI2CAddress(&tmag_handles[i + 16], tmag_addr_arr[i + 16]);
-
-      snprintf(buffer, sizeof(buffer), "init mux3:%u\r\n", i);
-      debugtalk(buffer);
-    }
-    enabled_tmags[i + 16] = (ret == HAL_OK);
-  }
-}
-
-static void PrintEnabledTmags(void) {
-  for (int i = 0; i < 25; i++) {
-    snprintf(buffer, sizeof(buffer), "en_tmags[%d] = %u\r\n", i,
-             enabled_tmags[i] ? 1U : 0U);
-    debugtalk(buffer);
-  }
-}
 
 /* USER CODE END 0 */
 
@@ -295,7 +171,7 @@ int main(void)
   
   // init i2c lcd display --------------------------------------------------------------------------------------------------------------
   //scan all addresses on i2c as some lcd modules use random
-  uint16_t lcd_address = probe_lcd_i2c_addr();
+  uint16_t lcd_address = probe_i2c_addr(&hi2c4);
 
   if (HAL_I2C_IsDeviceReady(&hi2c4, lcd_address, 3, 100) != HAL_OK) {
     debugtalk("LCD not found\r\n");
@@ -360,7 +236,7 @@ int main(void)
 
   
   
-  //Init_TMAGS();
+  Init_TMAGS();
 
   // init device stack for tiny usb!!! https://docs.tinyusb.org/en/latest/integration.html ----------------------------------------------
 	tud_cdc_write_clear();
@@ -396,7 +272,7 @@ int main(void)
       NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_blue);
 
       
-      Init_TMAGS();
+      //Init_TMAGS();
 
 
       lcd_puts(&lcd, "Hello, LCD 1!");
@@ -457,8 +333,8 @@ int main(void)
         ret2 = i2c_mux_select_multi(&tca_mux_1, 0xFF);
       }
 
-      snprintf(buffer, sizeof(buffer), "Ret: %u\r\n", ret2);
-      debugtalk(buffer);
+      //snprintf(buffer, sizeof(buffer), "Ret: %u\r\n", ret2);
+      //debugtalk(buffer);
 
       // reading rotation from sensor
 		  TMAG5273_Axis_t mag;
@@ -470,12 +346,13 @@ int main(void)
 		  if (ret == 0) {
 		  	snprintf(buffer, sizeof(buffer), "d=%d, z=%.3fmT\r\n", d, mag.Bz);
         debugtalk(buffer);
-        lcd_puts(&lcd, buffer);
-		  	snprintf(buffer, sizeof(buffer), "Return value: %u\r\n", ret);
-        debugtalk(buffer);
+        //lcd_clear(&lcd);
+        //lcd_puts(&lcd, buffer);
+		  	//snprintf(buffer, sizeof(buffer), "Return value: %u\r\n", ret);
+        //debugtalk(buffer);
       }
-      snprintf(buffer, sizeof(buffer), "Buffer done d=%d\r\n", d);
-      debugtalk(buffer);
+      //snprintf(buffer, sizeof(buffer), "Buffer done d=%d\r\n", d);
+      //debugtalk(buffer);
       //debugtalk("Buffer done");
     }
 

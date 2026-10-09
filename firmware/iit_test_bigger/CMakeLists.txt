@@ -53,6 +53,10 @@ add_executable(${CMAKE_PROJECT_NAME}
     Core/Inc/helper.h
     Core/Src/lcd-helper.c
     Core/Inc/lcd-helper.h
+    Core/Src/tmag-helper.c
+    Core/Inc/tmag-helper.h
+    Core/Src/rgb-helper.c
+    Core/Inc/rgb-helper.h
 )
 
 # Add STM32CubeMX generated sources
