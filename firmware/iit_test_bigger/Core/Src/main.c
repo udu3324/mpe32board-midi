@@ -83,7 +83,7 @@ uint8_t tmag_addr_arr[25] = { 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16,
 		0x24, 0x25, 0x26, 0x27, 0x28 }; 
 
   
-bool runOneshot = true;
+bool runOneshot[4] = { false, false, false, false };
 
 /* USER CODE END PV */
 
@@ -108,44 +108,65 @@ static void MX_USB_OTG_FS_PCD_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void button_debug() {
-  if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6) && runOneshot) { //PG6_BTN1_INT
-    runOneshot = false;
+  
+  //PG6_BTN1_INT
+  if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6) && runOneshot[0]) {
+    runOneshot[0] = false;
     NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_blue);
     //Init_TMAGS();
     lcd_puts(&lcd, "Hello, LCD 1!");
     debugtalk("1");
-  } else if (!HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6) && !runOneshot) {
-    runOneshot = true;
+  } else if (!HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6) && !runOneshot[0]) {
+    runOneshot[0] = true;
     NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_black);
   }
-  if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7)) { //PG7_BTN2_INT
+
+  //PG7_BTN2_INT
+  if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7) && runOneshot[1]) {
+    runOneshot[1] = false;
     NP32_SetLED_RGB(&neopixel_instance_internal, 2+2, color_blue);
 
     PrintEnabledTmags();
 
     lcd_puts(&lcd, "aaaaaaaaaaaaaaaaaaaa");
     debugtalk("2");
-  } else {
+  } else if (!HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7) && !runOneshot[1]) {
+    runOneshot[1] = true; 
     NP32_SetLED_RGB(&neopixel_instance_internal, 2+2, color_black);
   }
-  if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7)) { //PC7_BTN3_INT
+
+  //PC7_BTN3_INT
+  if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7) && runOneshot[2]) {
+    runOneshot[2] = false;
     NP32_SetLED_RGB(&neopixel_instance_internal, 1+2, color_blue);
     lcd_puts(&lcd, "ok bro ");
     debugtalk("3");
-  } else {
+  } else if (!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7) && !runOneshot[2]) {
+    runOneshot[2] = true;
     NP32_SetLED_RGB(&neopixel_instance_internal, 1+2, color_black);
   }
-  if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8)) { //PA8_BTN4_INT
+
+  //PA8_BTN4_INT
+  if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) && runOneshot[3]) {
+    runOneshot[3] = false;
     NP32_SetLED_RGB(&neopixel_instance_internal, 0+2, color_blue);
     lcd_puts(&lcd, "its not fair");
     debugtalk("4");
-  } else {
+  } else if (!HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) && !runOneshot[3]) {
+    runOneshot[3] = true;
     NP32_SetLED_RGB(&neopixel_instance_internal, 0+2, color_black);
   }
 }
 
 void button_handle() {
-  //todo
+  //PG6_BTN1_INT
+
+  //PG7_BTN2_INT
+
+  //PC7_BTN3_INT
+
+  //PA8_BTN4_INT
+  
 }
 
 void sensor_handle() {
@@ -231,7 +252,6 @@ int main(void)
   neopixel_instance_internal.StartDMA_Call = Start_LED_DMA;
 
   if (NP32_Init(&neopixel_instance_internal) != 0) {
-    // error initializing!@!!
     debugtalk("bad0\r\n");
     Error_Handler();
   }
@@ -245,8 +265,6 @@ int main(void)
 
   if (HAL_I2C_IsDeviceReady(&hi2c4, lcd_address, 3, 100) != HAL_OK) {
     debugtalk("LCD not found\r\n");
-  } else {
-    debugtalk("LCD found\r\n");
   }
 
   lcd.hi2c = &hi2c4;
@@ -266,22 +284,16 @@ int main(void)
   uint8_t mret = HAL_I2C_IsDeviceReady(&hi2c1, 0x70 << 1, 3, 5);
   if (mret != HAL_OK) {
     debugtalk("bad mux1");
-  } else {
-    debugtalk("good mux1");
   }
 
   uint8_t mret2 = HAL_I2C_IsDeviceReady(&hi2c1, 0x71 << 1, 3, 5);
   if (mret2 != HAL_OK) {
     debugtalk("bad mux2");
-  } else {
-    debugtalk("good mux2");
   }
 
   uint8_t mret3 = HAL_I2C_IsDeviceReady(&hi2c1, 0x72 << 1, 3, 5);
   if (mret3 != HAL_OK) {
     debugtalk("bad mux3");
-  } else {
-    debugtalk("good mux3");
   }
   
   // disable all i2c channels for a clean slate bruh
@@ -289,7 +301,6 @@ int main(void)
     debugtalk("bad1\r\n");
     NP32_SetLED_RGB(&neopixel_instance_internal, 0, color_red);
     NP32_Update(&neopixel_instance_internal);
-		//HAL_GPIO_WritePin(DEBUG2_LED_GPIO_Port, DEBUG2_LED_Pin, GPIO_PIN_SET);
 	}
   
   if (i2c_mux_reset(&tca_mux_2) != 0) {
@@ -304,16 +315,12 @@ int main(void)
     NP32_Update(&neopixel_instance_internal);
 	}
 
-  
-  
   Init_TMAGS();
 
   // init device stack for tiny usb!!! https://docs.tinyusb.org/en/latest/integration.html ----------------------------------------------
 	tud_cdc_write_clear();
   
-  if (tusb_init(BOARD_DEVICE_RHPORT_NUM, NULL)) {
-    debugtalk("inited tusb sucessfully\r\n");
-  } else {
+  if (!tusb_init(BOARD_DEVICE_RHPORT_NUM, NULL)) {
     debugtalk("bad4\r\n");
   }
 
