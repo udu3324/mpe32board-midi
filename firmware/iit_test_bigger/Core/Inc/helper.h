@@ -25,6 +25,6 @@ extern i2c_mux_t tca_mux_1;
 extern i2c_mux_t tca_mux_2;
 extern i2c_mux_t tca_mux_3;
 
-extern char buffer[50];
+extern char buffer[100];
 
 #endif

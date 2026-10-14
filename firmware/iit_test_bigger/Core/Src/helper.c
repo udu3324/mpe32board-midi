@@ -10,6 +10,8 @@
 #include "class/cdc/cdc_device.h"
 #include "TMAG5273.h"
 
+char buffer[100] = {0};
+
 void debugtalk(const char *msg) {
   uint16_t len = (uint16_t)strlen(msg);
   HAL_UART_Transmit(&hlpuart1, (uint8_t *)(msg), len, HAL_MAX_DELAY);
@@ -54,8 +56,6 @@ int16_t probe_i2c_addr(I2C_HandleTypeDef *hi2c) {
 
   return (uint16_t)(0<<1); //todo missing address handle
 }
-
-char buffer[50] = {0};
 
 i2c_mux_t tca_mux_1 = {
   .hi2c = &hi2c1,

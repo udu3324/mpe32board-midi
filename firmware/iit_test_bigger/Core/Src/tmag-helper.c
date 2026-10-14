@@ -1,7 +1,24 @@
+#include <math.h>
+#include <stdbool.h>
 #include <stdio.h>
 
 #include "helper.h"
 #include "i2c-mux.h"
+
+TMAG5273_Handle_t tmag_handles[25];
+bool enabled_tmags[25];
+uint8_t tmag_addr_arr[25] = { 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16,
+		0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F, 0x20, 0x21, 0x22,
+		0x23,
+		0x24, 0x25, 0x26, 0x27, 0x28 }; 
+
+bool storedInitialData = false;
+
+float tmag_pos[25];
+float tmag_rot[25];
+
+float tmag_pos_init[25];
+float tmag_rot_init[25];
 
 TMAG5273_Handle_t TMAG5273_CreateHandle(I2C_HandleTypeDef *hi2c,
 		uint8_t address) {
@@ -118,5 +135,58 @@ void PrintEnabledTmags() {
     snprintf(buffer, sizeof(buffer), "en_tmags[%d] = %u\r\n", i,
              enabled_tmags[i] ? 1U : 0U);
     debugtalk(buffer);
+  }
+}
+
+void sensor_handle() {
+  for (int d = 0; d < 25; d++) {
+    // skip sensors that are not plugged in
+    if (!enabled_tmags[d]) {
+      continue;
+    }
+
+    int ret2;
+    
+    if (d >= 16) {
+      ret2 = i2c_mux_select_multi(&tca_mux_3, 0xFF);
+    } else if (d >= 8) {
+      ret2 = i2c_mux_select_multi(&tca_mux_2, 0xFF);
+    } else {
+      ret2 = i2c_mux_select_multi(&tca_mux_1, 0xFF);
+    }
+
+    // reading rotation from sensor
+	  TMAG5273_Axis_t mag;
+	  TMAG5273_Angle_t angle;
+	  uint8_t ret = -1;
+
+	  // reading sensor magnet pos. to output led/etc.
+	  ret = TMAG5273_ReadMagneticField(&tmag_handles[d], &mag);
+	  if (ret == 0) {
+	  	//snprintf(buffer, sizeof(buffer), "d=%d, z=%.3fmT\r\n", d, mag.Bz);
+      //debugtalk(buffer);
+      tmag_pos[d] = fabsf(mag.Bz);
+    } else {
+      snprintf(buffer, sizeof(buffer), "Sensor Index = %d, RMF..() failed code = %d\r\n", d, ret);
+      debugtalk(buffer);
+    }
+
+    ret = TMAG5273_ReadAngle(&tmag_handles[d], &angle);
+		if (ret == 0) {
+			//printf("Angle: %.2f deg, Magnitude: %.2f\r\n", angle.angle, angle.magnitude);
+      tmag_rot[d] = fabsf(angle.angle);
+		} else {
+			snprintf(buffer, sizeof(buffer), "Sensor Index = %d, Failed angle read, code: %d\r\n", d, ret);
+      debugtalk(buffer);
+		}
+  }
+
+  if (!storedInitialData) {
+    storedInitialData = true;
+
+    for (int i = 0; i < 25; i++) {
+      tmag_pos_init[i] = tmag_pos[i];
+      tmag_rot_init[i] = tmag_rot[i];
+    }
   }
 }

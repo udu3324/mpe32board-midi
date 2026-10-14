@@ -42,10 +42,6 @@ extern I2C_HandleTypeDef hi2c4;
 extern I2C_HandleTypeDef hi2c1;
 
 extern TIM_HandleTypeDef htim8;
-
-extern TMAG5273_Handle_t tmag_handles[25];
-extern bool enabled_tmags[25];
-extern uint8_t tmag_addr_arr[25];
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
