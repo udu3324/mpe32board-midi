@@ -25,6 +25,15 @@ uint8_t midi_key_code_map[25]; //midi codes
 
 bool key_is_on[25];
 
+float key_velocity[25];
+
+float key_tick_start[25]; //velocity timings for calculation
+
+float key_rot_offset[25]; //pitch bend data
+
+float cache_key_pitch_shift[25];
+float cache_key_aftertouch[25];
+
 //internal - Initialize MPE mode
 void MPE_Init(void) {
 	if (mpe_initialized) return;
@@ -185,14 +194,63 @@ void midi_parse() {
         snprintf(buffer, sizeof(buffer), "i=%d p=%.2f r=%.2f\r\n", d, dpos, drot);
         debugtalk(buffer);
 
-        if ((dpos > 40) && !key_is_on[d]) { // trigger point
+        // trigger point |<--
+        if ((dpos > 8) && !key_is_on[d]) {
+            uint8_t measured_velocity = map_velocity_log(HAL_GetTick() - key_tick_start[d]);
+
             key_is_on[d] = true;
-            MPE_Send_Note_On(midi_key_code_map[d], 127);
+            key_rot_offset[d] = drot;
+            key_velocity[d] = measured_velocity;
+            MPE_Send_Note_On(midi_key_code_map[d], measured_velocity);
         }
         
-        if ((dpos < 6) && key_is_on[d]) { // release point
+        // release point |-->
+        if ((dpos < 2) && key_is_on[d]) {
             key_is_on[d] = false;
             MPE_Send_Note_Off(midi_key_code_map[d]);
+        }
+
+        // velocity tracking start |<<<
+        if ((dpos > 1.5) && key_tick_start[d] == 0) {
+            key_tick_start[d] = HAL_GetTick();
+        } else if ((dpos < 0.8) && key_tick_start[d] != 0) {
+            key_tick_start[d] = 0;
+        }
+
+        // pitch change per key <--|-->
+        if (key_is_on[d]) {
+            // the reason for this is due to drift when the key is translated up/down
+            float relative_rot = drot - key_rot_offset[d];
+            int16_t shift = 0;
+
+            // left bend <--|--
+            if (relative_rot < -15) {
+                shift = map_float_to_int16(relative_rot, -40.0, -15, -682, 0);
+            }
+
+            // right bend --|-->
+            if (relative_rot > 15) {
+                shift = map_float_to_int16(relative_rot, 15, 40.0, 0, 682);
+            }
+
+            if ((shift != 0) && cache_key_pitch_shift[d] != shift) {
+                cache_key_pitch_shift[d] = shift;
+                MPE_Send_Pitch_Bend(midi_key_code_map[d], shift);
+            }
+        }
+
+        // aftertouch per key >>>|<<<
+        if ((dpos > (8 + 2)) && key_is_on[d]) {
+            uint8_t pressure = map_float_to_uint8(dpos, (8 + 2), 60, 0, 127); // + key_velocity[d]
+
+            //if (pressure > 127) {
+            //    pressure = 127;
+            //}
+
+            if (cache_key_aftertouch[d] != pressure) {
+                cache_key_aftertouch[d] = pressure;
+                MPE_Send_Aftertouch(midi_key_code_map[d], pressure);
+            }
         }
     }
 }
