@@ -46,12 +46,12 @@ bool key_is_on[25];
 
 float key_velocity[25];
 
-float key_tick_start[25]; //velocity timings for calculation
+uint32_t key_tick_start[25]; //velocity timings for calculation
 
 float key_rot_offset[25]; //pitch bend data
 
-float cache_key_pitch_shift[25];
-float cache_key_aftertouch[25];
+int16_t cache_key_pitch_shift[25];
+uint8_t cache_key_aftertouch[25];
 
 //internal - Initialize MPE mode
 void MPE_Init(void) {
@@ -137,6 +137,12 @@ void MPE_Send_Note_On(uint8_t note, uint8_t velocity) {
 	if (channel < 0)
 		return; // polyphony limit reached
 
+	// Reset channel state BEFORE the note-on (per MPE, new note = fresh expression)
+    uint8_t pb[3] = { 0xE0 | (channel & 0x0F), 0x00, 0x40 }; // center = 8192
+    tud_midi_stream_write(0, pb, 3);
+    uint8_t at[2] = { 0xD0 | (channel & 0x0F), 0 };
+    tud_midi_stream_write(0, at, 2);
+
 	uint8_t msg[3] = { 0x90 | (channel & 0x0F), note, velocity };
 	tud_midi_stream_write(0, msg, 3);
 }
@@ -199,8 +205,8 @@ void midi_parse() {
         float dpos = tmag_pos[d] - tmag_pos_init[d];
         float drot = tmag_rot[d] - tmag_rot_init[d];
 
-        snprintf(buffer, sizeof(buffer), "i=%d p=%.2f r=%.2f\r\n", d, dpos, drot);
-        debugtalk(buffer);
+        //snprintf(buffer, sizeof(buffer), "i=%d p=%.2f r=%.2f\r\n", d, dpos, drot);
+        //debugtalk(buffer);
 
         // trigger point |<--
         if ((dpos > 8) && !key_is_on[d]) {
@@ -209,6 +215,8 @@ void midi_parse() {
             key_is_on[d] = true;
             key_rot_offset[d] = drot;
             key_velocity[d] = measured_velocity;
+			cache_key_aftertouch[d] = 0;
+			cache_key_pitch_shift[d] = 0;
             MPE_Send_Note_On(midi_key_code_map[d], measured_velocity);
         }
         
@@ -225,7 +233,7 @@ void midi_parse() {
             key_tick_start[d] = 0;
         }
 
-        // pitch change per key <--|-->
+        // pitch bend per key <--|-->
         if (key_is_on[d]) {
             // the reason for this is due to drift when the key is translated up/down
             float relative_rot = drot - key_rot_offset[d];
@@ -241,19 +249,19 @@ void midi_parse() {
                 shift = map_float_to_int16(relative_rot, 15, 40.0, 0, 682);
             }
 
-            if ((shift != 0) && cache_key_pitch_shift[d] != shift) {
+            if (cache_key_pitch_shift[d] != shift) {
                 cache_key_pitch_shift[d] = shift;
                 MPE_Send_Pitch_Bend(midi_key_code_map[d], shift);
             }
         }
 
         // aftertouch per key >>>|<<<
-        if ((dpos > (8 + 2)) && key_is_on[d]) {
-            uint8_t pressure = map_float_to_uint8(dpos, (8 + 2), 60, 0, 127); // + key_velocity[d]
+        if (key_is_on[d]) {
+            uint8_t pressure = 0;
 
-            //if (pressure > 127) {
-            //    pressure = 127;
-            //}
+            if (dpos > (8 + 2)) {
+                pressure = map_float_to_uint8(dpos, (8 + 2), 60, 0, 127); // + key_velocity[d]
+            }
 
             if (cache_key_aftertouch[d] != pressure) {
                 cache_key_aftertouch[d] = pressure;
