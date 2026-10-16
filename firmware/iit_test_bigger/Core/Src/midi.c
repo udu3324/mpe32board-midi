@@ -22,6 +22,25 @@ MPE_NoteSlot mpe_slots[MAX_MPE_CHANNELS] = { 0 };
 static bool mpe_initialized = false;
 
 uint8_t midi_key_code_map[25]; //midi codes
+int physical_board_map_index[25] = { 
+	16, 19, 23, 22, 8, 11, 15, 14, 
+0, 3, 7, 6, 17, 18, 20, 21, 
+9, 10, 12, 13, 1, 2, 4, 5, 0};
+
+//for each d, get where that number (d) is in the array, and save its position as x
+//that x can be put in midi_key_code_map[x + 1] to get its actual midi code
+
+void fill_midi_key_arr(int size, int start_octave) {
+	int midi_note = 12 + (start_octave * 12);
+	for (int i = 0; i < size; i++) {
+		//map array that maps the physical io's markings to what midi code they should be
+		midi_key_code_map[physical_board_map_index[i]] = midi_note; //todo only supports 25 keys atm, does not go beyond
+		// Step to next note in chromatic order
+		// C, C#, D, D#, E, F, F#, G, G#, A, A#, B
+		// Intervals: 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+		midi_note++;
+	}
+}
 
 bool key_is_on[25];
 
@@ -168,17 +187,6 @@ void MPE_Send_Aftertouch(uint8_t note, uint8_t pressure) {
 
 	snprintf(buffer, sizeof(buffer), "Warning: Aftertouch for note %d not found in active slots\r\n", note);
     debugtalk(buffer);
-}
-
-void fill_midi_key_arr(int size, int start_octave) {
-	int midi_note = 11 + (start_octave * 12);
-	for (int i = 0; i < size; i++) {
-		midi_key_code_map[i] = midi_note;
-		// Step to next note in chromatic order
-		// B, C, C#, D, D#, E, F, F#, G, G#, A, A#
-		// Intervals: 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-		midi_note++;
-	}
 }
 
 void midi_parse() {
