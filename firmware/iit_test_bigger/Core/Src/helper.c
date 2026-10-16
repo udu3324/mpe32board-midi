@@ -3,6 +3,7 @@
 #include "stm32h7xx_hal.h"
 #include "main.h"
 #include <stdio.h>
+#include <math.h>
 #include "i2c-mux.h"
 
 #include <string.h>
@@ -116,14 +117,22 @@ uint8_t map_uint32_to_uint8(uint32_t input, uint32_t in_min, uint32_t in_max,
 	return (uint8_t) result;
 }
 
-int8_t map_velocity_log(uint32_t t) {
-	if (t < 110) {
-		return 127;
-	} else if (t < 350) {
-		return map_uint32_to_uint8(t, 110, 350, 81, 126);
-	} else if (t < 800) {
-		return map_uint32_to_uint8(t, 350, 800, 51, 81);
-	} else {
-		return map_uint32_to_uint8(t, 800, 10000, 30, 51);
-	}
+#define VEL_T_FAST_MS   4.0f     // time cutoff for max velocity
+#define VEL_T_SLOW_MS   200.0f   // ~ for min
+#define VEL_MIN         15.0f
+#define VEL_MAX         127.0f
+#define VEL_CURVE       1.0f     // config
+
+// https://melatonin.dev/blog/doing-my-synthesizer-homework-the-quirks-of-midi-velocity
+// https://midi.org/community/midi-specifications/how-do-controllers-calculate-velocity
+
+uint8_t map_velocity_log(uint32_t t_ms) { //lgtm
+    float t = (float)t_ms;
+    if (t <= VEL_T_FAST_MS) return (uint8_t)VEL_MAX;
+    if (t >= VEL_T_SLOW_MS) return (uint8_t)VEL_MIN;
+
+    float x = logf(t / VEL_T_FAST_MS) / logf(VEL_T_SLOW_MS / VEL_T_FAST_MS);
+    x = powf(x, VEL_CURVE);
+
+    return (uint8_t)(VEL_MAX - x * (VEL_MAX - VEL_MIN) + 0.5f);
 }

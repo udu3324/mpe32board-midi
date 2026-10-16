@@ -23,9 +23,9 @@ void debugtalk(const char *msg);
 
 /**
  * @brief Maps the time (hal_tick) to a midi key velocity
- * @param t: time duration
+ * @param t_ms: time duration
  */
-int8_t map_velocity_log(uint32_t t);
+uint8_t map_velocity_log(uint32_t t_ms);
 
 /**
  * @brief Map a range of float to a int16 range
