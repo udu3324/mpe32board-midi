@@ -66,11 +66,34 @@ void button_debug_handle() {
 
 void button_handle() {
   //PG6_BTN1_INT
+  if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6) && runOneshot[0]) {
+    runOneshot[0] = false;
+
+  } else if (!HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6) && !runOneshot[0]) {
+    runOneshot[0] = true;
+  }
 
   //PG7_BTN2_INT
+  if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7) && runOneshot[1]) {
+    runOneshot[1] = false;
+  
+  } else if (!HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7) && !runOneshot[1]) {
+    runOneshot[1] = true;
+  }
 
   //PC7_BTN3_INT
+  if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7) && runOneshot[2]) {
+    runOneshot[2] = false;
+
+  } else if (!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7) && !runOneshot[2]) {
+    runOneshot[2] = true;
+  }
 
   //PA8_BTN4_INT
-  
+  if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) && runOneshot[3]) {
+    runOneshot[3] = false;
+
+  } else if (!HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) && !runOneshot[3]) {
+    runOneshot[3] = true;
+  }
 }

@@ -81,6 +81,7 @@ SDRAM_HandleTypeDef hsdram1;
 bool getFirstTick = true;
 uint32_t firstTick = 0;
 bool probe_resting_pos = true;
+bool trigger_main_screen = false;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -113,6 +114,16 @@ void tick_service() {
   if (((HAL_GetTick() - firstTick) > 1000) && probe_resting_pos) {
     probe_resting_pos = false;
     storedInitialData = false;
+  }
+
+  //after ~2 seconds
+  if (((HAL_GetTick() - firstTick) > 2000)) {
+    if (!trigger_main_screen) {
+      trigger_main_screen = true;
+      state = MAIN_MENU;
+    }
+
+    ui_service_tick();
   }
 }
 /* USER CODE END 0 */
