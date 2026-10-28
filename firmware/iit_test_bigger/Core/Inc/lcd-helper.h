@@ -9,6 +9,8 @@ typedef enum {
     CONFIG
 } UIState;
 
+extern bool trigger_main_screen;
+
 extern I2C_LCD_HandleTypeDef lcd;
 
 extern UIState state;

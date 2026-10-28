@@ -81,7 +81,6 @@ SDRAM_HandleTypeDef hsdram1;
 bool getFirstTick = true;
 uint32_t firstTick = 0;
 bool probe_resting_pos = true;
-bool trigger_main_screen = false;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -247,7 +246,7 @@ int main(void)
   // init mpe32board device settings/config here ----------------------------------------------------------------------------------------
 
   storedInitialData = false;
-  fill_midi_key_arr(25, 4);
+  fill_midi_key_arr(25, octave);
 
   // init device stack for tiny usb!!! https://docs.tinyusb.org/en/latest/integration.html ----------------------------------------------
 	tud_cdc_write_clear();
@@ -272,8 +271,8 @@ int main(void)
 
     //gather button data
     // SWITCH HERE BETWEEN DEVELOPMENT AND PRODUCTION ENVIRONMENTS //TODO 
-    button_debug_handle();
-    //button_handle();
+    //button_debug_handle();
+    button_handle();
 
     //gather sensor data
     sensor_handle();

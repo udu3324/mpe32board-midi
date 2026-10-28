@@ -3,6 +3,8 @@
 #include "lcd-helper.h"
 #include "i2clcd.h"
 
+bool trigger_main_screen = false;
+
 I2C_LCD_HandleTypeDef lcd;
 
 void render_main_menu() {

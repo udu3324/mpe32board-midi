@@ -3,6 +3,8 @@
 
 //void MPE_Init(void);
 
+extern int octave;
+
 void MPE_Send_Note_On(uint8_t note, uint8_t velocity);
 
 void MPE_Send_Note_Off(uint8_t note);

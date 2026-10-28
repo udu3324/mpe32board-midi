@@ -6,9 +6,12 @@
 #include "i2clcd.h"
 #include "lcd-helper.h"
 #include "tmag-helper.h"
+#include "midi.h"
 
 
 bool runOneshot[4] = { false, false, false, false };
+
+bool button_state[4] = { false, false, false, false };
 
 void button_debug_handle() {  
   //PG6_BTN1_INT
@@ -69,6 +72,22 @@ void button_handle() {
   if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6) && runOneshot[0]) {
     runOneshot[0] = false;
 
+    switch (state) {
+        case SPLASH_BOOT:
+            break;
+        case MAIN_MENU:
+            if (octave >= 0) {
+              octave--;
+              fill_midi_key_arr(25, octave);
+              lcd_gotoxy(&lcd, 1, 1);
+              lcd_puts(&lcd, "-");
+            }
+        
+            break;
+        case CONFIG:
+
+            break;
+    }
   } else if (!HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6) && !runOneshot[0]) {
     runOneshot[0] = true;
   }
@@ -76,7 +95,23 @@ void button_handle() {
   //PG7_BTN2_INT
   if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7) && runOneshot[1]) {
     runOneshot[1] = false;
-  
+    
+    switch (state) {
+        case SPLASH_BOOT:
+            break;
+        case MAIN_MENU:
+            if (octave <= 7) {
+              octave++;
+              fill_midi_key_arr(25, octave);
+              lcd_gotoxy(&lcd, 5, 1);
+              lcd_puts(&lcd, "+");
+            }
+        
+            break;
+        case CONFIG:
+
+            break;
+    }
   } else if (!HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7) && !runOneshot[1]) {
     runOneshot[1] = true;
   }
@@ -85,6 +120,16 @@ void button_handle() {
   if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7) && runOneshot[2]) {
     runOneshot[2] = false;
 
+    switch (state) {
+        case SPLASH_BOOT:
+            break;
+        case MAIN_MENU:
+        
+            break;
+        case CONFIG:
+
+            break;
+    }
   } else if (!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7) && !runOneshot[2]) {
     runOneshot[2] = true;
   }
@@ -93,6 +138,16 @@ void button_handle() {
   if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) && runOneshot[3]) {
     runOneshot[3] = false;
 
+    switch (state) {
+        case SPLASH_BOOT:
+            break;
+        case MAIN_MENU:
+
+            break;
+        case CONFIG:
+
+            break;
+    }
   } else if (!HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) && !runOneshot[3]) {
     runOneshot[3] = true;
   }

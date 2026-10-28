@@ -21,6 +21,8 @@ MPE_NoteSlot mpe_slots[MAX_MPE_CHANNELS] = { 0 };
 
 static bool mpe_initialized = false;
 
+int octave = 4;
+
 uint8_t midi_key_code_map[25]; //midi codes
 int physical_board_map_index[25] = { 
 	16, 19, 23, 22, 8, 11, 15, 14, 
