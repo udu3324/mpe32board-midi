@@ -15,6 +15,8 @@ extern I2C_LCD_HandleTypeDef lcd;
 
 extern UIState state;
 
+extern char status_string[16];
+
 void ui_service_tick();
 
 #endif

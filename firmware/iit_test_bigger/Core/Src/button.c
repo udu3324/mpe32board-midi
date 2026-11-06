@@ -1,5 +1,7 @@
 #include "stm32h7xx_hal.h"
 
+#include <stdio.h>
+
 #include "helper.h"
 #include "neopixel32.h"
 #include "rgb-helper.h"
@@ -81,6 +83,8 @@ void button_handle() {
               fill_midi_key_arr(25, octave);
               lcd_gotoxy(&lcd, 1, 1);
               lcd_puts(&lcd, "-");
+              
+              snprintf(status_string, 16, "octave to %d", octave);
             }
         
             break;
@@ -105,6 +109,8 @@ void button_handle() {
               fill_midi_key_arr(25, octave);
               lcd_gotoxy(&lcd, 5, 1);
               lcd_puts(&lcd, "+");
+
+              snprintf(status_string, 16, "octave to %d", octave);
             }
         
             break;

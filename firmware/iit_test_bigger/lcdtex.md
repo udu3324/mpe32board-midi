@@ -30,7 +30,23 @@ btnA btnB btnC btnD
 ### main screen
 ```
 +################+
-#mpe32board      #
+#                #
+#o-  o+  mcro cfg#
++################+
+```
+
+status messages
+
+```
++################+
+# > connected!   #
+#o-  o+  mcro cfg#
++################+
+```
+
+```
++################+
+# > octave to .. #
 #o-  o+  mcro cfg#
 +################+
 ```
