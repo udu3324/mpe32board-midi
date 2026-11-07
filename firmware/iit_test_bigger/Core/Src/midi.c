@@ -210,6 +210,16 @@ void midi_parse() {
         //snprintf(buffer, sizeof(buffer), "i=%d p=%.2f r=%.2f\r\n", d, dpos, drot);
         //debugtalk(buffer);
 
+		//if ((d == 17)) {
+		//	if (key_is_on[d]) {
+		//		static uint32_t last; 
+		//		uint32_t now = HAL_GetTick();
+		//		snprintf(buffer, sizeof(buffer), "dt=%lu\r\n", now - last);
+		//		debugtalk(buffer);
+		//		last = now;
+		//	}
+		//}
+
         // trigger point |<--
         if ((dpos > 8) && !key_is_on[d]) {
             uint8_t measured_velocity = map_velocity_log(HAL_GetTick() - key_tick_start[d]);
