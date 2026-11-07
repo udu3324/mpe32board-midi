@@ -80,7 +80,7 @@ void button_handle() {
         case MAIN_MENU:
             if (octave >= 0) {
               octave--;
-              fill_midi_key_arr(25, octave);
+              fill_midi_key_arr(24, octave);
               lcd_gotoxy(&lcd, 1, 1);
               lcd_puts(&lcd, "-");
               
@@ -106,7 +106,7 @@ void button_handle() {
         case MAIN_MENU:
             if (octave <= 7) {
               octave++;
-              fill_midi_key_arr(25, octave);
+              fill_midi_key_arr(24, octave);
               lcd_gotoxy(&lcd, 5, 1);
               lcd_puts(&lcd, "+");
 

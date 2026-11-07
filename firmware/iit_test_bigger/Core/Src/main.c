@@ -246,7 +246,7 @@ int main(void)
   // init mpe32board device settings/config here ----------------------------------------------------------------------------------------
 
   storedInitialData = false;
-  fill_midi_key_arr(25, octave);
+  fill_midi_key_arr(24, octave);
 
   // init device stack for tiny usb!!! https://docs.tinyusb.org/en/latest/integration.html ----------------------------------------------
 	tud_cdc_write_clear();

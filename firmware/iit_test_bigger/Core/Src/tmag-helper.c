@@ -38,12 +38,19 @@ TMAG5273_Handle_t TMAG5273_CreateHandle(I2C_HandleTypeDef *hi2c,
 	return tmag;
 }
 
+void mux_all_off(void) {
+  i2c_mux_reset(&tca_mux_1);
+  i2c_mux_reset(&tca_mux_2);
+  i2c_mux_reset(&tca_mux_3);
+}
+
 void Init_TMAGS() {
   //mux1
   for (int i = 0; i < 8; i++) {
     snprintf(buffer, sizeof(buffer), "working on mux1:%u\r\n", i);
     debugtalk(buffer);
 
+    mux_all_off();
     if (i2c_mux_select(&tca_mux_1, i) != 0) {
       debugtalk("TMAG mux channel 1 select failed\r\n");
       Error_Handler();
@@ -74,6 +81,7 @@ void Init_TMAGS() {
     snprintf(buffer, sizeof(buffer), "working on mux2:%u\r\n", i);
     debugtalk(buffer);
 
+    mux_all_off();
     if (i2c_mux_select(&tca_mux_2, i) != 0) {
       debugtalk("TMAG mux channel 2 select failed\r\n");
       Error_Handler();
@@ -104,6 +112,7 @@ void Init_TMAGS() {
     snprintf(buffer, sizeof(buffer), "working on mux3:%u\r\n", i);
     debugtalk(buffer);
 
+    mux_all_off();
     if (i2c_mux_select(&tca_mux_3, i) != 0) {
       debugtalk("TMAG mux channel 3 select failed\r\n");
       Error_Handler();
@@ -128,6 +137,8 @@ void Init_TMAGS() {
     }
     enabled_tmags[i + 16] = (ret == HAL_OK);
   }
+
+  mux_all_off();
 }
 
 void PrintEnabledTmags() {
