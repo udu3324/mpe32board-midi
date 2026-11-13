@@ -20,4 +20,6 @@ extern NP32_RGB_t color_black;
 extern NP32_RGB_t color_red;
 extern NP32_RGB_t color_blue;
 
+NP32_RGB_t ModifyColorBrightness(NP32_RGB_t color, int8_t value);
+
 #endif

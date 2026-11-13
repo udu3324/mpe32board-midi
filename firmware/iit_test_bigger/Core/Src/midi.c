@@ -241,8 +241,8 @@ void midi_parse() {
 			cache_key_aftertouch[d] = 0;
 			cache_key_pitch_shift[d] = 0;
             MPE_Send_Note_On(midi_key_code_map[d], measured_velocity);
-
-			NP32_SetLED_RGB(&neopixel_instance_keys, midi_key_led_map[d], color_blue);
+            
+			NP32_SetLED_RGB(&neopixel_instance_keys, midi_key_led_map[d], ModifyColorBrightness(color_blue, 10));
         }
         
         // release point |-->
@@ -293,6 +293,10 @@ void midi_parse() {
             if (cache_key_aftertouch[d] != pressure) {
                 cache_key_aftertouch[d] = pressure;
                 MPE_Send_Aftertouch(midi_key_code_map[d], pressure);
+
+				float value = map_float_to_uint8(dpos, (8 + 2), 60, 10, 100);;
+                
+				NP32_SetLED_RGB(&neopixel_instance_keys, midi_key_led_map[d], ModifyColorBrightness(color_blue, value));
             }
         }
     }
