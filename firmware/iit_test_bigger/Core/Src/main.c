@@ -72,6 +72,7 @@ SD_HandleTypeDef hsd1;
 
 TIM_HandleTypeDef htim8;
 DMA_HandleTypeDef hdma_tim8_ch4;
+DMA_HandleTypeDef hdma_tim8_ch3;
 
 PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
@@ -174,6 +175,8 @@ int main(void)
   debugtalk("hello world\r\n");
 
   // init neopixels --------------------------------------------------------------------------------------------------------------------
+
+  //internal
   neopixel_instance_internal.LED_Count = 6;
   neopixel_instance_internal.StartDMA_Call = Start_LED_DMA;
 
@@ -184,6 +187,18 @@ int main(void)
 
   NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_black);
   NP32_Update(&neopixel_instance_internal);
+
+  //keys
+  neopixel_instance_keys.LED_Count = 24;
+  neopixel_instance_keys.StartDMA_Call = Start_LED_DMA_KEYS;
+
+  if (NP32_Init(&neopixel_instance_keys) != 0) {
+    debugtalk("bad00\r\n");
+    Error_Handler();
+  }
+
+  NP32_SetAllLEDs_RGB(&neopixel_instance_keys, color_black);
+  NP32_Update(&neopixel_instance_keys);
   
   // init i2c lcd display --------------------------------------------------------------------------------------------------------------
   //scan all addresses on i2c as some lcd modules use random
@@ -281,6 +296,7 @@ int main(void)
     midi_parse();
     
     NP32_Update(&neopixel_instance_internal);
+    NP32_Update(&neopixel_instance_keys);
 
   }
   /* USER CODE END 3 */
@@ -652,9 +668,14 @@ static void MX_TIM8_Init(void)
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
   sConfigOC.Pulse = 0;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   sConfigOC.OCIdleState = TIM_OCIDLESTATE_RESET;
   sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
+  if (HAL_TIM_PWM_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
+  {
+    Error_Handler();
+  }
   if (HAL_TIM_PWM_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
   {
     Error_Handler();
@@ -730,6 +751,9 @@ static void MX_DMA_Init(void)
   /* DMA1_Stream0_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
+  /* DMA1_Stream1_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream1_IRQn);
 
 }
 
@@ -811,7 +835,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOI, GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_3|GPIO_PIN_4
-                          |GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_RESET);
+                          |GPIO_PIN_5|GPIO_PIN_6, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOF, GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10, GPIO_PIN_RESET);
@@ -837,9 +861,9 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PI9 PI10 PI3 PI4
-                           PI5 PI6 PI7 */
+                           PI5 PI6 */
   GPIO_InitStruct.Pin = GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_3|GPIO_PIN_4
-                          |GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7;
+                          |GPIO_PIN_5|GPIO_PIN_6;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

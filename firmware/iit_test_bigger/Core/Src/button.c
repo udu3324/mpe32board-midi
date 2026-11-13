@@ -84,6 +84,8 @@ void button_handle() {
               lcd_gotoxy(&lcd, 1, 1);
               lcd_puts(&lcd, "-");
               
+              NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_blue);
+
               snprintf(status_string, 16, "octave to %d", octave);
             }
         
@@ -94,6 +96,8 @@ void button_handle() {
     }
   } else if (!HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6) && !runOneshot[0]) {
     runOneshot[0] = true;
+
+    NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_black);
   }
 
   //PG7_BTN2_INT
@@ -110,6 +114,8 @@ void button_handle() {
               lcd_gotoxy(&lcd, 5, 1);
               lcd_puts(&lcd, "+");
 
+              NP32_SetLED_RGB(&neopixel_instance_internal, 2+2, color_blue);
+
               snprintf(status_string, 16, "octave to %d", octave);
             }
         
@@ -120,6 +126,8 @@ void button_handle() {
     }
   } else if (!HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7) && !runOneshot[1]) {
     runOneshot[1] = true;
+
+    NP32_SetLED_RGB(&neopixel_instance_internal, 2+2, color_black);
   }
 
   //PC7_BTN3_INT
@@ -130,7 +138,7 @@ void button_handle() {
         case SPLASH_BOOT:
             break;
         case MAIN_MENU:
-        
+            NP32_SetLED_RGB(&neopixel_instance_internal, 1+2, color_blue);
             break;
         case CONFIG:
 
@@ -138,6 +146,8 @@ void button_handle() {
     }
   } else if (!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7) && !runOneshot[2]) {
     runOneshot[2] = true;
+
+    NP32_SetLED_RGB(&neopixel_instance_internal, 1+2, color_black);
   }
 
   //PA8_BTN4_INT

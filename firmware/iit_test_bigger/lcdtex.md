@@ -28,6 +28,7 @@ btnA btnB btnC btnD
 
 
 ### main screen
+
 ```
 +################+
 #                #
@@ -50,3 +51,7 @@ status messages
 #o-  o+  mcro cfg#
 +################+
 ```
+
+
+### config
+

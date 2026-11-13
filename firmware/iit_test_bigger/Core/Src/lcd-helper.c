@@ -19,10 +19,6 @@ void render_main_menu() {
 
 }
 
-void render_btns() {
-    //lcd_puts(&lcd, "");
-}
-
 void debug() {
 
 }
@@ -34,23 +30,25 @@ void ui_service_tick() {
 
     // status text
 
-    if (status_string[0] != '\0') {
-        ptick = HAL_GetTick() + 2000;
+    if (state == MAIN_MENU) {
+        if (status_string[0] != '\0') {
+            ptick = HAL_GetTick() + 2000; // text lingers for this amount of time, timer resets when recieving a new string
 
-        lcd_gotoxy(&lcd, 0, 0);
-        lcd_puts(&lcd, "                ");
-        lcd_gotoxy(&lcd, 0, 0);
-        lcd_puts(&lcd, status_string);
-
-        status_string[0] = '\0';
-    }
-
-    if (ptick != 0) {
-        if (HAL_GetTick() > ptick) {
             lcd_gotoxy(&lcd, 0, 0);
             lcd_puts(&lcd, "                ");
+            lcd_gotoxy(&lcd, 0, 0);
+            lcd_puts(&lcd, status_string);
 
-            ptick = 0;
+            status_string[0] = '\0';
+        }
+
+        if (ptick != 0) {
+            if (HAL_GetTick() > ptick) {
+                lcd_gotoxy(&lcd, 0, 0);
+                lcd_puts(&lcd, "                ");
+
+                ptick = 0;
+            }
         }
     }
 

@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#include "neopixel32.h"
+#include "rgb-helper.h"
 #include "tusb.h"
 #include "helper.h"
 #include "tmag-helper.h"
@@ -28,6 +30,15 @@ int physical_board_map_index[25] = {
 	16, 19, 23, 22, 8, 11, 15, 14, 
 0, 3, 7, 6, 17, 18, 20, 21, 
 9, 10, 12, 13, 1, 2, 4, 5, 0};
+
+uint8_t midi_key_led_map[25] = {
+	17, 22, 12, 5, 23, 13, 6, 18, 2, 9, 
+	10, 3, 21, 11, 4, 16, 0, 7, 19, 
+	14, 8, 20, 15, 1
+};
+//n is device position from 3 i2c muxes, with n being looped ++
+//feed n to physical_board_map_index[25] and get its p, the position in the midi scale mapped to n
+//feed n to midi_key_led_map[25] and get its l, the positions of leds mapped to n
 
 //for each d, get where that number (d) is in the array, and save its position as x
 //that x can be put in midi_key_code_map[x + 1] to get its actual midi code
@@ -230,12 +241,16 @@ void midi_parse() {
 			cache_key_aftertouch[d] = 0;
 			cache_key_pitch_shift[d] = 0;
             MPE_Send_Note_On(midi_key_code_map[d], measured_velocity);
+
+			NP32_SetLED_RGB(&neopixel_instance_keys, midi_key_led_map[d], color_blue);
         }
         
         // release point |-->
         if ((dpos < 2) && key_is_on[d]) {
             key_is_on[d] = false;
             MPE_Send_Note_Off(midi_key_code_map[d]);
+
+			NP32_SetLED_RGB(&neopixel_instance_keys, midi_key_led_map[d], color_black);
         }
 
         // velocity tracking start |<<<

@@ -4,10 +4,17 @@
 #include "neopixel32.h"
 
 NP32_Instance_t neopixel_instance_internal;
+NP32_Instance_t neopixel_instance_keys;
 
 NP32_RGB_t color_black = {0, 0, 0};
 NP32_RGB_t color_red = {10, 0, 0};
-NP32_RGB_t color_blue = {0, 0, 10};
+NP32_RGB_t color_blue = {5, 70, 80};
+
+//keys
+int8_t Start_LED_DMA_KEYS(uint16_t *buf, uint16_t len) {
+  HAL_StatusTypeDef status = HAL_TIM_PWM_Start_DMA(&htim8, TIM_CHANNEL_3, (uint32_t *)buf, len);
+  return status == HAL_OK ? 0 : -1;
+}
 
 //ty https://github.com/ElisaCastellari/prova-cps-progettob
 int8_t Start_LED_DMA(uint16_t *buf, uint16_t len) {
@@ -17,9 +24,16 @@ int8_t Start_LED_DMA(uint16_t *buf, uint16_t len) {
 
 void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
   if (htim->Instance == TIM8) {
-    // Avvisa la libreria che il buffer è libero
-    NP32_DMAComplete_Callback(&neopixel_instance_internal);
-    // Ferma il PWM
-    HAL_TIM_PWM_Stop_DMA(&htim8, TIM_CHANNEL_4);
+    if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3) {
+      // Avvisa la libreria che il buffer è libero
+      NP32_DMAComplete_Callback(&neopixel_instance_keys);
+      // Ferma il PWM
+      HAL_TIM_PWM_Stop_DMA(&htim8, TIM_CHANNEL_3);
+    } else if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_4) {
+      // Avvisa la libreria che il buffer è libero
+      NP32_DMAComplete_Callback(&neopixel_instance_internal);
+      // Ferma il PWM
+      HAL_TIM_PWM_Stop_DMA(&htim8, TIM_CHANNEL_4);
+    }
   }
 }
