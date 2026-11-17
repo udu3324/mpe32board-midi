@@ -4,6 +4,8 @@
 #include "neopixel32.h"
 #include <stdint.h>
 
+bool animate_led_startup = false;
+
 NP32_Instance_t neopixel_instance_internal;
 NP32_Instance_t neopixel_instance_keys;
 
@@ -46,4 +48,65 @@ NP32_RGB_t ModifyColorBrightness(NP32_RGB_t color, int8_t value) { // 0 to 100
   
   NP32_RGB_t new_color = {R, G, B};
   return new_color;
+}
+
+int led_value[24];
+bool led_pulse_up[24];
+bool led_pulse_down[24];
+
+void tick_internal_leds(int i, int value) {
+  if ((i % 4) == 0) {
+    NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, ModifyColorBrightness(color_blue, value));
+  } else if ((i % 4) == 1) {
+    NP32_SetLED_RGB(&neopixel_instance_internal, 2+2, ModifyColorBrightness(color_blue, value));
+  } else if ((i % 4) == 2) {
+    NP32_SetLED_RGB(&neopixel_instance_internal, 1+2, ModifyColorBrightness(color_blue, value));
+  } else {
+    NP32_SetLED_RGB(&neopixel_instance_internal, 0+2, ModifyColorBrightness(color_blue, value));
+  }
+}
+
+void tick_led_animation() {
+  //for each led
+  //pulse them
+  for (int i = 0; i < 24; i++) {
+    //skip since its already pulsed
+    if (led_pulse_up[i] && led_pulse_down[i]) {
+      continue;
+    }
+    if (!led_pulse_up[i]) {
+      led_value[i]++;
+      NP32_SetLED_RGB(&neopixel_instance_keys, i, ModifyColorBrightness(color_blue, led_value[i]));
+      tick_internal_leds(i, led_value[i]);
+
+      if (led_value[i] > 50) {
+        led_pulse_up[i] = true;
+      }
+      return;
+    } else if (!led_pulse_down[i]) {
+      led_value[i]--;
+      NP32_SetLED_RGB(&neopixel_instance_keys, i, ModifyColorBrightness(color_blue, led_value[i]));
+      tick_internal_leds(i, led_value[i]);
+
+      if (led_value[i] < 1) {
+        led_pulse_down[i] = true;
+      }
+      return;
+    }
+  }
+
+  //reset animation
+  for (int i = 0; i < 24; i++) {
+    led_pulse_up[i] = false;
+    led_pulse_down[i] = false;
+    led_value[i] = 0;
+  }
+}
+
+void stop_led_animation() {
+  if (animate_led_startup) {
+    animate_led_startup = false;
+    NP32_SetAllLEDs_RGB(&neopixel_instance_keys, color_black);
+    NP32_SetAllLEDs_RGB(&neopixel_instance_internal, color_black);
+  }
 }

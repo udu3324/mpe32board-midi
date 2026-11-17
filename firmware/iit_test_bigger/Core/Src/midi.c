@@ -241,6 +241,8 @@ void midi_parse() {
 			cache_key_aftertouch[d] = 0;
 			cache_key_pitch_shift[d] = 0;
             MPE_Send_Note_On(midi_key_code_map[d], measured_velocity);
+
+			stop_led_animation();
             
 			NP32_SetLED_RGB(&neopixel_instance_keys, midi_key_led_map[d], ModifyColorBrightness(color_blue, 10));
         }

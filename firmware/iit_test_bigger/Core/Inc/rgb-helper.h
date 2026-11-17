@@ -20,6 +20,12 @@ extern NP32_RGB_t color_black;
 extern NP32_RGB_t color_red;
 extern NP32_RGB_t color_blue;
 
+extern bool animate_led_startup;
+
 NP32_RGB_t ModifyColorBrightness(NP32_RGB_t color, int8_t value);
+
+void tick_led_animation();
+
+void stop_led_animation();
 
 #endif

@@ -114,6 +114,11 @@ void tick_service() {
   if (((HAL_GetTick() - firstTick) > 1000) && probe_resting_pos) {
     probe_resting_pos = false;
     storedInitialData = false;
+    animate_led_startup = true;
+  }
+
+  if (animate_led_startup) {
+    tick_led_animation();
   }
 
   //after ~2 seconds

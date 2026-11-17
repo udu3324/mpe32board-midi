@@ -24,6 +24,7 @@ void button_debug_handle() {
     lcd_clear(&lcd);
     lcd_puts(&lcd, "Hello, LCD 1!");
     debugtalk("1");
+    stop_led_animation();
   } else if (!HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6) && !runOneshot[0]) {
     runOneshot[0] = true;
     NP32_SetLED_RGB(&neopixel_instance_internal, 3+2, color_black);
@@ -39,6 +40,7 @@ void button_debug_handle() {
     lcd_clear(&lcd);
     lcd_puts(&lcd, "aaaaaaaaaaaaaaaaaaaa");
     debugtalk("2");
+    stop_led_animation();
   } else if (!HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7) && !runOneshot[1]) {
     runOneshot[1] = true; 
     NP32_SetLED_RGB(&neopixel_instance_internal, 2+2, color_black);
@@ -51,6 +53,7 @@ void button_debug_handle() {
     lcd_clear(&lcd);
     lcd_puts(&lcd, "ok bro ");
     debugtalk("3");
+    stop_led_animation();
   } else if (!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7) && !runOneshot[2]) {
     runOneshot[2] = true;
     NP32_SetLED_RGB(&neopixel_instance_internal, 1+2, color_black);
@@ -63,6 +66,7 @@ void button_debug_handle() {
     lcd_clear(&lcd);
     lcd_puts(&lcd, "its not fair");
     debugtalk("4");
+    stop_led_animation();
   } else if (!HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) && !runOneshot[3]) {
     runOneshot[3] = true;
     NP32_SetLED_RGB(&neopixel_instance_internal, 0+2, color_black);
@@ -73,6 +77,7 @@ void button_handle() {
   //PG6_BTN1_INT
   if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_6) && runOneshot[0]) {
     runOneshot[0] = false;
+    stop_led_animation();
 
     switch (state) {
         case SPLASH_BOOT:
@@ -103,6 +108,7 @@ void button_handle() {
   //PG7_BTN2_INT
   if (HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7) && runOneshot[1]) {
     runOneshot[1] = false;
+    stop_led_animation();
     
     switch (state) {
         case SPLASH_BOOT:
@@ -133,6 +139,7 @@ void button_handle() {
   //PC7_BTN3_INT
   if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7) && runOneshot[2]) {
     runOneshot[2] = false;
+    stop_led_animation();
 
     switch (state) {
         case SPLASH_BOOT:
@@ -153,6 +160,7 @@ void button_handle() {
   //PA8_BTN4_INT
   if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) && runOneshot[3]) {
     runOneshot[3] = false;
+    stop_led_animation();
 
     switch (state) {
         case SPLASH_BOOT:
