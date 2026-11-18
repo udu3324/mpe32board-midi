@@ -25,6 +25,10 @@ Code and physical layout guide
 btnA btnB btnC btnD
 ```
 
+software design:
+farthest left (btnD) acts mostly like a back button
+second left (btnC) is like a next page button
+
 
 
 ### main screen
@@ -55,3 +59,14 @@ status messages
 
 ### config
 
+submenus 
+
+1. white keys
+trigger distance
+release distance
+velocity track distance (maybe)
+rotational pitch bend deadzone
+pitch bend strength
+aftertouch strength
+2. black keys (~)
+3. leds

@@ -25,6 +25,18 @@ static bool mpe_initialized = false;
 
 int octave = 4;
 
+float wkey_trigger_d = 8;       // distance that sends the note
+float wkey_vtrack_d = 1.5;      // starts the velocity timer
+float wkey_release_d = 2;       // stops the note
+float wkey_rot_deadzone_d = 10; // deadzone for pitch logic before actually computing
+
+float bkey_trigger_d = 6;       // ~ different config on black keys due to mechanical difference
+float bkey_vtrack_d = 1.5;
+float bkey_release_d = 2;
+float bkey_rot_deadzone_d = 5;
+
+float mpe_bend_limit = 682;
+
 uint8_t midi_key_code_map[25]; //midi codes
 int physical_board_map_index[25] = { 
 	16, 19, 23, 22, 8, 11, 15, 14, 
@@ -36,6 +48,13 @@ uint8_t midi_key_led_map[25] = {
 	10, 3, 21, 11, 4, 16, 0, 7, 19, 
 	14, 8, 20, 15, 1
 };
+
+bool white_key_map[25] = {
+	false, false, true, true, false, true, true, false, true, true, 
+	true, true, false, true, true, false, true, true, false, 
+	false, true, false, false, true, true
+};
+
 //n is device position from 3 i2c muxes, with n being looped ++
 //feed n to physical_board_map_index[25] and get its p, the position in the midi scale mapped to n
 //feed n to midi_key_led_map[25] and get its l, the positions of leds mapped to n
@@ -218,21 +237,24 @@ void midi_parse() {
         float dpos = tmag_pos[d] - tmag_pos_init[d];
         float drot = tmag_rot[d] - tmag_rot_init[d];
 
+		float key_trigger_d = white_key_map[d] ? wkey_trigger_d : bkey_trigger_d;
+		float key_vtrack_d = white_key_map[d] ? wkey_release_d : bkey_vtrack_d;
+        float key_release_d = white_key_map[d] ? wkey_release_d : bkey_release_d;
+        float key_rot_deadzone_d = white_key_map[d] ? wkey_rot_deadzone_d : bkey_rot_deadzone_d;
+
         //snprintf(buffer, sizeof(buffer), "i=%d p=%.2f r=%.2f\r\n", d, dpos, drot);
         //debugtalk(buffer);
 
-		//if ((d == 17)) {
-		//	if (key_is_on[d]) {
-		//		static uint32_t last; 
-		//		uint32_t now = HAL_GetTick();
-		//		snprintf(buffer, sizeof(buffer), "dt=%lu\r\n", now - last);
-		//		debugtalk(buffer);
-		//		last = now;
-		//	}
+		//if ((d == 17) && key_is_on[d]) { //latency check
+		//	static uint32_t last; 
+		//	uint32_t now = HAL_GetTick();
+		//	snprintf(buffer, sizeof(buffer), "dt=%lu\r\n", now - last);
+		//	debugtalk(buffer);
+		//	last = now;
 		//}
 
         // trigger point |<--
-        if ((dpos > 8) && !key_is_on[d]) {
+        if ((dpos > key_trigger_d) && !key_is_on[d]) {
             uint8_t measured_velocity = map_velocity_log(HAL_GetTick() - key_tick_start[d]);
 
             key_is_on[d] = true;
@@ -240,6 +262,7 @@ void midi_parse() {
             key_velocity[d] = measured_velocity;
 			cache_key_aftertouch[d] = 0;
 			cache_key_pitch_shift[d] = 0;
+
             MPE_Send_Note_On(midi_key_code_map[d], measured_velocity);
 
 			stop_led_animation();
@@ -248,7 +271,7 @@ void midi_parse() {
         }
         
         // release point |-->
-        if ((dpos < 2) && key_is_on[d]) {
+        if ((dpos < key_release_d) && key_is_on[d]) {
             key_is_on[d] = false;
             MPE_Send_Note_Off(midi_key_code_map[d]);
 
@@ -256,7 +279,7 @@ void midi_parse() {
         }
 
         // velocity tracking start |<<<
-        if ((dpos > 1.5) && key_tick_start[d] == 0) {
+        if ((dpos > key_vtrack_d) && key_tick_start[d] == 0) {
             key_tick_start[d] = HAL_GetTick();
         } else if ((dpos < 0.8) && key_tick_start[d] != 0) {
             key_tick_start[d] = 0;
@@ -269,13 +292,13 @@ void midi_parse() {
             int16_t shift = 0;
 
             // left bend <--|--
-            if (relative_rot < -15) {
-                shift = map_float_to_int16(relative_rot, -40.0, -15, -682, 0);
+            if (relative_rot < -key_rot_deadzone_d) {
+                shift = map_float_to_int16(relative_rot, -40.0, -15, -mpe_bend_limit, 0);
             }
 
             // right bend --|-->
-            if (relative_rot > 15) {
-                shift = map_float_to_int16(relative_rot, 15, 40.0, 0, 682);
+            if (relative_rot > key_rot_deadzone_d) {
+                shift = map_float_to_int16(relative_rot, 15, 40.0, 0, mpe_bend_limit);
             }
 
             if (cache_key_pitch_shift[d] != shift) {
@@ -288,16 +311,15 @@ void midi_parse() {
         if (key_is_on[d]) {
             uint8_t pressure = 0;
 
-            if (dpos > (8 + 2)) {
-                pressure = map_float_to_uint8(dpos, (8 + 2), 60, 0, 127); // + key_velocity[d]
+            if (dpos > (key_trigger_d + key_release_d)) {
+                pressure = map_float_to_uint8(dpos, (key_trigger_d + key_release_d), 60, 0, 127); // + key_velocity[d]
             }
 
             if (cache_key_aftertouch[d] != pressure) {
                 cache_key_aftertouch[d] = pressure;
                 MPE_Send_Aftertouch(midi_key_code_map[d], pressure);
 
-				float value = map_float_to_uint8(dpos, (8 + 2), 60, 10, 100);;
-                
+				float value = map_float_to_uint8(dpos, (key_trigger_d + key_release_d), 60, 10, 100);;
 				NP32_SetLED_RGB(&neopixel_instance_keys, midi_key_led_map[d], ModifyColorBrightness(color_blue, value));
             }
         }

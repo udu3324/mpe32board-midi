@@ -4,6 +4,10 @@
 //void MPE_Init(void);
 
 extern int octave;
+extern float key_trigger_d;
+extern float key_vtrack_d;
+extern float key_release_d;
+extern float key_rot_deadzone_d;
 
 void MPE_Send_Note_On(uint8_t note, uint8_t velocity);
 
